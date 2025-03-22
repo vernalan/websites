@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown to Plain Text Converter</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      :root {
+        --primary-bg: #ffffff;
+        --secondary-bg: #edeaf1;
+        --text-color: #7145ac;
+        --accent: #673ab7;
+        --border: #e0e0e0;
+      }
+
+      [data-theme="dark"] {
+        --primary-bg: #000000;
+        --secondary-bg: #2d2d2d;
+        --text-color: #e0e0e0;
+        --accent: #ba68c8;
+        --border: #424242;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-color: var(--primary-bg);
+        color: var(--text-color);
+        transition: all 0.3s ease;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .theme-toggle {
+        margin-left: 1rem;
+        position: relative;
+        width: 50px;
+        height: 25px;
+        background: var(--accent);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .toggle-ball {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 21px;
+        height: 21px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.3s;
+      }
+
+      [data-theme="dark"] .toggle-ball {
+        transform: translateX(25px);
+      }
+
+      .editor-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .editor-panel {
+        background: var(--secondary-bg);
+        border-radius: 10px;
+        padding: 1.5rem;
+        height: auto;
+        min-height: 60vh;
+        overflow-y: auto;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        color: inherit;
+        resize: none;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1rem;
+      }
+
+      .output-header {
+        font-weight: bold;
+        font-size: 1.2rem;
+        user-select: none;
+        margin-bottom: 1rem;
+      }
+
+      .output {
+        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 0.5rem;
+        height: calc(100% - 2.7rem); /* Adjust for header and padding */
+      }
+
+      .controls {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      button {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .editor-container {
+          grid-template-columns: 1fr;
+        }
+
+        .editor-panel {
+          min-height: 40vh;
+        }
+
+        .output {
+          height: calc(100% - 2.7rem); /* Adjust for header and padding */
+        }
+      }
+    </style>
+  </head>
+  <body data-theme="dark">
+    <div class="container">
+      <header>
+        <h1>Markdown To Plain-Text Converter</h1>
+        <div class="controls">
+          <div class="theme-toggle" onclick="toggleTheme()">
+            <div class="toggle-ball"></div>
+          </div>
+          <button onclick="resetFields()">Reset</button>
+        </div>
+      </header>
+      <div class="controls">
+        <button onclick="pasteFromClipboard()">Paste from Clipboard</button>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+      </div>
+      <div class="editor-container">
+        <div class="editor-panel">
+          <textarea
+            id="markdownInput"
+            placeholder="Enter Markdown here..."
+          ></textarea>
+        </div>
+        <div class="editor-panel">
+          <div class="output-header">Plain Text Output</div>
+          <div id="plainTextOutput" class="output"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const markdownInput = document.getElementById("markdownInput");
+      const plainTextOutput = document.getElementById("plainTextOutput");
+      const copyButton = document.querySelector(".output + button");
+
+      // Conversion function
+      function convertMarkdownToText(markdown) {
+        const html = marked.parse(markdown);
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = html;
+        return tempDiv.textContent || tempDiv.innerText || "";
+      }
+
+      // Live update
+      markdownInput.addEventListener("input", () => {
+        const markdown = markdownInput.value;
+        const plainText = convertMarkdownToText(markdown);
+        plainTextOutput.textContent = plainText;
+      });
+
+      // Copy to clipboard
+      function copyToClipboard() {
+        const text = plainTextOutput.textContent.trim();
+        if (!text) return;
+
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            copyButton.textContent = "Copied!";
+            setTimeout(
+              () => (copyButton.textContent = "Copy to Clipboard"),
+              2000
+            );
+          })
+          .catch((err) => {
+            console.error("Error copying text to clipboard:", err);
+          });
+      }
+
+      // Paste from clipboard
+      function pasteFromClipboard() {
+        navigator.clipboard
+          .readText()
+          .then((text) => {
+            markdownInput.value = text;
+            const plainText = convertMarkdownToText(text);
+            plainTextOutput.textContent = plainText;
+          })
+          .catch((err) => {
+            console.error("Error reading text from clipboard:", err);
+          });
+      }
+
+      // Theme toggle
+      function toggleTheme() {
+        const body = document.body;
+        body.dataset.theme = body.dataset.theme === "dark" ? "light" : "dark";
+      }
+
+      // Reset fields
+      function resetFields() {
+        markdownInput.value = "";
+        plainTextOutput.textContent = "";
+      }
+
+      // Initial conversion
+      convertMarkdownToText("");
+    </script>
+  </body>
+</html>
