@@ -9,28 +9,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background-image: url('hehe.png');
             overflow-x: hidden;
             position: relative;
-            background-color: #000;
-            color: #fff;
-        }
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
+            background: url('hehe.png') no-repeat center center fixed;
+            background-size: cover;
         }
         h1 {
             font-size: 3rem;
             text-align: center;
-            color: #fff;
-            text-shadow: 0 0 10px #fff;
-            margin-bottom: 20px;
+            margin: 20px 10%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
         }
         h2 {
             text-align: center;
-            color: #fff;
-            text-shadow: 0 0 10px #fff;
+            margin: 20px 20%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
         }
         .container {
             display: flex;
@@ -38,139 +36,46 @@
             justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
         .card {
-            background-color: rgba(205, 218, 134, 0.9);
+            background-color: #fff;
             padding: 20px;
             margin: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(255, 238, 238, 0.986);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
             cursor: pointer;
         }
         .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
+            background-color: #0069d9;
+            color: #fff;
         }
         .card a {
             text-decoration: none;
-            color: #333;
+            color: #007BFF;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
         }
         .card a:hover {
-            color: #007BFF;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div id="canvas-container"></div>
     <h1>My Little Websites</h1>
     <h2>Made using vibe-coding</h2>
     <div class="container">
         <div class="card" onclick="location.href='ctd3.html'">
-            <img src="https://picsum.photos/200/300" alt="CTD3">
             <a href="ctd3.html">Countdown Timer</a>
         </div>
         <div class="card" onclick="location.href='1.html'">
-            <img src="https://picsum.photos/200/301" alt="1">
             <a href="1.html">Text Converter</a>
         </div>
+        <div class="card" onclick="location.href='i12.html'">
+            <a href="i12.html">JSON Viewer</a>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        // Scene setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0x000000);
-        document.body.appendChild(renderer.domElement);
-
-        // Create torus knot
-        const geometry = new THREE.TorusKnotGeometry(10, 3, 256, 32);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x00ff00,
-            shininess: 100,
-            wireframe: true
-        });
-        const torusKnot = new THREE.Mesh(geometry, material);
-        scene.add(torusKnot);
-
-        // Add particles
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particleCount = 5000;
-        const posArray = new Float32Array(particleCount * 3);
-        
-        for(let i = 0; i < particleCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 50;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.1,
-            color: 0xffffff,
-            transparent: true,
-            opacity: 0.8,
-            sizeAttenuation: true
-        });
-        
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        // Add lighting
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(20, 20, 20);
-        scene.add(light);
-        scene.add(new THREE.AmbientLight(0x404040));
-
-        camera.position.z = 40;
-
-        // Animation variables
-        let time = 0;
-        const clock = new THREE.Clock();
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            const delta = clock.getDelta();
-            time += delta;
-
-            // Rotate torus knot
-            torusKnot.rotation.x += delta * 0.5;
-            torusKnot.rotation.y += delta * 0.5;
-
-            // Animate particles
-            const positions = particlesGeometry.attributes.position.array;
-            for(let i = 0; i < positions.length; i += 3) {
-                positions[i + 1] = Math.sin(time + positions[i] * 0.1) * 2;
-            }
-            particlesGeometry.attributes.position.needsUpdate = true;
-
-            // Move camera
-            camera.position.x = Math.sin(time * 0.5) * 30;
-            camera.position.z = Math.cos(time * 0.5) * 30;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        }
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        animate();
-    </script>
 </body>
 </html>
 
