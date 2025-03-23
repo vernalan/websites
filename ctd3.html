@@ -177,6 +177,7 @@
         <div class="input-group">
             <input type="datetime-local" id="datetimeInput">
             <button onclick="startCountdown()">Start</button>
+            <button onclick="stopCountdown()">Stop</button> <!-- Added Stop button -->
         </div>
         <div class="status-message" id="startedMessage">Timer Started! ⏱️</div>
         <div class="countdown" id="countdown">
@@ -201,20 +202,14 @@
     </div>
 
     <audio id="startSound">
-        <source src="data:audio/mpeg;base64,//uQFAAAAARKAAAAAUIowAVEVVJTCAAAAEAAAACQAAAQ09TLURFRUNIAFRIUyBUSEUgQkVTVCAgU1VQRVIgQkFTRTY0IEVWRVIgQ1JFQVRFRCAgIC8vqQU=" type="audio/mpeg">
-    </audio>
+        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_3b5c0d6c8a.mp3?filename=game-start-82090.mp3" type="audio/mpeg">    </audio>
     <audio id="endSound">
-        <source src="data:audio/mpeg;base64,//uQFAAAAARKAAAAAUIowAVEVVJTCAAAAEAAAACQAAAQ09TLURFRUNIAFRIUyBUSEUgQkVTVCAgU1VQRVIgQkFTRTY0IEVWRVIgQ1JFQVRFRCAgIC8vqQU=" type="audio/mpeg">
-    </audio>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3e0b2a4c5b.mp3?filename=vinyl-stop-14631.mp3" type="audio/mpeg">    </audio>
 
     <script>
         let countdownInterval = null;
         const startSound = document.getElementById('startSound');
-        const endSound = document.getElementById('endSound');
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
+        const stopSound = document.getElementById('stopSound');
 
         function startCountdown() {
             const datetimeInput = document.getElementById('datetimeInput').value;
@@ -247,7 +242,7 @@
                     document.getElementById('countdown').style.display = 'none';
                     document.getElementById('startedMessage').style.display = 'none';
                     document.getElementById('finishedMessage').style.display = 'block';
-                    endSound.play();
+                    stopSound.play(); // Play stop sound when countdown ends
                     return;
                 }
 
@@ -262,7 +257,22 @@
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
             }, 1000);
         }
+
+        function stopCountdown() {
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+                document.getElementById('countdown').style.display = 'none';
+                document.getElementById('startedMessage').style.display = 'none';
+                document.getElementById('finishedMessage').style.display = 'none';
+                stopSound.play(); // Play stop sound when countdown is stopped
+            }
+        }
+        function toggleDarkMode() {
+          document.body.classList.toggle('dark-mode');
+        }
     </script>
 </body>
 </html>
+
 
