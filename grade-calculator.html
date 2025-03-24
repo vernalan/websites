@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Grade Calculator</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6c94c7;
+            --background-color: #f9f9f9;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --border-color: #dddddd;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            --primary-color: #6c94c7;
+            --secondary-color: #4a6fa5;
+            --background-color: #121212;
+            --card-background: #1e1e1e;
+            --text-color: #e0e0e0;
+            --border-color: #333333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        .dark-icon, .light-icon {
+            font-size: 20px;
+            margin: 0 5px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .assignments-container {
+            margin-bottom: 20px;
+        }
+
+        .assignment-row {
+            display: grid;
+            grid-template-columns: minmax(150px, 2fr) 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .assignment-header {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--card-background);
+            color: var(--text-color);
+            width: 100%;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .danger-btn {
+            background-color: var(--danger-color);
+        }
+
+        .danger-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        .secondary-btn {
+            background-color: var(--secondary-color);
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .target-grade-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .target-grade-container label {
+            white-space: nowrap;
+        }
+
+        #gradeNeededResults {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(74, 111, 165, 0.1);
+        }
+
+        .legend {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--card-background);
+        }
+
+        .legend h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .legend ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+
+        .legend li {
+            margin-bottom: 5px;
+        }
+
+        .export-section {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .custom-file-upload {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .custom-file-upload:hover {
+            background-color: var(--primary-color);
+        }
+
+        .file-name {
+            margin-left: 10px;
+            color: var(--text-color);
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+
+        .chart-container {
+            margin-top: 20px;
+            height: 300px;
+            background-color: var(--card-background);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .math-expression {
+            color: var(--secondary-color);
+            font-style: italic;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            margin-left: 5px;
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--card-background);
+            color: var(--text-color);
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Course Grade Calculator</h1>
+            <div class="toggle-container">
+                <span class="light-icon">☀️</span>
+                <label class="theme-toggle">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="dark-icon">🌙</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>Assignment Grades</h2>
+                <div class="assignments-container">
+                    <div class="assignment-row assignment-header">
+                        <div>Assignment</div>
+                        <div>Worth (%)</div>
+                        <div>Grade (%)
+                            <span class="tooltip">ⓘ
+                                <span class="tooltiptext">You can enter calculations like "45+5" or "(80+90)/2" directly.</span>
+                            </span>
+                        </div>
+                        <div>Contribution</div>
+                    </div>
+                    <div id="assignmentsList">
+                        <!-- Assignments will be added here by JavaScript -->
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="addAssignment">Add Assignment</button>
+                    <button id="clearAll" class="danger-btn">Clear All</button>
+                </div>
+                <div class="results">
+                    <h3>Current Total: <span id="currentTotal">0</span>%</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Calculate Required Grades</h2>
+                <div class="target-grade-container">
+                    <label for="targetGrade">Target Total Grade:</label>
+                    <input type="text" id="targetGrade" placeholder="e.g. 70 or 65+5" value="70" style="max-width: 150px;">
+                    <span>%</span>
+                    <button id="calculateNeeded">Calculate</button>
+                </div>
+                <div id="gradeNeededResults" class="hidden">
+                    <!-- Results will be shown here -->
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="gradeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>How to Use This Calculator</h3>
+            <ul>
+                <li><strong>Assignment:</strong> Enter the name of each assignment, project, or exam.</li>
+                <li><strong>Worth (%):</strong> Enter the percentage this assignment contributes to your final grade.</li>
+                <li><strong>Grade (%):</strong> Enter the grade you received (or leave blank for future assignments). You can enter simple math expressions like "45+5" or "(80+90)/2".</li>
+                <li><strong>Contribution:</strong> Shows how much this assignment contributes to your total grade.</li>
+                <li><strong>Target Grade:</strong> Set your desired overall course grade to calculate what you need on remaining assignments. Math expressions are also supported here.</li>
+                <li>Use the <strong>Import/Export</strong> features to save and reload your grade configurations.</li>
+            </ul>
+        </div>
+
+        <div class="export-section">
+            <button id="exportData">Export Data</button>
+            <label for="fileInput" class="custom-file-upload">
+                Import Data
+            </label>
+            <input type="file" id="fileInput" accept=".json">
+            <span id="fileName" class="file-name"></span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // DOM Elements
+        const assignmentsList = document.getElementById('assignmentsList');
+        const addAssignmentBtn = document.getElementById('addAssignment');
+        const clearAllBtn = document.getElementById('clearAll');
+        const currentTotalElement = document.getElementById('currentTotal');
+        const targetGradeInput = document.getElementById('targetGrade');
+        const calculateNeededBtn = document.getElementById('calculateNeeded');
+        const gradeNeededResults = document.getElementById('gradeNeededResults');
+        const exportDataBtn = document.getElementById('exportData');
+        const fileInput = document.getElementById('fileInput');
+        const fileNameElement = document.getElementById('fileName');
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Theme toggle
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', themeToggle.checked);
+            updateChart();
+        });
+
+        // Check for saved theme preference - UPDATED FOR DARK MODE DEFAULT
+        const savedDarkMode = localStorage.getItem('darkMode');
+        if (savedDarkMode === 'true') {
+            themeToggle.checked = true;
+            document.body.classList.add('dark-mode');
+        } else if (savedDarkMode === null) {
+            // Default to dark mode
+            themeToggle.checked = true;
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'true');
+        }
+
+        // Track assignments
+        let assignments = [];
+        let chart = null;
+
+        // Function to safely evaluate mathematical expressions - UPDATED TO HANDLE PERCENTAGES
+        function evaluateMathExpression(expression) {
+            // Replace x, X, * with multiplication
+            expression = expression.replace(/(\d+)x(\d+)/gi, '$1*$2');
+            
+            try {
+                // Use Function constructor to evaluate the expression safely
+                let result = new Function('return ' + expression)();
+                // Convert decimal to percentage if result <= 1
+                if (typeof result === 'number' && result <= 1) {
+                    result *= 100;
+                }
+                return result;
+            } catch (error) {
+                console.error('Error evaluating expression:', error);
+                return null;
+            }
+        }
+
+        // Initialize
+        function init() {
+            addAssignment();
+            updateTotals();
+            setupEventListeners();
+        }
+
+        function setupEventListeners() {
+            addAssignmentBtn.addEventListener('click', addAssignment);
+            clearAllBtn.addEventListener('click', clearAllAssignments);
+            calculateNeededBtn.addEventListener('click', calculateNeededGrades);
+            exportDataBtn.addEventListener('click', exportData);
+            fileInput.addEventListener('change', importData);
+            targetGradeInput.addEventListener('blur', () => {
+                // Handle math expressions in target grade
+                if (targetGradeInput.value.trim() !== '') {
+                    try {
+                        const result = evaluateMathExpression(targetGradeInput.value);
+                        if (result !== null) {
+                            targetGradeInput.value = result;
+                        }
+                    } catch (error) {
+                        console.error('Error evaluating target grade:', error);
+                    }
+                }
+            });
+        }
+
+        function addAssignment() {
+            const id = Date.now();
+            const assignment = {
+                id,
+                name: `Assignment ${assignments.length + 1}`,
+                worth: 0,
+                grade: null,
+                expression: ''
+            };
+            assignments.push(assignment);
+            renderAssignments();
+        }
+
+        function renderAssignments() {
+            assignmentsList.innerHTML = '';
+            assignments.forEach(assignment => {
+                const row = document.createElement('div');
+                row.className = 'assignment-row';
+                row.dataset.id = assignment.id;
+
+                const nameInput = document.createElement('input');
+                nameInput.type = 'text';
+                nameInput.value = assignment.name;
+                nameInput.placeholder = 'Assignment name';
+                nameInput.addEventListener('input', (e) => {
+                    assignment.name = e.target.value;
+                });
+
+                const worthInput = document.createElement('input');
+                worthInput.type = 'number';
+                worthInput.min = '0';
+                worthInput.max = '100';
+                worthInput.step = '0.1';
+                worthInput.value = assignment.worth;
+                worthInput.addEventListener('input', (e) => {
+                    assignment.worth = parseFloat(e.target.value) || 0;
+                    updateTotals();
+                });
+
+                const gradeInputContainer = document.createElement('div');
+                
+                const gradeInput = document.createElement('input');
+                gradeInput.type = 'text';
+                gradeInput.value = assignment.expression || (assignment.grade !== null ? assignment.grade : '');
+                gradeInput.placeholder = 'e.g. 85 or 80+5';
+                
+                // Add event listeners for processing math expressions
+                gradeInput.addEventListener('input', (e) => {
+                    assignment.expression = e.target.value;
+                    
+                    if (e.target.value.trim() === '') {
+                        assignment.grade = null;
+                        updateGradeExpression(assignment, gradeInputContainer);
+                        updateTotals();
+                        return;
+                    }
+                    
+                    // Check if input contains math operators
+                    if (/[\+\-\*\/\(\)]/.test(e.target.value)) {
+                        try {
+                            const result = evaluateMathExpression(e.target.value);
+                            if (result !== null) {
+                                assignment.grade = parseFloat(result);
+                                updateGradeExpression(assignment, gradeInputContainer);
+                                updateTotals();
+                            }
+                        } catch (error) {
+                            console.error('Error evaluating expression:', error);
+                        }
+                    } else {
+                        assignment.grade = parseFloat(e.target.value) || 0;
+                        updateTotals();
+                    }
+                });
+                
+                gradeInput.addEventListener('blur', () => {
+                    if (gradeInput.value.trim() !== '' && /[\+\-\*\/\(\)]/.test(gradeInput.value)) {
+                        try {
+                            const result = evaluateMathExpression(gradeInput.value);
+                            if (result !== null) {
+                                assignment.grade = parseFloat(result);
+                                updateGradeExpression(assignment, gradeInputContainer, true);
+                                updateTotals();
+                            }
+                        } catch (error) {
+                            console.error('Error on blur:', error);
+                        }
+                    }
+                });
+                
+                gradeInputContainer.appendChild(gradeInput);
+                
+                // Add expression result display
+                const expressionResult = document.createElement('div');
+                expressionResult.className = 'math-expression';
+                gradeInputContainer.appendChild(expressionResult);
+                
+                // Update the expression result immediately if we have one
+                updateGradeExpression(assignment, gradeInputContainer);
+
+                const contributionSpan = document.createElement('span');
+                contributionSpan.className = 'contribution';
+                contributionSpan.textContent = calculateContribution(assignment);
+
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = '×';
+                removeBtn.style.marginLeft = '5px';
+                removeBtn.style.width = '30px';
+                removeBtn.style.height = '30px';
+                removeBtn.style.borderRadius = '50%';
+                removeBtn.style.padding = '0';
+                removeBtn.style.display = 'inline-flex';
+                removeBtn.style.justifyContent = 'center';
+                removeBtn.style.alignItems = 'center';
+                removeBtn.className = 'danger-btn';
+                removeBtn.addEventListener('click', () => {
+                    removeAssignment(assignment.id);
+                });
+
+                row.appendChild(nameInput);
+                row.appendChild(worthInput);
+                row.appendChild(gradeInputContainer);
+                const contributionContainer = document.createElement('div');
+                contributionContainer.style.display = 'flex';
+                contributionContainer.style.alignItems = 'center';
+                contributionContainer.appendChild(contributionSpan);
+                contributionContainer.appendChild(removeBtn);
+                row.appendChild(contributionContainer);
+
+                assignmentsList.appendChild(row);
+            });
+        }
+        
+        function updateGradeExpression(assignment, container, showComputedValue = false) {
+            const expressionResult = container.querySelector('.math-expression');
+            
+            if (!expressionResult) return;
+            
+            if (assignment.expression && /[\+\-\*\/\(\)]/.test(assignment.expression) && assignment.grade !== null) {
+                if (showComputedValue) {
+                    expressionResult.textContent = `= ${assignment.grade.toFixed(2)}%`;
+                } else {
+                    expressionResult.textContent = 'Calculating...';
+                }
+            } else {
+                expressionResult.textContent = '';
+            }
+        }
+
+        function removeAssignment(id) {
+            assignments = assignments.filter(a => a.id !== id);
+            renderAssignments();
+            updateTotals();
+        }
+
+        function clearAllAssignments() {
+            assignments = [];
+            addAssignment();
+            renderAssignments();
+            updateTotals();
+        }
+
+        function calculateContribution(assignment) {
+            if (assignment.grade === null) {
+                return 'N/A';
+            }
+            const contribution = (assignment.worth / 100) * assignment.grade;
+            return contribution.toFixed(2) + '%';
+        }
+
+        function updateTotals() {
+            let total = 0;
+            let totalWorth = 0;
+
+            assignments.forEach(assignment => {
+                if (assignment.grade !== null) {
+                    total += (assignment.worth / 100) * assignment.grade;
+                    totalWorth += parseFloat(assignment.worth);
+                }
+            });
+
+            currentTotalElement.textContent = total.toFixed(2);
+            updateChart();
+        }
+
+        function calculateNeededGrades() {
+            let targetGrade;
+            
+            // Process target grade if it contains math expressions
+            if (/[\+\-\*\/\(\)]/.test(targetGradeInput.value)) {
+                try {
+                    const result = evaluateMathExpression(targetGradeInput.value);
+                    if (result !== null) {
+                        targetGrade = result;
+                        targetGradeInput.value = result;
+                    } else {
+                        targetGrade = parseFloat(targetGradeInput.value) || 0;
+                    }
+                } catch (error) {
+                    console.error('Error calculating target grade:', error);
+                    targetGrade = parseFloat(targetGradeInput.value) || 0;
+                }
+            } else {
+                targetGrade = parseFloat(targetGradeInput.value) || 0;
+            }
+            
+            const currentTotal = parseFloat(currentTotalElement.textContent) || 0;
+            
+            // Get completed and incomplete assignments
+            const completedAssignments = assignments.filter(a => a.grade !== null);
+            const incompleteAssignments = assignments.filter(a => a.grade === null);
+            
+            // Calculate total worth of incomplete assignments
+            const incompleteWorth = incompleteAssignments.reduce((sum, a) => sum + parseFloat(a.worth), 0);
+            
+            if (incompleteWorth === 0) {
+                gradeNeededResults.innerHTML = '<p>No incomplete assignments found. Add assignments with empty grades to calculate needed scores.</p>';
+                gradeNeededResults.classList.remove('hidden');
+                return;
+            }
+
+            // Calculate needed average grade for incomplete assignments
+            const totalNeeded = targetGrade - currentTotal;
+            const avgNeeded = (totalNeeded / incompleteWorth) * 100;
+            
+            gradeNeededResults.innerHTML = '';
+            
+            // Overall result
+            const overallResult = document.createElement('div');
+            overallResult.className = 'result-item';
+            
+            if (avgNeeded <= 100 && avgNeeded >= 0) {
+                overallResult.innerHTML = `<strong>You need an average of ${avgNeeded.toFixed(2)}% on your remaining assignments to achieve your target grade of ${targetGrade.toFixed(2)}%.</strong>`;
+            } else if (avgNeeded > 100) {
+                overallResult.innerHTML = `<strong>You need an average of ${avgNeeded.toFixed(2)}% on your remaining assignments, which is not possible (exceeds 100%). Consider adjusting your target grade.</strong>`;
+                overallResult.style.backgroundColor = 'rgba(244, 67, 54, 0.1)'; // Red background
+            } else {
+                overallResult.innerHTML = `<strong>You've already achieved or exceeded your target grade of ${targetGrade.toFixed(2)}%!</strong>`;
+                overallResult.style.backgroundColor = 'rgba(76, 175, 80, 0.2)'; // Green background
+            }
+            
+            gradeNeededResults.appendChild(overallResult);
+            
+            // Individual assignment results
+            if (incompleteAssignments.length > 0) {
+                const detailsHeading = document.createElement('h4');
+                detailsHeading.textContent = 'Grades needed per assignment:';
+                detailsHeading.style.marginTop = '15px';
+                detailsHeading.style.marginBottom = '10px';
+                gradeNeededResults.appendChild(detailsHeading);
+                
+                incompleteAssignments.forEach(assignment => {
+                    const assignmentResult = document.createElement('p');
+                    assignmentResult.innerHTML = `<strong>${assignment.name}</strong> (worth ${assignment.worth}%): <strong>${avgNeeded.toFixed(2)}%</strong>`;
+                    gradeNeededResults.appendChild(assignmentResult);
+                });
+            }
+            
+            gradeNeededResults.classList.remove('hidden');
+            updateChart();
+        }
+
+        function exportData() {
+            const data = {
+                assignments,
+                targetGrade: targetGradeInput.value
+            };
+            
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            
+            const exportFileDefaultName = 'course_grades.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            fileNameElement.textContent = file.name;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.assignments && Array.isArray(data.assignments)) {
+                        assignments = data.assignments;
+                        
+                        if (data.targetGrade !== undefined) {
+                            targetGradeInput.value = data.targetGrade;
+                        }
+                        
+                        renderAssignments();
+                        updateTotals();
+                        
+                        // Clear file input
+                        fileInput.value = '';
+                    }
+                } catch (error) {
+                    alert('Error importing data: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('gradeChart').getContext('2d');
+            
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Current Grade', 'Target Grade'],
+                    datasets: [{
+                        label: 'Grade Percentage',
+                        data: [0, 0],
+                        backgroundColor: [
+                            'rgba(74, 111, 165, 0.7)',
+                            'rgba(74, 111, 165, 0.3)'
+                        ],
+                        borderColor: [
+                            'rgba(74, 111, 165, 1)',
+                            'rgba(74, 111, 165, 0.5)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: 'rgba(200, 200, 200, 0.1)'
+                            },
+                            ticks: {
+                                color: getComputedStyle(document.body).getPropertyValue('--text-color')
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: getComputedStyle(document.body).getPropertyValue('--text-color')
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChart() {
+            if (!chart) {
+                initChart();
+                return;
+            }
+
+            const currentTotal = parseFloat(currentTotalElement.textContent) || 0;
+            let targetGrade;
+            
+            // Process target grade if it contains math expressions
+            if (/[\+\-\*\/\(\)]/.test(targetGradeInput.value)) {
+                try {
+                    const result = evaluateMathExpression(targetGradeInput.value);
+                    if (result !== null) {
+                        targetGrade = result;
+                    } else {
+                        targetGrade = parseFloat(targetGradeInput.value) || 0;
+                    }
+                } catch (error) {
+                    targetGrade = parseFloat(targetGradeInput.value) || 0;
+                }
+            } else {
+                targetGrade = parseFloat(targetGradeInput.value) || 0;
+            }
+
+            chart.data.datasets[0].data = [currentTotal, targetGrade];
+            
+            // Update chart colors based on theme
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            
+            chart.options.scales.y.ticks.color = getComputedStyle(document.body).getPropertyValue('--text-color');
+            chart.options.scales.x.ticks.color = getComputedStyle(document.body).getPropertyValue('--text-color');
+            
+            chart.update();
+        }
+
+        // Initialize the app
+        init();
+    </script>
+</body>
+</html>
