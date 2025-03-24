@@ -202,14 +202,40 @@
     </div>
 
     <audio id="startSound">
-        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_3b5c0d6c8a.mp3?filename=game-start-82090.mp3" type="audio/mpeg">    </audio>
+        <source src="https://cdn.uppbeat.io/audio-files/409c63977e186cfad73a8cf2951fde04/2798beaea60e965553493544f7f89032/4ff10021469141672ac206ac5224272d/STREAMING-water-bubble-mechanical-wave-wet-1-00-00.mp3" type="audio/mpeg">    </audio>
     <audio id="endSound">
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3e0b2a4c5b.mp3?filename=vinyl-stop-14631.mp3" type="audio/mpeg">    </audio>
+        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_c668156e64.mp3" type="audio/mpeg">    </audio>
 
     <script>
         let countdownInterval = null;
         const startSound = document.getElementById('startSound');
-        const stopSound = document.getElementById('stopSound');
+        const endSound = document.getElementById('endSound');
+
+        // Load saved countdown when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedData = localStorage.getItem('countdownData');
+            if (savedData) {
+                const { targetDate: storedDate, isRunning } = JSON.parse(savedData);
+                const targetDate = new Date(storedDate);
+                const now = new Date();
+                
+                if (isRunning && targetDate > now) {
+                    document.getElementById('datetimeInput').value = toLocalDatetimeString(targetDate);
+                    startCountdown();
+                } else {
+                    localStorage.removeItem('countdownData');
+                }
+            }
+        });
+
+        function toLocalDatetimeString(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
 
         function startCountdown() {
             const datetimeInput = document.getElementById('datetimeInput').value;
@@ -225,6 +251,12 @@
                 alert('Please select a future date and time!');
                 return;
             }
+
+            // Save to localStorage
+            localStorage.setItem('countdownData', JSON.stringify({
+                targetDate: targetDate.toISOString(),
+                isRunning: true
+            }));
 
             if (countdownInterval) clearInterval(countdownInterval);
 
@@ -242,7 +274,8 @@
                     document.getElementById('countdown').style.display = 'none';
                     document.getElementById('startedMessage').style.display = 'none';
                     document.getElementById('finishedMessage').style.display = 'block';
-                    stopSound.play(); // Play stop sound when countdown ends
+                    endSound.play();
+                    localStorage.removeItem('countdownData');
                     return;
                 }
 
@@ -265,11 +298,13 @@
                 document.getElementById('countdown').style.display = 'none';
                 document.getElementById('startedMessage').style.display = 'none';
                 document.getElementById('finishedMessage').style.display = 'none';
-                stopSound.play(); // Play stop sound when countdown is stopped
+                endSound.play();
+                localStorage.removeItem('countdownData');
             }
         }
+
         function toggleDarkMode() {
-          document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('dark-mode');
         }
     </script>
 </body>
