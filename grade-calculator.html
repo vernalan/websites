@@ -635,16 +635,16 @@
             });
         }
         
-        function updateGradeExpression(assignment, container, showComputedValue = false) {
+        function updateGradeExpression(assignment, container) {
             const expressionResult = container.querySelector('.math-expression');
-            
+                
             if (!expressionResult) return;
-            
-            if (assignment.expression && /[\+\-\*\/\(\)]/.test(assignment.expression) && assignment.grade !== null) {
-                if (showComputedValue) {
+                
+            if (assignment.expression && assignment.expression.trim() !== '') {
+                if (assignment.grade !== null) {
                     expressionResult.textContent = `= ${assignment.grade.toFixed(2)}%`;
                 } else {
-                    expressionResult.textContent = 'Calculating...';
+                    expressionResult.textContent = 'Invalid expression';
                 }
             } else {
                 expressionResult.textContent = '';
@@ -784,23 +784,43 @@
         function importData(event) {
             const file = event.target.files[0];
             if (!file) return;
-            
+                
             fileNameElement.textContent = file.name;
-            
+                
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
                     const data = JSON.parse(e.target.result);
                     if (data.assignments && Array.isArray(data.assignments)) {
-                        assignments = data.assignments;
-                        
+                        // Process imported assignments
+                        assignments = data.assignments.map(a => {
+                            // Evaluate expressions if they exist
+                            if (a.expression && a.expression.trim() !== '') {
+                                try {
+                                    a.grade = evaluateMathExpression(a.expression);
+                                } catch (error) {
+                                    console.error('Error evaluating stored expression:', error);
+                                    a.grade = null;
+                                }
+                            }
+                            return a;
+                        });
+                    
                         if (data.targetGrade !== undefined) {
                             targetGradeInput.value = data.targetGrade;
+                            // Evaluate target grade expression if needed
+                            if (/[\+\-\*\/\(\)]/.test(data.targetGrade)) {
+                                try {
+                                    targetGradeInput.value = evaluateMathExpression(data.targetGrade);
+                                } catch (error) {
+                                    console.error('Error evaluating target grade:', error);
+                                }
+                            }
                         }
-                        
+                    
                         renderAssignments();
                         updateTotals();
-                        
+
                         // Clear file input
                         fileInput.value = '';
                     }
