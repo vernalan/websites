@@ -1,0 +1,1575 @@
+/* Updated Color Palette */
+:root {
+  /* Light Mode */
+  --primary-color: #007bff; /* Vibrant Blue */
+  --secondary-color: #f8f9fa; /* Very Light Gray */
+  --accent-color: #ffc107; /* Amber */
+  --text-color: #212529; /* Dark Gray */
+  --light-text: #6c757d; /* Medium Gray */
+  --border-color: #dee2e6; /* Light Gray Border */
+  --hover-color: #e9ecef; /* Lighter Gray Hover */
+  --selected-color: #cfe2ff; /* Light Blue Selected */
+  --selected-outline: #80bdff; /* Brighter Blue for Outline */
+  --today-color: #fff3cd; /* Light Yellow Today */
+  --weekend-color: #fdfdfe; /* Almost White Weekend */
+  --focus-ring-color: rgba(0, 123, 255, 0.35);
+
+  /* Category Colors (Light) */
+  --work-color: #0d6efd;
+  --personal-color: #198754;
+  --family-color: #fd7e14;
+  --other-color: #6f42c1;
+
+  /* Dark Mode */
+  --dark-bg: #121212;
+  --dark-surface: #1e1e1e;
+  --dark-primary: #4dabf7;
+  --dark-secondary: #343a40;
+  --dark-accent: #ffd54f;
+  --dark-text: #e9ecef;
+  --dark-light-text: #adb5bd;
+  --dark-border: #495057;
+  --dark-hover: #343a40;
+  --dark-selected: #364a70;
+  --dark-selected-outline: #6baef8;
+  --dark-today: #544b2b;
+  --dark-weekend: #2a2a2a;
+  --dark-focus-ring-color: rgba(77, 171, 247, 0.4);
+
+  /* Category Colors (Dark) */
+  --dark-work-color: #4dabf7;
+  --dark-personal-color: #40c057;
+  --dark-family-color: #ff922b;
+  --dark-other-color: #be95ff;
+}
+
+/* Base styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column; /* Allow instructions below */
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content to top */
+  min-height: 100vh;
+  padding: 20px;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 0;
+  /* Initial background set via JS based on theme */
+}
+
+body.dark-mode {
+  color: var(--dark-text);
+}
+
+/* --- Abstract Gradient Background Styles --- */
+.gradient-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    125deg,
+    #ff5f6d,
+    #ffc371,
+    #2cccff,
+    #20e3b2,
+    #ffcc70
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+  z-index: -1;
+  transition: opacity 0.5s ease; /* For fade out/in */
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition: opacity 0.5s ease; /* For fade out/in */
+  /* Individual animations defined below */
+}
+#blob1 {
+  width: 40%;
+  height: 40%;
+  background-color: rgba(255, 99, 177, 0.8);
+  left: 20%;
+  top: 30%;
+  animation-name: float1;
+  animation-duration: 20s;
+}
+#blob2 {
+  width: 35%;
+  height: 35%;
+  background-color: rgba(84, 179, 255, 0.8);
+  left: 50%;
+  top: 20%;
+  animation-name: float2;
+  animation-duration: 25s;
+}
+#blob3 {
+  width: 30%;
+  height: 30%;
+  background-color: rgba(145, 255, 112, 0.8);
+  left: 30%;
+  top: 60%;
+  animation-name: float3;
+  animation-duration: 18s;
+}
+#blob4 {
+  width: 25%;
+  height: 25%;
+  background-color: rgba(255, 217, 102, 0.8);
+  left: 70%;
+  top: 50%;
+  animation-name: float4;
+  animation-duration: 22s;
+}
+
+/* Keyframes (unchanged) */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-15%, 10%);
+  }
+  50% {
+    transform: translate(10%, 15%);
+  }
+  75% {
+    transform: translate(15%, -5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(10%, -10%);
+  }
+  60% {
+    transform: translate(-15%, 5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-10%, -15%);
+  }
+  66% {
+    transform: translate(15%, 10%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes float4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(-15%, 10%);
+  }
+  80% {
+    transform: translate(10%, -15%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Class to pause animations */
+body.animations-paused .gradient-container,
+body.animations-paused .blob {
+  animation-play-state: paused !important;
+  /* Optionally fade them slightly when paused */
+  /* opacity: 0.8; */
+}
+/* Solid background fallback when animations are off */
+body.animations-paused {
+  background-color: var(--secondary-color); /* Light mode default bg */
+  transition: background-color 0.3s ease;
+}
+body.animations-paused.dark-mode {
+  background-color: var(--dark-bg); /* Dark mode default bg */
+}
+body.animations-paused .gradient-container {
+  opacity: 0; /* Hide gradient when paused */
+}
+/* --- End Background Styles --- */
+
+/* Focus Visible Styles */
+:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--secondary-color); /* Inner shadow for contrast */
+}
+body.dark-mode :focus-visible {
+  outline-color: var(--dark-focus-ring-color);
+  box-shadow: 0 0 0 4px var(--dark-surface);
+}
+/* Remove default outline for non-keyboard focus */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+/* Special focus for day cells */
+.day:focus-visible {
+  outline-offset: -1px; /* Inside the cell */
+}
+
+/* Wrapper */
+.main-content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 850px; /* Slightly wider for better spacing */
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px; /* Space for instructions below */
+}
+@media (max-width: 800px) {
+  /* Adjust breakpoint */
+  .main-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px; /* Adjust max width for stacked */
+  }
+  .events-list-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Calendar Container */
+.calendar-container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  /* overflow: hidden; */ /* Removed to prevent popup clipping */
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+body.dark-mode .calendar-container {
+  background-color: var(--dark-surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--dark-border);
+}
+
+/* Calendar Header */
+.calendar-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 18px 20px; /* Adjusted padding */
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Subtle separator */
+}
+body.dark-mode .calendar-header {
+  background-color: var(--dark-primary);
+  color: var(--dark-text);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+.month-year {
+  font-size: 1.4rem; /* Slightly smaller */
+  font-weight: 600;
+  margin-bottom: 0; /* Removed bottom margin */
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding-right: 40px; /* Add right padding */
+}
+/* Jump to Date */
+.jump-to-date-section {
+  /* Inherit background from header, remove specific background */
+  padding: 5px; /* Add some padding */
+  border-radius: 4px;
+  margin-top: 5px; /* Space from month/year */
+  display: inline-block; /* Allow natural width */
+}
+/* Remove dark mode background override */
+body.dark-mode .jump-to-date-section {
+  /* background-color: var(--dark-secondary); */ /* Removed */
+  /* border-color: var(--dark-border); */ /* Removed, no border needed */
+}
+
+/* --- Jump to Date Input/Select/Button Styling --- */
+/* Standardize input/select styles */
+.jump-to-date-section select,
+.jump-to-date-section input[type="number"] {
+  padding: 10px 12px; /* Standardized padding */
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Standardized radius */
+  font-size: 1rem; /* Standardized font size */
+  background-color: #fff;
+  color: var(--text-color);
+  margin: 0 2px;
+  vertical-align: middle; /* Align elements nicely */
+}
+.jump-to-date-section select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 14px 10px; /* Adjusted size */
+  padding-right: 30px; /* Adjusted space for arrow with new padding */
+}
+.jump-to-date-section input[type="number"] {
+  width: 150px; /* Slightly wider year input */
+  margin-right: 5px; /* Add margin to separate from button */
+}
+/* Align Jump to Date button style closer to control buttons */
+.jump-to-date-section button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none; /* Remove border to match control buttons */
+  /* Increase padding for larger button */
+  padding: 6px 14px;
+  border-radius: 6px; /* Match control buttons */
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); /* Match control buttons */
+  box-shadow: 0 2px 6px rgb(0, 0, 0); /* More dramatic drop shadow */
+  font-weight: 700; /* Match control buttons */
+  letter-spacing: 0.3px; /* Match control buttons */
+  font-size: 1rem; /* Slightly larger font for visibility */
+  vertical-align: middle;
+  margin: 0 2px; /* Add horizontal margin */
+}
+.jump-to-date-section button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode for Jump to Date elements */
+body.dark-mode .jump-to-date-section select,
+body.dark-mode .jump-to-date-section input[type="number"] {
+  background-color: var(--dark-secondary);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+body.dark-mode .jump-to-date-section select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23adb5bd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+body.d dark-mode .jump-to-date-section button {
+  background-color: var(--dark-primary);
+  color: var(--dark-text);
+}
+body.dark-mode .jump-to-date-section button:hover {
+  background-color: #2c97f5;
+}
+
+/* Focus styles for Jump to Date elements */
+.jump-to-date-section select:focus,
+.jump-to-date-section input[type="number"]:focus,
+.jump-to-date-section button:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+body.dark-mode .jump-to-date-section select:focus,
+body.dark-mode .jump-to-date-section input[type="number"]:focus,
+body.dark-mode .jump-to-date-section button:focus {
+  border-color: var(--dark-primary);
+  box-shadow: 0 0 0 3px var(--dark-focus-ring-color);
+}
+/* Dark mode Jump to Date button alignment */
+body.dark-mode .jump-to-date-section button {
+  background-color: var(--dark-primary);
+  color: var(--dark-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .jump-to-date-section button:hover {
+  background-color: #2c97f5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/* --- End Jump to Date Styling --- */
+
+/* Nav buttons */
+.nav-buttons {
+  position: absolute;
+  /* top: 50%; */ /* Remove or comment out */
+  /* transform: translateY(-50%); */ /* Remove or comment out */
+  top: 18px; /* Align with top padding */
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.nav-button {
+  pointer-events: auto; /* Enable clicks on buttons */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Make circular */
+  cursor: pointer;
+  width: 32px; /* Fixed size */
+  height: 32px; /* Fixed size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Lighten on hover */
+}
+/* Dark mode nav buttons */
+body.dark-mode .nav-button {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--dark-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* Focus style for nav buttons */
+.nav-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7); /* White outline */
+  outline-offset: 1px;
+}
+body.dark-mode .nav-button:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.5); /* Adjust dark mode focus */
+}
+
+/* Weekdays */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: var(--secondary-color);
+  padding: 12px 0; /* Adjust padding */
+  text-align: center;
+  font-weight: 600;
+  color: var(--light-text);
+  font-size: 0.8rem; /* Slightly smaller */
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+}
+body.dark-mode .weekdays {
+  background-color: var(--dark-secondary);
+  color: var(--dark-light-text);
+  border-bottom-color: var(--dark-border);
+}
+
+/* Days Grid */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  padding: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+.days-grid.fade-out {
+  opacity: 0;
+}
+
+/* Individual Day */
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  font-weight: 500;
+  color: var(--text-color);
+  border: 2px solid transparent; /* Placeholder for selected outline */
+  outline: none; /* Remove default outline, use focus-visible */
+}
+body.dark-mode .day {
+  color: var(--dark-text);
+}
+
+.day:hover:not(.empty) {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .day:hover:not(.empty) {
+  background-color: var(--dark-hover);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.empty {
+  background: transparent;
+  cursor: default;
+  opacity: 0.5;
+  border-color: transparent !important;
+}
+.weekend {
+  color: var(--primary-color);
+  background-color: var(--weekend-color);
+}
+body.dark-mode .weekend {
+  color: var(--dark-primary);
+  background-color: var(--dark-weekend);
+}
+
+.today {
+  background-color: var(--today-color);
+  color: #b38000; /* Darker text on yellow */
+  font-weight: 700; /* Make today stand out more */
+}
+body.dark-mode .today {
+  background-color: var(--dark-today);
+  color: #ffecb3; /* Lighter text on dark yellow */
+}
+
+.selected {
+  background-color: var(--selected-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  border: 2px solid var(--selected-outline); /* More prominent outline */
+  box-shadow: 0 0 0 2px var(--selected-color); /* Inner glow */
+}
+body.dark-mode .selected {
+  background-color: var(--dark-selected);
+  color: var(--dark-primary);
+  border-color: var(--dark-selected-outline);
+  box-shadow: 0 0 0 2px var(--dark-selected);
+}
+
+/* Event Marker (dot) */
+.has-event::after {
+  content: "";
+  position: absolute;
+  bottom: 5px; /* Slightly higher */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px; /* Slightly larger */
+  height: 6px;
+  background-color: var(--primary-color); /* Default, overridden */
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  /* Use CSS variable set by JS for marker color */
+  background-color: var(--event-color, var(--primary-color));
+}
+/* Use primary color for all event markers now */
+body.dark-mode .has-event::after {
+  /* Use CSS variable set by JS for marker color */
+  background-color: var(--event-color, var(--dark-primary));
+}
+
+/* Event Popup on Hover */
+.event-popup {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  width: auto; /* Allow natural width based on content */
+  min-width: 250px; /* Keep a minimum width */
+  max-width: 350px; /* Increased max-width */
+  max-height: 250px; /* Slightly increased max-height */
+  overflow-y: auto;
+  z-index: 10;
+  display: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+body.dark-mode .event-popup {
+  background-color: var(--dark-surface);
+  color: var(--dark-text);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dark-border);
+}
+/* Arrow (unchanged) */
+.event-popup::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+}
+body.dark-mode .event-popup::before {
+  border-color: var(--dark-surface) transparent transparent transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+/* Popup Item Styling (unchanged) */
+.event-popup-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.event-popup-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.event-popup-item:first-child {
+  padding-top: 0;
+}
+body.dark-mode .event-popup-item {
+  border-bottom-color: var(--dark-border);
+}
+.event-popup-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  /* Color and border set via inline style in JS */
+  padding-left: 8px; /* Space for border */
+  border-left: 4px solid; /* Border color set inline */
+}
+.event-popup-item p {
+  margin: 0 0 4px 0;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+body.dark-mode .event-popup-item h4 {
+  /* Base dark mode style */
+}
+body.dark-mode .event-popup-item p {
+  color: var(--dark-light-text);
+}
+.show-popup .event-popup {
+  display: block;
+}
+/* Popup Actions/Buttons */
+.event-popup-item .popup-actions {
+  margin-top: 8px;
+  text-align: right;
+}
+/* Apply consistent icon button style */
+.event-popup-item button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--light-text);
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 0.9rem;
+  line-height: 1;
+  margin-left: 5px; /* Space between buttons */
+}
+.event-popup-item button:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+.event-popup-item button.delete-event:hover {
+  color: #dc3545; /* Red hover for delete */
+}
+.event-popup-item button.edit-event:hover {
+  color: var(--primary-color); /* Blue hover for edit */
+}
+
+/* Popup Item Styling (unchanged) */
+.event-popup-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.event-popup-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.event-popup-item:first-child {
+  padding-top: 0;
+}
+body.dark-mode .event-popup-item {
+  border-bottom-color: var(--dark-border);
+}
+.event-popup-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  /* Color and border set via inline style in JS */
+  padding-left: 8px; /* Space for border */
+  border-left: 4px solid; /* Border color set inline */
+}
+.event-popup-item p {
+  margin: 0 0 4px 0;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+body.dark-mode .event-popup-item h4 {
+  /* Base dark mode style */
+}
+body.dark-mode .event-popup-item p {
+  color: var(--dark-light-text);
+}
+.show-popup .event-popup {
+  display: block;
+}
+/* Popup Actions/Buttons */
+.event-popup-item .popup-actions {
+  margin-top: 8px;
+  text-align: right;
+}
+/* Apply consistent icon button style */
+.event-popup-item button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--light-text);
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 0.9rem;
+  line-height: 1;
+  margin-left: 5px; /* Space between buttons */
+}
+.event-popup-item button:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+.event-popup-item button.delete-event:hover {
+  color: #dc3545; /* Red hover for delete */
+}
+.event-popup-item button.edit-event:hover {
+  color: var(--primary-color); /* Blue hover for edit */
+}
+/* Dark mode popup buttons */
+body.dark-mode .event-popup-item button {
+  color: var(--dark-light-text);
+}
+body.dark-mode .event-popup-item button:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-text);
+}
+body.dark-mode .event-popup-item button.delete-event:hover {
+  color: #f06575; /* Lighter red */
+}
+body.dark-mode .event-popup-item button.edit-event:hover {
+  color: var(--dark-primary); /* Lighter blue */
+}
+/* Focus style for popup buttons */
+.event-popup-item button:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 2px var(--secondary-color);
+}
+body.dark-mode .event-popup-item button:focus-visible {
+  outline-color: var(--dark-focus-ring-color);
+  box-shadow: 0 0 0 2px var(--dark-surface);
+}
+
+/* Selected Date Display */
+.selected-date-display {
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: #fff;
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  min-height: 1.2em;
+  font-weight: 500;
+}
+body.dark-mode .selected-date-display {
+  background-color: var(--dark-surface);
+  color: var(--dark-text);
+  border-top-color: var(--dark-border);
+}
+
+/* Controls Bar */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px; /* Slightly less padding */
+  border-top: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+  /* border-radius removed, handled by settings */
+}
+body.dark-mode .controls {
+  border-top-color: var(--dark-border);
+  background-color: var(--dark-surface);
+}
+.controls button.control-button {
+  /* Shared style for Today, Add Event, Settings */
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 9px 14px; /* Slightly smaller */
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  font-size: 0.9rem; /* Slightly smaller font */
+}
+body.dark-mode .controls button.control-button {
+  background-color: var(--dark-primary);
+  color: var(--dark-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.controls button.control-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+body.dark-mode .controls button.control-button:hover {
+  background-color: #2c97f5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/* --- NEW Settings Section --- */
+.settings-section {
+  background-color: var(--secondary-color);
+  border-top: 1px solid var(--border-color);
+  padding: 15px;
+  border-radius: 0 0 16px 16px; /* Round bottom corners here */
+  transition: all 0.3s ease;
+  max-height: 0; /* Start collapsed */
+  overflow: hidden;
+  opacity: 0;
+}
+body.dark-mode .settings-section {
+  background-color: var(--dark-secondary);
+  border-top-color: var(--dark-border);
+}
+.settings-section.open {
+  max-height: 200px; /* Adjust as needed */
+  opacity: 1;
+}
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between settings items */
+}
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.setting-item label {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-right: 10px;
+}
+body.dark-mode .setting-item label {
+  color: var(--dark-light-text);
+}
+/* Theme Toggle Switch */
+.theme-switch-wrapper {
+  /* Now used inside settings */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 48px;
+  flex-shrink: 0;
+}
+.theme-switch input {
+  display: none;
+}
+.slider {
+  background-color: #adb5bd;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.slider:before {
+  background-color: #fff;
+  bottom: 3px;
+  content: "";
+  height: 18px;
+  left: 3px;
+  position: absolute;
+  transition: 0.4s;
+  width: 18px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+body.dark-mode input:checked + .slider {
+  background-color: var(--dark-primary);
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+.theme-switch-wrapper i {
+  color: var(--light-text);
+  font-size: 1.1rem;
+}
+body.dark-mode .theme-switch-wrapper i {
+  color: var(--dark-light-text);
+}
+
+/* Animation Toggle Switch (uses same structure as theme) */
+.animation-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+/* Use same .theme-switch and .slider classes for styling */
+.animation-switch-wrapper i {
+  color: var(--light-text);
+  font-size: 1.1rem;
+}
+body.dark-mode .animation-switch-wrapper i {
+  color: var(--dark-light-text);
+}
+
+/* --- NEW: Category Management Styles --- */
+.setting-item.category-management {
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  gap: 5px;
+}
+.category-management label {
+  flex-basis: 100%; /* Label takes full width */
+  margin-bottom: 5px;
+}
+.category-management input[type="text"] {
+  flex-grow: 1; /* Input takes available space */
+  padding: 10px 12px; /* Standard input padding */
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem; /* Standard input font size */
+  background-color: #fff;
+  color: var(--text-color);
+}
+.category-management button {
+  /* Style like other control buttons */
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+.category-management button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+/* Dark mode category management */
+body.dark-mode .category-management input[type="text"] {
+  background-color: var(--dark-secondary);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+body.dark-mode .category-management button {
+  background-color: var(--dark-primary);
+  color: var(--dark-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .category-management button:hover {
+  background-color: #2c97f5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/* Focus styles for category management */
+.category-management input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+body.dark-mode .category-management input[type="text"]:focus {
+  border-color: var(--dark-primary);
+  box-shadow: 0 0 0 3px var(--dark-focus-ring-color);
+}
+.category-management button:focus-visible {
+  /* Use global focus-visible */
+}
+/* --- End Category Management Styles --- */
+/* --- End Settings Section --- */
+
+/* --- Event List Styles --- */
+.events-list-container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px; /* Slightly wider */
+  border: 1px solid var(--border-color);
+  padding: 15px 20px; /* Adjust padding */
+  transition: all 0.3s ease;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+body.dark-mode .events-list-container {
+  background-color: var(--dark-surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--dark-border);
+}
+
+.events-list-header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+body.dark-mode .events-list-header {
+  border-bottom-color: var(--dark-border);
+}
+
+.events-list-header h2 {
+  font-size: 1.2rem; /* Slightly smaller */
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 10px 0; /* Adjust margin */
+  text-align: center;
+}
+body.dark-mode .events-list-header h2 {
+  color: var(--dark-primary);
+}
+
+/* NEW Search and Filter */
+.list-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px; /* Space below controls */
+  flex-wrap: wrap; /* Allow wrapping on small screens if needed */
+}
+/* Standardize input/select styles */
+.list-controls input[type="search"],
+.list-controls select {
+  padding: 10px 12px; /* Standardized padding */
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Standardized radius */
+  font-size: 1rem; /* Standardized font size */
+  flex-grow: 1;
+  min-width: 120px;
+  background-color: #fff;
+  color: var(--text-color);
+}
+body.dark-mode .list-controls input[type="search"],
+body.dark-mode .list-controls select {
+  background-color: var(--dark-secondary);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+.list-controls select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center; /* Keep original position */
+  background-size: 16px 12px; /* Keep original size */
+  padding-right: 45px; /* Adjusted space for arrow with new padding */
+  flex-grow: 0;
+  flex-basis: 180px; /* Wider base for category filter */
+}
+body.dark-mode .list-controls select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23adb5bd' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+.list-controls input[type="search"]:focus,
+.list-controls select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+body.dark-mode .list-controls input[type="search"]:focus,
+body.dark-mode .list-controls select:focus {
+  border-color: var(--dark-primary);
+  box-shadow: 0 0 0 3px var(--dark-focus-ring-color);
+}
+
+#events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+  /* max-height: 400px; /* Consider removing fixed max-height if flex-grow works well */
+  min-height: 100px; /* Prevent collapsing completely */
+  transition: opacity 0.3s ease; /* For filtering fade */
+}
+
+.event-list-item {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 12px 15px; /* Adjust padding */
+  margin-bottom: 10px;
+  border-left: 5px solid var(--primary-color);
+  transition: all 0.3s ease;
+  display: flex; /* Use flex for icon alignment */
+  align-items: flex-start; /* Align icon to top */
+  gap: 10px; /* Space between icon and content */
+  outline: none; /* Use focus-visible */
+  position: relative; /* Needed for absolute positioning of actions */
+  /* Use CSS variable set by JS for border color */
+  border-left-color: var(--event-color, var(--primary-color));
+}
+/* Focus style for list items */
+.event-list-item:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 3px var(--secondary-color);
+}
+body.dark-mode .event-list-item:focus-visible {
+  outline-color: var(--dark-focus-ring-color);
+  box-shadow: 0 0 0 3px var(--dark-surface);
+}
+
+body.dark-mode .event-list-item {
+  background-color: var(--dark-secondary);
+  /* Use CSS variable set by JS for border color */
+  border-left-color: var(--event-color, var(--dark-primary));
+}
+/* REMOVED old category-specific border colors */
+/* .event-list-item.category-work { ... } etc ... */
+
+/* List Item Icon */
+.item-icon {
+  font-size: 1.1rem;
+  margin-top: 2px; /* Align better with title */
+  flex-shrink: 0;
+  width: 20px; /* Ensure consistent width */
+  text-align: center;
+  /* Use primary color for all icons now */
+  color: var(--primary-color);
+}
+body.dark-mode .item-icon {
+  color: var(--dark-primary); /* Dark mode icon color */
+}
+/* REMOVED old category-specific icon colors */
+/* .event-list-item.category-work .item-icon { ... } etc ... */
+
+.item-content {
+  flex-grow: 1; /* Take remaining space */
+}
+
+.event-list-item .item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; /* Align title and date better */
+  margin-bottom: 5px;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 5px;
+}
+.event-list-item .item-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+body.dark-mode .event-list-item .item-title {
+  color: var(--dark-text);
+}
+.event-list-item .item-date {
+  font-size: 0.8rem;
+  color: var(--light-text);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+body.dark-mode .event-list-item .item-date {
+  color: var(--dark-light-text);
+}
+.event-list-item .item-time,
+.event-list-item .item-category,
+.event-list-item .item-desc {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.event-list-item .item-desc {
+  margin-top: 6px;
+}
+body.dark-mode .event-list-item .item-time,
+body.dark-mode .event-list-item .item-category,
+body.dark-mode .event-list-item .item-desc {
+  color: var(--dark-light-text);
+}
+.event-list-item strong {
+  color: var(--text-color);
+} /* Slightly emphasize labels */
+body.dark-mode .event-list-item strong {
+  color: var(--dark-text);
+}
+
+/* --- NEW: Event List Item Actions --- */
+.item-actions {
+  display: flex;
+  gap: 5px;
+  margin-left: auto; /* Push buttons to the right */
+  padding-left: 10px; /* Space between content and buttons */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  align-items: center; /* Vertically align buttons with content */
+}
+.event-list-item button {
+  /* Base style for list buttons */
+  background: none;
+  border: none;
+  padding: 4px; /* Small padding */
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--light-text);
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 0.9rem; /* Slightly smaller icon */
+  line-height: 1; /* Prevent extra space */
+}
+.event-list-item button:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+.event-list-item button.delete-event-list:hover {
+  color: #dc3545; /* Red hover for delete */
+}
+.event-list-item button.edit-event-list:hover {
+  color: var(--primary-color); /* Blue hover for edit */
+}
+/* Dark mode list buttons */
+body.dark-mode .event-list-item button {
+  color: var(--dark-light-text);
+}
+body.dark-mode .event-list-item button:hover {
+  background-color: var(--dark-hover);
+  color: var(--dark-text);
+}
+body.dark-mode .event-list-item button.delete-event-list:hover {
+  color: #f06575; /* Lighter red */
+}
+body.dark-mode .event-list-item button.edit-event-list:hover {
+  color: var(--dark-primary); /* Lighter blue */
+}
+/* Focus style for list buttons */
+.event-list-item button:focus-visible {
+  outline: 2px solid var(--focus-ring-color);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 2px var(--secondary-color); /* Inner contrast */
+}
+body.dark-mode .event-list-item button:focus-visible {
+  outline-color: var(--dark-focus-ring-color);
+  box-shadow: 0 0 0 2px var(--dark-surface);
+}
+/* --- End Event List Item Actions --- */
+
+/* No Events Message */
+.no-events-message {
+  text-align: center;
+  color: var(--light-text);
+  padding: 30px 20px; /* More padding */
+  font-style: italic;
+  font-size: 0.95rem;
+}
+body.dark-mode .no-events-message {
+  color: var(--dark-light-text);
+}
+
+/* --- Modal Styles --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+  padding-top: 5vh; /* Use viewport height for padding */
+}
+.modal-content {
+  background-color: #fff;
+  margin: 0 auto 5vh auto; /* Center vertically better */
+  padding: 30px; /* More padding */
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: modalFadeIn 0.3s ease forwards;
+}
+@keyframes modalFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body.dark-mode .modal-content {
+  background-color: var(--dark-surface);
+  border-color: var(--dark-border);
+}
+
+.close-button {
+  color: var(--light-text);
+  position: absolute;
+  top: 15px; /* Adjust position */
+  right: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1; /* Ensure consistent alignment */
+  padding: 5px; /* Easier click target */
+  background: none; /* Ensure no background */
+  border: none; /* Ensure no border */
+}
+.close-button:hover,
+.close-button:focus-visible {
+  /* Style focus too */
+  color: var(--text-color);
+  text-decoration: none;
+}
+body.dark-mode .close-button {
+  color: var(--dark-light-text);
+}
+body.dark-mode .close-button:hover,
+body.dark-mode .close-button:focus-visible {
+  color: var(--dark-text);
+}
+
+.modal h2 {
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-size: 1.5rem; /* Slightly larger */
+  font-weight: 600;
+  /* Removed border bottom for cleaner look */
+}
+body.dark-mode .modal h2 {
+  color: var(--dark-primary);
+}
+
+.modal .form-group {
+  margin-bottom: 20px;
+}
+
+/* NEW: Inline form group for color/icon */
+.form-group-inline {
+  display: flex;
+  gap: 15px; /* Space between items */
+  align-items: flex-end; /* Align bottom of elements */
+}
+.form-group-inline > div {
+  flex: 1; /* Each item takes equal space */
+}
+.form-group-inline label {
+  margin-bottom: 5px; /* Slightly less margin */
+}
+/* Style color input */
+.modal input[type="color"] {
+  padding: 5px; /* Adjust padding for color input */
+  height: 40px; /* Match text input height roughly */
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+body.dark-mode .modal input[type="color"] {
+  border-color: var(--dark-border);
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--light-text);
+  font-size: 0.9rem; /* Smaller label */
+}
+body.dark-mode .modal label {
+  color: var(--dark-light-text);
+}
+
+.modal input[type="text"],
+.modal input[type="time"],
+.modal select,
+.modal textarea {
+  width: 100%;
+  padding: 10px 12px;
+  /* margin-bottom removed, handled by form-group */
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  font-size: 1rem; /* Back to standard size */
+  background-color: #fff;
+  color: var(--text-color);
+}
+.modal input[type="text"]:focus,
+.modal input[type="time"]:focus,
+.modal select:focus,
+.modal textarea:focus {
+  /* Focus style handled by :focus-visible global rule */
+  border-color: var(--primary-color); /* Keep border color change */
+}
+body.dark-mode .modal input[type="text"],
+body.dark-mode .modal input[type="time"],
+body.dark-mode .modal select,
+body.dark-mode .modal textarea {
+  background-color: var(--dark-secondary);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+body.dark-mode .modal input[type="text"]:focus,
+body.dark-mode .modal input[type="time"]:focus,
+body.dark-mode .modal select:focus,
+body.dark-mode .modal textarea:focus {
+  border-color: var(--dark-primary);
+}
+/* Select arrow styling (unchanged) */
+.modal select {
+  /* styles unchanged */
+}
+body.dark-mode .modal select {
+  /* styles unchanged */
+}
+
+.modal button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 10px; /* Reduced top margin */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Remove width: 100% for consistency, allow natural width */
+  /* width: 100%; */
+  display: inline-block; /* Allow natural width */
+}
+/* Align modal submit hover with control buttons */
+.modal button[type="submit"]:hover {
+  background-color: #0056b3; /* Match control buttons hover */
+  transform: translateY(-1px); /* Match control buttons hover */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Match control buttons hover */
+  /* box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); */ /* Original was slightly different */
+}
+/* Align dark mode modal submit with dark control buttons */
+body.dark-mode .modal button[type="submit"] {
+  background-color: var(--dark-primary); /* Match dark control buttons */
+  color: var(--dark-text); /* Match dark control buttons */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Match dark control buttons */
+}
+/* Align dark mode modal submit hover with dark control buttons */
+body.dark-mode .modal button[type="submit"]:hover {
+  background-color: #2c97f5; /* Match dark control buttons hover */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Match dark control buttons hover */
+  /* box-shadow: 0 4px 8px rgba(77, 171, 247, 0.3); */ /* Original was slightly different */
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .days-grid {
+    gap: 2px;
+    padding: 5px;
+  }
+  .day {
+    font-size: 0.9rem;
+  }
+  .has-event::after {
+    width: 4px;
+    height: 4px;
+    bottom: 3px;
+  }
+  .modal-content {
+    padding: 20px;
+  }
+}
+
+/* --- NEW: Instructions Container Styles --- */
+.instructions-container {
+  background-color: rgba(255, 255, 255, 0.85); /* More opaque white */
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-top: 30px; /* More space below main content */
+  max-width: 850px; /* Match main content width */
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  z-index: 1; /* Ensure it's above background */
+}
+.instructions-container h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-size: 1.8rem; /* Increased font size */
+  text-align: center;
+  font-weight: 600;
+}
+.instructions-container ul {
+  list-style: disc;
+  margin: 0 0 0 30px;
+  padding: 0;
+  font-size: 1.2rem; /* Increased font size */
+  color: var(--text-color);
+  line-height: 1.7;
+}
+.instructions-container li {
+  margin-bottom: 12px;
+}
+/* Dark mode instructions */
+body.dark-mode .instructions-container {
+  background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent dark */
+  border-color: var(--dark-border);
+}
+body.dark-mode .instructions-container h2 {
+  color: var(--dark-primary);
+}
+body.dark-mode .instructions-container ul {
+  color: var(--dark-text);
+}

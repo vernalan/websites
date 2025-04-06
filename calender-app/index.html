@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calendar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Screen Reader Only Styles (can stay here or move to css) -->
+    <style>
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+    </style>
+</head>
+<body>
+    <!-- Abstract Gradient Background (HTML remains the same) -->
+    <div class="gradient-container" aria-hidden="true">
+        <div class="blob" id="blob1"></div>
+        <div class="blob" id="blob2"></div>
+        <div class="blob" id="blob3"></div>
+        <div class="blob" id="blob4"></div>
+    </div>
+
+    <!-- Wrapper (HTML remains the same) -->
+    <div class="main-content-wrapper">
+        <!-- Calendar Container (HTML remains the same) -->
+        <div class="calendar-container">
+            <!-- ... (calendar header, weekdays, days-grid, selected-date-display, controls, settings) ... -->
+             <div class="calendar-header">
+                <div class="nav-buttons">
+                    <button id="prev-month" class="nav-button" aria-label="Previous Month">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-month" class="nav-button" aria-label="Next Month">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="month-year-container">
+                    <h2 id="month-year-display" class="month-year" title="Click to jump to date" aria-live="polite" aria-atomic="true">Month Year</h2>
+                </div>
+                <div class="jump-to-date-section" id="jump-to-date">
+                    <label for="jump-month" class="sr-only">Month</label>
+                    <select id="jump-month"></select>
+                    <label for="jump-year" class="sr-only">Year</label>
+                    <input type="number" id="jump-year" placeholder="Year" min="1900" max="2100">
+                    <button id="jump-button" aria-label="Jump to selected month and year">Go</button>
+     </div>
+
+            </div>
+            <div class="weekdays" role="row">
+                <div role="columnheader">Sun</div> <div role="columnheader">Mon</div> <div role="columnheader">Tue</div>
+                <div role="columnheader">Wed</div> <div role="columnheader">Thu</div> <div role="columnheader">Fri</div>
+                <div role="columnheader">Sat</div>
+            </div>
+            <div class="days-grid" id="days-grid" role="grid" aria-labelledby="month-year-display"></div>
+            <div class="selected-date-display" id="selected-date-display" aria-live="polite">Select a date</div>
+            <div class="controls">
+                <button class="control-button" id="today-button" aria-label="Go to today's date"><i class="fas fa-calendar-day" aria-hidden="true"></i> Today</button>
+                <button class="control-button" id="add-event-button" aria-label="Add event for selected date"><i class="fas fa-plus" aria-hidden="true"></i> Add Event</button>
+                <button class="control-button" id="settings-toggle-button" aria-label="Toggle settings panel" aria-expanded="false"><i class="fas fa-cog" aria-hidden="true"></i> Settings</button>
+            </div>
+            <div class="settings-section" id="settings-section">
+                <div class="settings-content">
+                    <div class="setting-item">
+                        <label for="theme-checkbox">Theme</label>
+                        <div class="theme-switch-wrapper">
+                            <i class="fas fa-sun" aria-hidden="true"></i>
+                            <label class="theme-switch" for="theme-checkbox" aria-label="Toggle light/dark theme"><input type="checkbox" id="theme-checkbox" /><div class="slider"></div></label>
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <label for="animation-checkbox">Background Animation</label>
+                        <div class="animation-switch-wrapper">
+                             <i class="fas fa-pause" aria-hidden="true"></i>
+                             <label class="theme-switch" for="animation-checkbox" aria-label="Toggle background animation"><input type="checkbox" id="animation-checkbox" checked /><div class="slider"></div></label>
+                              <i class="fas fa-play" aria-hidden="true"></i>
+                          </div>
+                     </div>
+                     <hr> <!-- Separator -->
+                     <div class="setting-item category-management">
+                         <label for="new-category-input">Add Category:</label>
+                         <input type="text" id="new-category-input" placeholder="New category name">
+                         <button id="add-category-button" aria-label="Add new category">Add</button>
+                     </div>
+                     <!-- Optional: Add a list here to display/delete categories later -->
+                 </div>
+            </div>
+        </div>
+
+        <!-- Events List Container (HTML remains the same) -->
+        <div class="events-list-container">
+            <div class="events-list-header">
+                <h2 id="events-list-title" aria-live="polite">Events This Month</h2>
+                <div class="list-controls">
+                    <label for="event-search" class="sr-only">Search Events</label>
+                    <input type="search" id="event-search" placeholder="Search events...">
+                     <label for="event-filter" class="sr-only">Filter by Category</label>
+                     <select id="event-filter">
+                         <option value="all">All Categories</option>
+                         <!-- Options populated by JS -->
+                     </select>
+                 </div>
+            </div>
+            <ul id="events-list"></ul>
+        </div>
+    </div>
+
+    <!-- The Modal (HTML remains the same) -->
+    <div id="event-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-button" aria-label="Close dialog">×</button>
+            <h2 id="modal-title">Add/Edit Event</h2>
+            <form id="event-form">
+                <input type="hidden" id="event-date" name="event-date">
+                <input type="hidden" id="event-index" name="event-index" value="-1">
+                <div class="form-group">
+                    <label for="event-title">Title:</label>
+                    <input type="text" id="event-title" name="event-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-time">Time (Optional):</label>
+                    <input type="time" id="event-time" name="event-time">
+                </div>
+                <div class="form-group">
+                     <label for="event-category">Category:</label>
+                      <select id="event-category" name="event-category">
+                          <!-- Options populated by JS -->
+                      </select>
+                  </div>
+                  <div class="form-group form-group-inline"> <!-- Inline group -->
+                      <div>
+                          <label for="event-color">Color:</label>
+                          <input type="color" id="event-color" name="event-color" value="#007bff"> <!-- Default color -->
+                      </div>
+                      <div>
+                          <label for="event-icon">Icon (<a href="https://fontawesome.com/icons" target="_blank">Font Awesome</a>):</label>
+                          <input type="text" id="event-icon" name="event-icon" placeholder="e.g., fa-star">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="event-description">Description:</label>
+                    <textarea id="event-description" name="event-description" rows="3"></textarea>
+                </div>
+                <button type="submit" id="save-event-button">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- NEW: Instructions Section -->
+    <div class="instructions-container">
+        <h2>How to Use</h2>
+        <ul>
+            <li>Click on a date in the calendar to select it.</li>
+            <li>Click the "Add Event" button to add a new event for the selected date.</li>
+            <li>Hover over a date with a dot to see a summary of events. Click the edit/delete icons in the popup.</li>
+            <li>Use the event list on the right to see all events for the current month.</li>
+            <li>Use the search and filter controls above the event list to find specific events.</li>
+            <li>Click the edit/delete icons on list items to manage events.</li>
+            <li>Click the month/year display (e.g., "May 2025") to jump to a specific month and year.</li>
+            <li>Click the "Settings" button to manage categories, toggle theme, or pause background animations.</li>
+            <li>In the modal, choose a category, color, and optionally provide a Font Awesome icon class (e.g., `fa-star`, `fa-briefcase`) for your event.</li>
+        </ul>
+    </div>
+    <!-- Link the main JS module -->
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>
