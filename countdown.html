@@ -8,26 +8,27 @@
         :root {
             --bg-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --text-color: #fff;
-            --container-bg: rgba(255, 255, 255, 0.95);
-            --box-bg: white;
-            --button-bg: #4a90e2;
-            --button-hover: #357abd;
-            --number-color: #4a90e2;
-            --label-color: #666;
-            --timer-color: black;
+            --container-bg: rgba(255, 255, 255, 0.15);
+            --box-bg: rgba(255, 255, 255, 0.1);
+            --button-bg: rgba(74, 144, 226, 0.7);
+            --button-hover: rgba(53, 122, 189, 0.8);
+            --number-color: white;
+            --label-color: rgba(255, 255, 255, 0.8);
+            --timer-color: white;
+            --border-color: rgba(255, 255, 255, 0.2);
         }
 
         .dark-mode {
             --bg-color: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            --container-bg: rgba(0, 0, 0, 0.8);
-            --box-bg: #2c3e50;
-            --button-bg: #3498db;
-            --button-hover: #2980b9;
-            --number-color: #3498db;
-            --label-color: #ecf0f1;
+            --container-bg: rgba(0, 0, 0, 0.15);
+            --box-bg: rgba(0, 0, 0, 0.1);
+            --button-bg: rgba(52, 152, 219, 0.7);
+            --button-hover: rgba(41, 128, 185, 0.8);
+            --number-color: white;
+            --label-color: rgba(255, 255, 255, 0.8);
             --text-color: #ecf0f1;
             --timer-color: white;
-
+            --border-color: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -53,10 +54,13 @@
             background: var(--container-bg);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
             margin-top: 2rem;
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--border-color);
         }
 
         h1 {
@@ -67,12 +71,26 @@
 
         .input-group {
             display: flex;
-            min-width: 205px;
+            flex-wrap: wrap;
             gap: 1rem;
             margin-bottom: 2rem;
         }
 
-        input[type="datetime-local"],
+        .input-group > * {
+            flex: 1 1 auto;
+            min-width: 300px;
+        }
+
+        input[type="datetime-local"] {   
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--box-bg);
+            color: var(--label-color);
+            min-width: 330px;
+        }
         input[type="number"] {
             flex: 1;
             padding: 0.8rem;
@@ -92,9 +110,12 @@
             letter-spacing: 4px;
             font-weight: 700;
             text-transform: uppercase;
-            transition: 0.5s;
-            transition-property: box-shadow;
+            transition: 0.3s;
             background: var(--button-bg);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         button:hover {
@@ -114,6 +135,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid var(--border-color);
         }
 
         .number {
@@ -190,12 +214,21 @@
         <div class="input-group">
             <input type="datetime-local" id="datetimeInput">
             <button onclick="startCountdown()">Start</button>
-            <button onclick="stopCountdown()">Stop</button> <!-- Added Stop button -->
+            <button onclick="stopCountdown()">Stop</button>
+            <button onclick="resetCountdown()">Reset</button>
         </div>
         <div class="preset-buttons">
-            <button onclick="setPresetTime(1)">1 min</button>
-            <button onclick="setPresetTime(5)">5 min</button>
-            <button onclick="setPresetTime(10)">10 min</button>
+            <button onclick="setPresetTime(60)">1 min</button>
+            <button onclick="setPresetTime(300)">5 min</button>
+            <button onclick="setPresetTime(600)">10 min</button>
+        </div>
+        <div id="customPresetsContainer" class="preset-buttons" style="margin-top: 0.5rem; flex-wrap: wrap;">
+            <!-- Custom presets will be loaded here -->
+        </div>
+        <div class="input-group" style="margin-top: 1rem; align-items: center;">
+             <input type="number" id="customPresetMinInput" placeholder="Min" min="0" value="0" style="flex-grow: 0.3;">
+             <input type="number" id="customPresetSecInput" placeholder="Sec" min="0" max="59" value="0" style="flex-grow: 0.3;">
+             <button onclick="saveCustomPreset()" style="flex-grow: 0.4;">Add Preset</button>
         </div>
         <div class="status-message" id="startedMessage">Timer Started! ⏱️</div>
         <div class="countdown" id="countdown">
@@ -228,9 +261,11 @@
         let countdownInterval = null;
         const startSound = document.getElementById('startSound');
         const endSound = document.getElementById('endSound');
+        const CUSTOM_PRESETS_KEY = 'customCountdownPresets';
 
-        // Load saved countdown when page loads
+        // Load saved countdown and custom presets when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            // Load running timer state
             const savedData = localStorage.getItem('countdownData');
             if (savedData) {
                 const { targetDate: storedDate, isRunning } = JSON.parse(savedData);
@@ -244,6 +279,8 @@
                     localStorage.removeItem('countdownData');
                 }
             }
+            // Load and display custom presets
+            loadAndDisplayCustomPresets();
         });
 
         function toLocalDatetimeString(date) {
@@ -252,7 +289,8 @@
             const day = String(date.getDate()).padStart(2, '0');
             const hours = String(date.getHours()).padStart(2, '0');
             const minutes = String(date.getMinutes()).padStart(2, '0');
-            return `${year}-${month}-${day}T${hours}:${minutes}`;
+            const seconds = String(date.getSeconds()).padStart(2, '0'); // Add seconds
+            return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`; // Include seconds in format
         }
 
         function startCountdown() {
@@ -316,14 +354,20 @@
                 document.getElementById('countdown').style.display = 'none';
                 document.getElementById('startedMessage').style.display = 'none';
                 document.getElementById('finishedMessage').style.display = 'none';
-                endSound.play();
+                // Stop any playing sounds
+                startSound.pause();
+                startSound.currentTime = 0;
+                endSound.pause();
+                endSound.currentTime = 0;
+                // Optionally play a stop sound (or remove endSound.play() if not desired)
+                // endSound.play(); // Uncomment if you want a sound on stop
                 localStorage.removeItem('countdownData');
             }
         }
 
-        function setPresetTime(minutes) {
+        function setPresetTime(totalSeconds) {
             const now = new Date();
-            const targetDate = new Date(now.getTime() + minutes * 60 * 1000);
+            const targetDate = new Date(now.getTime() + totalSeconds * 1000); // Use totalSeconds
             document.getElementById('datetimeInput').value = toLocalDatetimeString(targetDate);
             startCountdown();
         }
@@ -331,6 +375,136 @@
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
+
+        function resetCountdown() {
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+            localStorage.removeItem('countdownData');
+            document.getElementById('datetimeInput').value = '';
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+            document.getElementById('startedMessage').style.display = 'none';
+            document.getElementById('finishedMessage').style.display = 'none';
+            document.getElementById('countdown').style.display = 'grid'; // Ensure countdown display is visible
+
+            // Stop any playing sounds
+            startSound.pause();
+            startSound.currentTime = 0;
+            endSound.pause();
+            endSound.currentTime = 0;
+        }
+
+        // --- Custom Preset Functions ---
+
+        function getCustomPresets() {
+            const presets = localStorage.getItem(CUSTOM_PRESETS_KEY);
+            return presets ? JSON.parse(presets) : [];
+        }
+
+        function saveCustomPresets(presets) {
+            // Ensure presets are unique and sorted
+            const uniqueSortedPresets = [...new Set(presets)].sort((a, b) => a - b);
+            localStorage.setItem(CUSTOM_PRESETS_KEY, JSON.stringify(uniqueSortedPresets));
+            return uniqueSortedPresets; // Return the cleaned list
+        }
+
+        function saveCustomPreset() {
+            const minInput = document.getElementById('customPresetMinInput');
+            const secInput = document.getElementById('customPresetSecInput');
+            const minutes = parseInt(minInput.value, 10) || 0; // Default to 0 if NaN
+            const seconds = parseInt(secInput.value, 10) || 0; // Default to 0 if NaN
+
+            if (minutes < 0 || seconds < 0 || seconds > 59) {
+                 alert('Please enter valid minutes (>=0) and seconds (0-59).');
+                 return;
+            }
+
+            const totalSeconds = minutes * 60 + seconds;
+
+            if (totalSeconds <= 0) {
+                alert('Please enter a total time greater than 0 seconds.');
+                return;
+            }
+
+            const presets = getCustomPresets(); // Presets are stored as total seconds
+            if (presets.includes(totalSeconds)) {
+                 alert(`Preset for ${formatSeconds(totalSeconds)} already exists.`);
+                 minInput.value = '0';
+                 secInput.value = '0';
+                 return;
+            }
+            presets.push(totalSeconds);
+            const savedPresets = saveCustomPresets(presets); // Save and get cleaned list
+            displayCustomPresets(savedPresets); // Update UI
+            minInput.value = '0'; // Clear inputs
+            secInput.value = '0';
+        }
+
+        function deleteCustomPreset(totalSecondsToDelete) {
+            let presets = getCustomPresets();
+            presets = presets.filter(p => p !== totalSecondsToDelete);
+            const savedPresets = saveCustomPresets(presets); // Save and get cleaned list
+            displayCustomPresets(savedPresets); // Update UI
+        }
+
+        // Helper function to format total seconds into "X min Y sec"
+        function formatSeconds(totalSeconds) {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            let text = '';
+            if (minutes > 0) {
+                text += `${minutes} min `;
+            }
+            if (seconds > 0 || minutes === 0) { // Show seconds if non-zero or if minutes is zero
+                 text += `${seconds} sec`;
+            }
+            return text.trim();
+        }
+
+        function displayCustomPresets(presets) { // presets are total seconds
+            const container = document.getElementById('customPresetsContainer');
+            container.innerHTML = ''; // Clear existing buttons
+
+            presets.forEach(totalSeconds => {
+                const buttonWrapper = document.createElement('div');
+                buttonWrapper.style.display = 'flex';
+                buttonWrapper.style.alignItems = 'center';
+                buttonWrapper.style.gap = '5px'; // Space between preset and delete button
+
+                const button = document.createElement('button');
+                button.textContent = formatSeconds(totalSeconds); // Use formatted string
+                button.onclick = () => setPresetTime(totalSeconds); // Pass total seconds
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'X';
+                deleteButton.style.padding = '4px 8px'; // Smaller delete button
+                deleteButton.style.fontSize = '0.8rem';
+                deleteButton.style.backgroundColor = 'rgba(255, 82, 82, 0.7)'; // Reddish background
+                deleteButton.style.minWidth = 'auto'; // Allow button to shrink
+                deleteButton.onclick = (event) => {
+                    event.stopPropagation(); // Prevent triggering setPresetTime
+                    const formattedTime = formatSeconds(totalSeconds);
+                    if (confirm(`Are you sure you want to delete the ${formattedTime} preset?`)) {
+                        deleteCustomPreset(totalSeconds);
+                    }
+                };
+                deleteButton.title = `Delete ${formatSeconds(totalSeconds)} preset`; // Tooltip
+
+                buttonWrapper.appendChild(button);
+                buttonWrapper.appendChild(deleteButton);
+                container.appendChild(buttonWrapper);
+            });
+        }
+
+        function loadAndDisplayCustomPresets() {
+            const presets = getCustomPresets();
+            displayCustomPresets(presets);
+        }
+
     </script>
 </body>
 </html>
