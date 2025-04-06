@@ -631,16 +631,25 @@
 
       // Copy to clipboard
       copyButton.addEventListener('click', async () => {
-        let textToCopy = '';
-        
-        if (outputFormat === 'richtext') {
-          textToCopy = outputRichtext.innerHTML;
-        } else {
-          textToCopy = outputTextarea.value;
-        }
-        
         try {
-          await navigator.clipboard.writeText(textToCopy);
+          if (outputFormat === 'richtext') {
+            // For rich text, copy both HTML and plain text versions
+            const html = outputRichtext.innerHTML;
+            const text = outputRichtext.textContent || '';
+            
+            const htmlBlob = new Blob([html], { type: 'text/html' });
+            const textBlob = new Blob([text], { type: 'text/plain' });
+            
+            await navigator.clipboard.write([
+              new ClipboardItem({
+                'text/html': htmlBlob,
+                'text/plain': textBlob
+              })
+            ]);
+          } else {
+            // For other formats, just copy plain text
+            await navigator.clipboard.writeText(outputTextarea.value);
+          }
           showToast('Copied to clipboard!');
         } catch (err) {
           console.error('Failed to copy: ', err);

@@ -139,6 +139,19 @@
             color: var(--timer-color);
         }
 
+        .preset-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+
+        .preset-buttons button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
         .theme-toggle {
             position: fixed;
             bottom: 25px;
@@ -178,6 +191,11 @@
             <input type="datetime-local" id="datetimeInput">
             <button onclick="startCountdown()">Start</button>
             <button onclick="stopCountdown()">Stop</button> <!-- Added Stop button -->
+        </div>
+        <div class="preset-buttons">
+            <button onclick="setPresetTime(1)">1 min</button>
+            <button onclick="setPresetTime(5)">5 min</button>
+            <button onclick="setPresetTime(10)">10 min</button>
         </div>
         <div class="status-message" id="startedMessage">Timer Started! ⏱️</div>
         <div class="countdown" id="countdown">
@@ -303,11 +321,16 @@
             }
         }
 
+        function setPresetTime(minutes) {
+            const now = new Date();
+            const targetDate = new Date(now.getTime() + minutes * 60 * 1000);
+            document.getElementById('datetimeInput').value = toLocalDatetimeString(targetDate);
+            startCountdown();
+        }
+
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
     </script>
 </body>
 </html>
-
-
