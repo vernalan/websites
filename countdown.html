@@ -373,8 +373,17 @@
         }
 
         function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isDarkMode);
         }
+
+        // Check for saved theme preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (savedDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+        });
 
         function resetCountdown() {
             if (countdownInterval) {
@@ -506,5 +515,31 @@
         }
 
     </script>
+
+    <div class="container" style="margin-top: 2rem;">
+        <h2 style="text-align: center;">How to Use</h2>
+        <div style="margin-top: 1.5rem; line-height: 1.6;">
+            <h3 style="margin-top: 1.5rem;">Basic Timer</h3>
+            <ol style="margin-bottom: 1.5rem;">
+                <li>Select a future date and time using the datetime picker</li>
+                <li>Click "Start" to begin the countdown</li>
+                <li>Use "Stop" to pause or "Reset" to clear</li>
+            </ol>
+
+            <h3 style="margin-top: 1.5rem;">Preset Timers</h3>
+            <ul style="margin-bottom: 1.5rem;">
+                <li>Use the 1/5/10 minute buttons for quick starts</li>
+                <li>Create custom presets by entering minutes/seconds and clicking "Add Preset"</li>
+                <li>Delete presets by clicking the "X" next to them</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem;">Other Features</h3>
+            <ul style="margin-bottom: 1rem;">
+                <li>Toggle dark/light mode using the moon/sun button in the bottom right</li>
+                <li>Your timer, theme and presets are saved between sessions</li>
+                <li>Audio cues play when timer starts and finishes</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
