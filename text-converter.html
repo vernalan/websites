@@ -662,7 +662,16 @@
       clearOutputButton.addEventListener('click', clearOutput);
 
       // Theme toggle
-      themeToggle.addEventListener('change', toggleTheme);
+      themeToggle.addEventListener('change', () => {
+        toggleTheme();
+        localStorage.setItem('textConverterTheme', themeToggle.checked ? 'dark' : 'light');
+      });
+      
+      // Load saved theme
+      const savedTheme = localStorage.getItem('textConverterTheme');
+      if (savedTheme) {
+        themeToggle.checked = savedTheme === 'dark';
+      }
       toggleTheme(); // Initialize theme
 
       // Rich text editor buttons
@@ -693,8 +702,36 @@
         });
       });
 
+      // Save content when changed
+      function saveContent() {
+        const content = inputFormat === 'richtext' ? richEditor.innerHTML : inputTextarea.value;
+        localStorage.setItem('textConverterContent', content);
+        localStorage.setItem('textConverterFormat', inputFormat);
+      }
+
+      inputTextarea.addEventListener('input', () => {
+        updateOutput();
+        saveContent();
+      });
+      richEditor.addEventListener('input', () => {
+        updateOutput();
+        saveContent();
+      });
+
+      // Load saved content
+      const savedContent = localStorage.getItem('textConverterContent');
+      const savedFormat = localStorage.getItem('textConverterFormat') || 'markdown';
+      if (savedContent) {
+        if (savedFormat === 'richtext') {
+          richEditor.innerHTML = savedContent;
+        } else {
+          inputTextarea.value = savedContent;
+        }
+        switchInputFormat(savedFormat);
+      }
+
       // Initialize
-      switchInputFormat('markdown');
+      switchInputFormat(savedFormat);
       switchOutputFormat('markdown');
     });
   </script>
