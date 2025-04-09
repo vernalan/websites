@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage to Markdown Extractor</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mozilla/readability@0.5.0/Readability.min.js"></script>
+    <script src="https://unpkg.com/turndown/dist/turndown.js"></script>
+    <style>
+        :root {
+            /* Light Theme Variables */
+            --bg-color-light: #f8f9fa;
+            --text-color-light: #212529;
+            --card-bg-light: #ffffff;
+            --border-color-light: #dee2e6;
+            --input-bg-light: #ffffff;
+            --input-border-light: #ced4da;
+            --button-primary-bg-light: #007bff;
+            --button-primary-hover-light: #0056b3;
+            --button-secondary-bg-light: #6c757d;
+            --button-secondary-hover-light: #5a6268;
+            --button-success-bg-light: #28a745;
+            --button-success-hover-light: #218838;
+            --button-info-bg-light: #0dcaf0; /* Added for Copy button */
+            --button-info-hover-light: #0baccc;
+            --link-color-light: #007bff;
+            --pre-bg-light: #e9ecef;
+            --status-color-light: #495057;
+            --error-color-light: #dc3545;
+            --canvas-bg-light: #e0e0e0;
+
+            /* Dark Theme Variables */
+            --bg-color-dark: #121212;
+            --text-color-dark: #e0e0e0;
+            --card-bg-dark: #1e1e1e;
+            --border-color-dark: #444444;
+            --input-bg-dark: #2a2a2a;
+            --input-border-dark: #555555;
+            --button-primary-bg-dark: #0d6efd;
+            --button-primary-hover-dark: #0b5ed7;
+            --button-secondary-bg-dark: #5c636a;
+            --button-secondary-hover-dark: #4a4f54;
+            --button-success-bg-dark: #198754;
+            --button-success-hover-dark: #146c43;
+            --button-info-bg-dark: #31d2f2; /* Added for Copy button */
+            --button-info-hover-dark: #25cff2;
+            --link-color-dark: #6ea8fe;
+            --pre-bg-dark: #2a2a2a;
+            --status-color-dark: #adb5bd;
+            --error-color-dark: #f8d7da;
+            --canvas-bg-dark: #121212;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        body.light-theme {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        body.dark-theme {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        #backgroundCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #app-container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, border 0.3s ease;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        body.light-theme #app-container {
+            background-color: var(--card-bg-light);
+            border: 1px solid var(--border-color-light);
+        }
+
+        body.dark-theme #app-container {
+            background-color: rgba(30, 30, 30, 0.9);
+            border: 1px solid var(--border-color-dark);
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid;
+        }
+        body.light-theme #header { border-color: var(--border-color-light); }
+        body.dark-theme #header { border-color: var(--border-color-dark); }
+
+        h1 { margin: 0; font-size: 1.8em; }
+
+        #themeToggleButton {
+            padding: 8px 12px; border: none; border-radius: 20px; cursor: pointer; font-size: 0.9em; transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.light-theme #themeToggleButton { background-color: var(--button-secondary-bg-light); color: var(--bg-color-light); }
+        body.dark-theme #themeToggleButton { background-color: var(--button-secondary-bg-dark); color: var(--text-color-dark); }
+        body.light-theme #themeToggleButton:hover { background-color: var(--button-secondary-hover-light); }
+        body.dark-theme #themeToggleButton:hover { background-color: var(--button-secondary-hover-dark); }
+
+        #controls { display: flex; gap: 10px; margin-bottom: 20px; align-items: stretch; }
+        #urlInputContainer { flex-grow: 1; display: flex; }
+        #urlInput {
+            flex-grow: 1; padding: 10px; border: 1px solid; border-radius: 4px 0 0 4px; font-size: 1em; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; min-width: 150px;
+        }
+        body.light-theme #urlInput { background-color: var(--input-bg-light); border-color: var(--input-border-light); color: var(--text-color-light); }
+        body.dark-theme #urlInput { background-color: var(--input-bg-dark); border-color: var(--input-border-dark); color: var(--text-color-dark); }
+        #urlInput:focus { outline: none; border-color: var(--button-primary-bg-light); box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); }
+        body.dark-theme #urlInput:focus { border-color: var(--button-primary-bg-dark); box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25); }
+
+        button { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; transition: background-color 0.2s ease, opacity 0.2s ease; white-space: nowrap; }
+        button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        #clearUrlButton { border-radius: 0 4px 4px 0; margin-left: -1px; }
+
+        #extractButton, #clearUrlButton, #clearContentButton, #copyContentButton { color: white; } /* Ensure copy button text is white */
+
+        body.light-theme #extractButton { background-color: var(--button-primary-bg-light); }
+        body.light-theme #extractButton:hover:not(:disabled) { background-color: var(--button-primary-hover-light); }
+        body.dark-theme #extractButton { background-color: var(--button-primary-bg-dark); }
+        body.dark-theme #extractButton:hover:not(:disabled) { background-color: var(--button-primary-hover-dark); }
+
+        body.light-theme #clearUrlButton, body.light-theme #clearContentButton { background-color: var(--button-secondary-bg-light); }
+        body.light-theme #clearUrlButton:hover:not(:disabled), body.light-theme #clearContentButton:hover:not(:disabled) { background-color: var(--button-secondary-hover-light); }
+        body.dark-theme #clearUrlButton, body.dark-theme #clearContentButton { background-color: var(--button-secondary-bg-dark); }
+        body.dark-theme #clearUrlButton:hover:not(:disabled), body.dark-theme #clearContentButton:hover:not(:disabled) { background-color: var(--button-secondary-hover-dark); }
+
+        /* Style for Copy Button */
+        body.light-theme #copyContentButton { background-color: var(--button-info-bg-light); }
+        body.light-theme #copyContentButton:hover:not(:disabled) { background-color: var(--button-info-hover-light); }
+        body.dark-theme #copyContentButton { background-color: var(--button-info-bg-dark); color: #111; /* Dark text on light blue */}
+        body.dark-theme #copyContentButton:hover:not(:disabled) { background-color: var(--button-info-hover-dark); }
+
+
+        #status { margin-top: 15px; font-weight: bold; min-height: 1.2em; transition: color 0.3s ease; }
+        body.light-theme #status { color: var(--status-color-light); }
+        body.dark-theme #status { color: var(--status-color-dark); }
+        #status.error { font-weight: bold; }
+        body.light-theme #status.error { color: var(--error-color-light); }
+        body.dark-theme #status.error { color: var(--error-color-dark); }
+
+        #results { margin-top: 20px; border: 1px solid; padding: 15px; border-radius: 4px; transition: background-color 0.3s ease, border-color 0.3s ease; }
+        body.light-theme #results { background-color: var(--bg-color-light); border-color: var(--border-color-light); }
+        body.dark-theme #results { background-color: var(--card-bg-dark); border-color: var(--border-color-dark); }
+
+        #resultsHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 10px; /* Add gap between buttons */ flex-wrap: wrap; /* Allow buttons to wrap on small screens */ }
+        #resultsHeader h2 { margin: 0; font-size: 1.4em; flex-grow: 1; /* Allow title to take space */ }
+        #resultsHeader .button-group { display: flex; gap: 10px; } /* Group the buttons */
+
+
+        h2 { margin: 0; font-size: 1.4em; }
+
+        #downloadArea { margin-top: 15px; margin-bottom: 15px; }
+        #downloadArea a { display: inline-block; padding: 8px 12px; color: white; text-decoration: none; border-radius: 4px; transition: background-color 0.2s; }
+        body.light-theme #downloadArea a { background-color: var(--button-success-bg-light); }
+        body.light-theme #downloadArea a:hover { background-color: var(--button-success-hover-light); }
+        body.dark-theme #downloadArea a { background-color: var(--button-success-bg-dark); }
+        body.dark-theme #downloadArea a:hover { background-color: var(--button-success-hover-dark); }
+
+        #output { white-space: pre-wrap; word-wrap: break-word; max-height: 400px; overflow-y: auto; padding: 10px; border: 1px solid; border-radius: 4px; font-family: monospace; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+        body.light-theme #output { background-color: var(--pre-bg-light); border-color: var(--border-color-light); color: var(--text-color-light); }
+        body.dark-theme #output { background-color: var(--pre-bg-dark); border-color: var(--border-color-dark); color: var(--text-color-dark); }
+
+        .info { font-size: 0.9em; margin-top: 15px; border-top: 1px dashed; padding-top: 10px; transition: color 0.3s ease, border-color 0.3s ease; }
+        body.light-theme .info { color: #6c757d; border-color: var(--border-color-light); }
+        body.dark-theme .info { color: #adb5bd; border-color: var(--border-color-dark); }
+        .info a { text-decoration: none; transition: color 0.3s ease; }
+        body.light-theme .info a { color: var(--link-color-light); }
+        body.dark-theme .info a { color: var(--link-color-dark); }
+        .info a:hover { text-decoration: underline; }
+
+        @media (max-width: 700px) { /* Adjusted breakpoint */
+            #app-container { margin: 20px 10px; padding: 15px; max-height: calc(100vh - 40px); }
+            #controls { flex-direction: column; align-items: stretch; }
+            #urlInputContainer { margin-bottom: 10px; }
+            #urlInput { border-radius: 4px 0 0 4px; }
+            #clearUrlButton { border-radius: 0 4px 4px 0; }
+            #extractButton { border-radius: 4px; }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+             /* Adjust results header for smaller screens */
+             #resultsHeader {
+                 flex-direction: column;
+                 align-items: flex-start; /* Align items to start */
+             }
+             #resultsHeader h2 {
+                 margin-bottom: 10px; /* Add space below title */
+             }
+             #resultsHeader .button-group {
+                 width: 100%; /* Make button group take full width */
+                 justify-content: flex-start; /* Align buttons to start */
+             }
+        }
+         @media (max-width: 400px) {
+             #resultsHeader .button-group {
+                 flex-direction: column; /* Stack buttons vertically */
+                 align-items: stretch; /* Make buttons full width */
+             }
+         }
+
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div id="app-container">
+
+        <div id="header">
+            <h1>Webpage to Markdown Extractor</h1>
+            <button id="themeToggleButton">Toggle Theme</button>
+        </div>
+
+        <div id="controls">
+            <div id="urlInputContainer">
+                <input type="url" id="urlInput" placeholder="https://example.com">
+                <button id="clearUrlButton" title="Clear URL">X</button>
+            </div>
+            <button id="extractButton">Extract & Convert</button>
+        </div>
+
+        <div id="status">Enter a URL and click extract.</div>
+
+        <div id="results" style="display: none;">
+            <div id="resultsHeader">
+                 <h2>Extracted Content</h2>
+                 <div class="button-group">
+                     <button id="copyContentButton" title="Copy to Clipboard">Copy</button>
+                     <button id="clearContentButton">Clear Content</button>
+                 </div>
+            </div>
+            <div id="downloadArea"></div>
+            <pre id="output"></pre>
+            <div class="info">
+                Note: This tool uses the public <a href="https://allorigins.win/" target="_blank" rel="noopener noreferrer">allorigins.win</a> CORS proxy. Reliability depends on this service. Clipboard API requires secure context (HTTPS/localhost).
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // --- DOM Elements ---
+        const body = document.body;
+        const urlInput = document.getElementById('urlInput');
+        const extractButton = document.getElementById('extractButton');
+        const clearUrlButton = document.getElementById('clearUrlButton');
+        const clearContentButton = document.getElementById('clearContentButton');
+        const copyContentButton = document.getElementById('copyContentButton'); // Added
+        const themeToggleButton = document.getElementById('themeToggleButton');
+        const statusDiv = document.getElementById('status');
+        const resultsDiv = document.getElementById('results');
+        const outputPre = document.getElementById('output');
+        const downloadArea = document.getElementById('downloadArea');
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // --- State & Constants ---
+        const LS_KEYS = {
+            THEME: 'extractor_theme',
+            URL: 'extractor_last_url',
+            CONTENT: 'extractor_last_content'
+        };
+        let currentDownloadUrl = null;
+        let circles = [];
+        const numCircles = 50;
+        let mouse = { x: undefined, y: undefined };
+        let copyTimeout = null; // Timeout ID for resetting copy button text
+
+        // --- Initialize Services ---
+        const turndownService = new TurndownService();
+
+        // --- Event Listeners ---
+        extractButton.addEventListener('click', handleExtract);
+        themeToggleButton.addEventListener('click', handleThemeToggle);
+        clearUrlButton.addEventListener('click', handleClearUrl);
+        clearContentButton.addEventListener('click', handleClearContent);
+        copyContentButton.addEventListener('click', handleCopyContent); // Added
+        canvas.addEventListener('mousemove', handleCanvasMouseMove);
+        window.addEventListener('resize', handleResize);
+        document.addEventListener('DOMContentLoaded', initializeApp);
+
+        // --- Initialization ---
+        function initializeApp() {
+            console.log("Initializing App...");
+            loadTheme();
+            loadUrl();
+            loadContent();
+            initCanvas();
+            animateCanvas();
+            console.log("App Initialized.");
+        }
+
+        // --- Theme Management ---
+        function loadTheme() {
+            const savedTheme = localStorage.getItem(LS_KEYS.THEME) || 'dark';
+            applyTheme(savedTheme);
+            console.log("Theme loaded:", savedTheme);
+        }
+
+        function applyTheme(theme) {
+            body.classList.remove('light-theme', 'dark-theme');
+            body.classList.add(theme + '-theme');
+            themeToggleButton.textContent = theme === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+            if (canvas && ctx) {
+                 canvas.style.backgroundColor = theme === 'dark' ? 'var(--canvas-bg-dark)' : 'var(--canvas-bg-light)';
+            }
+            localStorage.setItem(LS_KEYS.THEME, theme);
+            // Re-initialize canvas colors if needed when theme changes AFTER initial load
+            if (circles.length > 0) {
+                initCanvas(); // Re-init to get correct colors if theme changes
+            }
+            console.log("Theme applied:", theme);
+        }
+
+        function handleThemeToggle() {
+            const currentTheme = localStorage.getItem(LS_KEYS.THEME) || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        }
+
+        // --- Local Storage Management ---
+        function loadUrl() {
+            const savedUrl = localStorage.getItem(LS_KEYS.URL);
+            if (savedUrl) {
+                urlInput.value = savedUrl;
+                console.log("URL loaded from localStorage.");
+            }
+        }
+
+        function loadContent() {
+            const savedContent = localStorage.getItem(LS_KEYS.CONTENT);
+            if (savedContent) {
+                outputPre.textContent = savedContent;
+                resultsDiv.style.display = 'block';
+                downloadArea.innerHTML = '<small>Content loaded from previous session. Extract again to download.</small>';
+                setStatus('Previous content loaded.', false);
+                // Ensure copy button is enabled if there's loaded content
+                copyContentButton.disabled = false;
+                console.log("Content loaded from localStorage.");
+            } else {
+                // Disable copy button if no content initially
+                copyContentButton.disabled = true;
+            }
+        }
+
+        // --- Core Functionality ---
+        async function handleExtract() {
+            const url = urlInput.value.trim();
+            if (!url) { setStatus('Please enter a URL.', true); return; }
+            try { new URL(url); } catch (_) { setStatus('Invalid URL format.', true); return; }
+            localStorage.setItem(LS_KEYS.URL, url);
+
+            // Reset UI
+            extractButton.disabled = true;
+            copyContentButton.disabled = true; // Disable copy button during extraction
+            copyContentButton.textContent = 'Copy'; // Reset copy button text
+            clearTimeout(copyTimeout); // Clear any pending reset
+            resultsDiv.style.display = 'none';
+            outputPre.textContent = '';
+            downloadArea.innerHTML = '';
+            setStatus('Fetching content...');
+            if (currentDownloadUrl) { URL.revokeObjectURL(currentDownloadUrl); currentDownloadUrl = null; }
+
+            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+
+            try {
+                // 1. Fetch
+                const response = await fetch(proxyUrl);
+                if (!response.ok) throw new Error(`Fetch failed: ${response.status} ${response.statusText}`);
+                const html = await response.text();
+                setStatus('Parsing HTML...');
+
+                // 2. Parse DOM
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                let base = doc.querySelector('base');
+                if (!base) { base = doc.createElement('base'); base.href = url; doc.head.appendChild(base); }
+                else { try { const currentBaseHref = new URL(base.getAttribute('href'), url); base.setAttribute('href', currentBaseHref.href); } catch (e) { base.setAttribute('href', url); console.warn("Corrected invalid base href to:", url); } }
+                setStatus('Extracting article content...');
+
+                // 3. Readability
+                const reader = new Readability(doc);
+                const article = reader.parse();
+                if (!article || !article.content) throw new Error("Could not extract article content.");
+                setStatus('Converting to Markdown...');
+
+                // 4. Turndown
+                const markdown = turndownService.turndown(article.content);
+
+                // 5. Output & Download Link
+                const articleTitle = article.title || 'Untitled Article';
+                const fullMarkdown = `# ${articleTitle}\n\n${markdown}`;
+                const filename = `${articleTitle.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, ' ').trim() || 'article'}.md`;
+
+                outputPre.textContent = fullMarkdown;
+                localStorage.setItem(LS_KEYS.CONTENT, fullMarkdown);
+
+                const blob = new Blob([fullMarkdown], { type: 'text/markdown;charset=utf-8' });
+                currentDownloadUrl = URL.createObjectURL(blob);
+                const downloadLink = document.createElement('a');
+                downloadLink.href = currentDownloadUrl; downloadLink.download = filename; downloadLink.textContent = `Download "${filename}"`;
+                downloadArea.appendChild(downloadLink);
+
+                resultsDiv.style.display = 'block';
+                copyContentButton.disabled = false; // Enable copy button on success
+                setStatus('Extraction and conversion complete.', false);
+
+            } catch (error) {
+                console.error('Error processing URL:', error);
+                setStatus(`Error: ${error.message}`, true);
+                resultsDiv.style.display = 'none';
+                localStorage.removeItem(LS_KEYS.CONTENT);
+                copyContentButton.disabled = true; // Keep copy disabled on error
+            } finally {
+                extractButton.disabled = false;
+            }
+        }
+
+        // --- Button Handlers ---
+        function handleClearUrl() {
+            urlInput.value = '';
+            localStorage.removeItem(LS_KEYS.URL);
+            urlInput.focus();
+            console.log("URL cleared.");
+        }
+
+        function handleClearContent() {
+            outputPre.textContent = '';
+            downloadArea.innerHTML = '';
+            resultsDiv.style.display = 'none';
+            localStorage.removeItem(LS_KEYS.CONTENT);
+            if (currentDownloadUrl) { URL.revokeObjectURL(currentDownloadUrl); currentDownloadUrl = null; }
+            copyContentButton.disabled = true; // Disable copy button when content cleared
+            copyContentButton.textContent = 'Copy'; // Reset copy button text
+            clearTimeout(copyTimeout); // Clear any pending reset
+            setStatus('Enter a URL and click extract.', false);
+            console.log("Content cleared.");
+        }
+
+        // --- NEW: Copy Content Handler ---
+        async function handleCopyContent() {
+            const textToCopy = outputPre.textContent;
+            if (!textToCopy || copyContentButton.disabled) {
+                return; // No content or button disabled
+            }
+
+            // Check if clipboard API is available
+            if (!navigator.clipboard) {
+                setStatus('Clipboard API not available in this browser or context (requires HTTPS/localhost).', true);
+                console.warn('Clipboard API not available.');
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                // Provide visual feedback
+                copyContentButton.textContent = 'Copied!';
+                copyContentButton.disabled = true; // Briefly disable after copy
+
+                // Clear previous timeout if user clicks rapidly
+                clearTimeout(copyTimeout);
+
+                // Reset button text after a delay
+                copyTimeout = setTimeout(() => {
+                    copyContentButton.textContent = 'Copy';
+                    copyContentButton.disabled = false; // Re-enable
+                }, 2000); // Reset after 2 seconds
+
+                console.log("Content copied to clipboard.");
+                // Optionally update status briefly
+                // setStatus('Content copied!', false);
+                // setTimeout(() => setStatus(statusDiv.dataset.originalStatus || '', false), 2000); // Requires storing original status
+
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                setStatus('Failed to copy content to clipboard.', true);
+            }
+        }
+
+
+        // --- Utility Functions ---
+        function setStatus(message, isError = false) {
+            statusDiv.textContent = message;
+            statusDiv.className = isError ? 'error' : '';
+            // Could store original status here if needed for copy feedback:
+            // if (!isError) { statusDiv.dataset.originalStatus = message; }
+        }
+
+        // --- Canvas Animation ---
+        class Circle {
+            constructor(x, y, radius, color, dx, dy) {
+                this.x = x; this.y = y; this.baseRadius = radius; this.radius = radius; this.color = color; this.dx = dx; this.dy = dy;
+            }
+            draw() {
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
+            }
+            update() {
+                if (this.x + this.radius > canvas.width || this.x - this.radius < 0) { this.dx = -this.dx; }
+                if (this.y + this.radius > canvas.height || this.y - this.radius < 0) { this.dy = -this.dy; }
+                this.x += this.dx; this.y += this.dy;
+
+                const dxMouse = mouse.x - this.x; const dyMouse = mouse.y - this.y;
+                const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+                const maxRadius = this.baseRadius * 3; const minRadius = this.baseRadius * 0.5;
+
+                if (distanceMouse < 150) {
+                    const proximityFactor = (150 - distanceMouse) / 150;
+                    this.radius = this.baseRadius + (maxRadius - this.baseRadius) * proximityFactor * 0.5;
+                } else if (this.radius > this.baseRadius) { this.radius -= 1; }
+                else if (this.radius < this.baseRadius) { this.radius += 1; }
+                this.radius = Math.max(minRadius, Math.min(maxRadius, this.radius));
+                this.draw();
+            }
+        }
+
+        function initCanvas() {
+            if (!canvas || !ctx) return; // Add check if canvas exists
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            circles.length = 0;
+            const currentTheme = localStorage.getItem(LS_KEYS.THEME) || 'dark';
+            const baseColorVal = currentTheme === 'dark' ? 255 : 0;
+
+            for (let i = 0; i < numCircles; i++) {
+                const radius = Math.random() * 10 + 2;
+                const x = Math.random() * (canvas.width - radius * 2) + radius;
+                const y = Math.random() * (canvas.height - radius * 2) + radius;
+                const dx = (Math.random() - 0.5) * 1.5; const dy = (Math.random() - 0.5) * 1.5;
+                const color = `rgba(${baseColorVal}, ${baseColorVal}, ${baseColorVal}, ${Math.random() * 0.5 + 0.1})`;
+                circles.push(new Circle(x, y, radius, color, dx, dy));
+            }
+            canvas.style.backgroundColor = currentTheme === 'dark' ? 'var(--canvas-bg-dark)' : 'var(--canvas-bg-light)';
+        }
+
+        function animateCanvas() {
+            if (!canvas || !ctx) return; // Add check
+            requestAnimationFrame(animateCanvas);
+            const currentTheme = localStorage.getItem(LS_KEYS.THEME) || 'dark';
+            const lineColorVal = currentTheme === 'dark' ? 255 : 0;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < circles.length; i++) {
+                circles[i].update();
+                for (let j = i + 1; j < circles.length; j++) {
+                    const dx = circles[i].x - circles[j].x; const dy = circles[i].y - circles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const lineThreshold = 120;
+                    if (distance < lineThreshold) {
+                        ctx.beginPath(); ctx.moveTo(circles[i].x, circles[i].y); ctx.lineTo(circles[j].x, circles[j].y);
+                        const opacity = 1 - (distance / lineThreshold);
+                        ctx.strokeStyle = `rgba(${lineColorVal}, ${lineColorVal}, ${lineColorVal}, ${opacity * 0.3})`;
+                        ctx.lineWidth = 0.5; ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function handleCanvasMouseMove(event) { mouse.x = event.clientX; mouse.y = event.clientY; }
+        function handleResize() { initCanvas(); }
+
+    </script>
+
+</body>
+</html>
