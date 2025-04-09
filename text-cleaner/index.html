@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Cleaner and Text Formatter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header-info">
+        <strong>Text Cleaner and Text Formatter:</strong> Text cleaner is an all-in-one <strong>text cleaning and text formatting</strong> online tool that can perform many simple and complex text operations including format text, clean text, remove line breaks, strip HTML, convert case, and find and replace text online.
+    </div>
+
+    <div class="header-controls">
+        <h1>Text Cleaner and Text Formatter</h1>
+        <div class="theme-switch-wrapper">
+            <span>☀️</span>
+            <label class="theme-switch" for="theme-checkbox">
+                <input type="checkbox" id="theme-checkbox" />
+                <div class="slider round"></div>
+            </label>
+            <span>🌙</span>
+        </div>
+    </div>
+
+
+    <div class="text-area-container">
+        <div class="wrap-lines">
+            <span>Wrap lines</span>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <textarea placeholder="Copy and paste your text here, change the settings below and click the clean button."></textarea>
+        <div class="button-container">
+            <button class="clean-btn">Clean</button>
+            <button class="undo-btn">Undo</button>
+        </div>
+    </div>
+
+    <h2>SETTINGS</h2>
+
+    <div class="settings-section">
+        <div class="section-title">Clean Text</div>
+        
+        <div class="options-container">
+            <div class="column">
+                <strong>Whitespace</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="trim">
+                    <label for="trim">Trim</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-leading">
+                    <label for="remove-leading">Remove leading spaces</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-trailing">
+                    <label for="remove-trailing">Remove trailing spaces</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="replace-spaces-check">
+                    <label for="replace-spaces-check">Replace <input type="number" id="replace-spaces-count" value="4" min="1" style="width: 40px; background-color: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 3px; padding: 2px 5px;"> spaces with 1 tab</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="replace-tab-check">
+                    <label for="replace-tab-check">Replace 1 tab with <input type="number" id="replace-tab-count" value="4" min="1" style="width: 40px; background-color: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 3px; padding: 2px 5px;"> spaces</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-blank">
+                    <label for="remove-blank">Remove blank/empty lines</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="replace-linebreak">
+                    <label for="replace-linebreak">Replace line break with space</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="multiple-spaces">
+                    <label for="multiple-spaces">Multiple spaces to single</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="multiple-blank">
+                    <label for="multiple-blank">Multiple blank lines to single</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-linebreaks">
+                    <label for="remove-linebreaks">Remove all line breaks</label>
+                </div>
+            </div>
+
+            <div class="column">
+                <strong>Characters</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-punctuation">
+                    <label for="remove-punctuation">Remove punctuation marks</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="strip-emojis">
+                    <label for="strip-emojis">Strip all emojis</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-accents">
+                    <label for="remove-accents">Remove letter accents (diacritics)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="normalize-unicode">
+                    <label for="normalize-unicode">Normalize unicode letters/characters</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-replacement">
+                    <label for="remove-replacement">Remove replacement character</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-non-ascii">
+                    <label for="remove-non-ascii">Remove non-ASCII characters</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-non-alpha">
+                    <label for="remove-non-alpha">Remove non-alphanumeric characters</label>
+                </div>
+                
+                <strong>Other</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="strip-emails">
+                    <label for="strip-emails">Strip all e-mails</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-bbcode">
+                    <label for="remove-bbcode">Remove BBCode tags (forum)</label>
+                </div>
+            </div>
+
+            <div class="column">
+                <strong>HTML</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="unescape-html">
+                    <label for="unescape-html">Unescape HTML tags</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="strip-html">
+                    <label for="strip-html">Strip all HTML tags</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-alt">
+                    <label for="remove-alt">Remove alt tag</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-classes">
+                    <label for="remove-classes">Remove all classes</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" checked id="remove-styles">
+                    <label for="remove-styles">Remove inline styles</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="decode-entities">
+                    <label for="decode-entities">Decode HTML Character Entities</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="decode-entities-named">
+                    <label for="decode-entities-named">Decode HTML-encoded characters</label>
+                </div>
+                
+                <strong>Links</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-urls">
+                    <label for="remove-urls">Remove all web urls</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="convert-urls">
+                    <label for="convert-urls">Convert urls to links</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-section">
+        <div class="section-title">Text Formatting Online</div>
+        
+        <div class="options-container">
+            <div class="column">
+                <strong>Letter case</strong>
+                <div class="letter-case">
+                    <div class="radio-item">
+                        <input type="radio" name="case" id="uppercase">
+                        <label for="uppercase">Uppercase</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="case" id="lowercase">
+                        <label for="lowercase">Lowercase</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="case" id="sentence-case">
+                        <label for="sentence-case">Sentence case</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="case" id="capitalize">
+                        <label for="capitalize">Capitalize each word</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="case" id="no-change" checked>
+                        <label for="no-change">Do not change</label>
+                    </div>
+                </div>
+                
+                <strong>Quotes</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="smart-quotes">
+                    <label for="smart-quotes">Smart quotes to regular</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="regular-quotes">
+                    <label for="regular-quotes">Regular quotes to smart</label>
+                </div>
+            </div>
+
+            <div class="column">
+                <strong>Duplicates</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-dupes-lines">
+                    <label for="remove-dupes-lines">Remove duplicate lines/paragraphs</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="remove-dupes-words">
+                    <label for="remove-dupes-words">Remove repeating words</label>
+                </div>
+                
+                <strong>Trim</strong>
+                <div class="trim-section">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="remove-left-check">
+                        <label for="remove-left-check">Remove <input type="number" id="remove-left-count" value="1" min="1" style="width: 40px; background-color: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 3px; padding: 2px 5px;"> characters from left</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="remove-right-check">
+                        <label for="remove-right-check">Remove <input type="number" id="remove-right-count" value="1" min="1" style="width: 40px; background-color: #333; color: #e0e0e0; border: 1px solid #444; border-radius: 3px; padding: 2px 5px;"> characters from right</label>
+                    </div>
+                </div>
+                
+                <strong>Writing</strong>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="fix-spaces">
+                    <label for="fix-spaces">Fix spaces after each punctuation mark</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="convert-shorthand">
+                    <label for="convert-shorthand">Convert common shorthand to full words</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="selector">
+            Select: <a href="#">All</a> | <a href="#">None</a> | <a href="#">Default</a>
+        </div>
+    </div>
+
+    <div class="find-replace-section">
+        <div class="section-title">Find and Replace</div>
+        <div id="find-replace-container">
+            <!-- Find/Replace pairs will be added here -->
+            <div class="find-replace-pair">
+                 <input type="text" class="find-input" placeholder="Find">
+                 <input type="text" class="replace-input" placeholder="Replace">
+                 <button class="remove-pair-btn" type="button">X</button>
+                 <label><input type="checkbox" class="fr-case-sensitive"> Case Sensitive</label>
+                 <label><input type="checkbox" class="fr-regex"> Regex</label>
+            </div>
+        </div>
+        <div class="add-button">
+            <button id="add-pair-btn" type="button">+</button>
+        </div>
+    </div>
+
+    <style>
+        /* Add specific styles for find/replace here to avoid cluttering style.css */
+        .find-replace-pair {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+        .find-replace-pair input[type="text"] {
+             flex-grow: 1;
+             background-color: #333;
+             color: #e0e0e0;
+             border: 1px solid #444;
+             border-radius: 3px;
+             padding: 4px 8px; /* Adjusted padding */
+             min-width: 100px; /* Ensure inputs don't get too small */
+        }
+        .find-replace-pair .remove-pair-btn {
+            background-color: #f44336; /* Red */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            font-size: 12px;
+            line-height: 20px; /* Center 'X' vertically */
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0; /* Prevent button from shrinking */
+        }
+         .find-replace-pair label {
+             display: flex;
+             align-items: center;
+             font-size: 12px;
+             white-space: nowrap; /* Prevent wrapping */
+             flex-shrink: 0;
+         }
+         .find-replace-pair input[type="checkbox"] {
+             margin-right: 3px;
+         }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
