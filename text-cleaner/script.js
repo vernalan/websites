@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Element Selectors ---
     const textArea = document.querySelector('textarea');
     const cleanBtn = document.querySelector('.clean-btn');
+    const copyBtn = document.querySelector('.copy-btn'); // Added copy button selector
     const undoBtn = document.querySelector('.undo-btn');
     const themeToggle = document.getElementById('theme-checkbox');
     const trimCheckbox = document.getElementById('trim');
@@ -74,6 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Select ALL relevant inputs for saving state
     const allOptionInputs = document.querySelectorAll('.settings-section input:not([type="text"]):not([type="number"]), .text-area-container input[type="checkbox"], .find-replace-pair input[type="checkbox"]'); // Checkboxes and Radios across sections
     const allValueInputs = document.querySelectorAll('#replace-spaces-count, #replace-tab-count, #remove-left-count, #remove-right-count'); // Number inputs
+    const selectAllLink = document.querySelector('.selector a:nth-of-type(1)');
+    const selectNoneLink = document.querySelector('.selector a:nth-of-type(2)');
+    const selectDefaultLink = document.querySelector('.selector a:nth-of-type(3)');
 
 
     const uppercaseRadio = document.getElementById('uppercase');
@@ -83,27 +87,72 @@ document.addEventListener('DOMContentLoaded', () => {
     const noChangeRadio = document.getElementById('no-change');
     const wrapLinesToggle = document.querySelector('.wrap-lines input[type="checkbox"]');
 
-    let previousText = ''; // For Undo functionality
+    // --- History Management ---
+    const MAX_HISTORY_SIZE = 10; // Store last 10 states
+    let undoStack = [];
+    // let previousText = ''; // No longer needed
 
     // --- Event Listeners ---
 
+    copyBtn.addEventListener('click', () => {
+        const textToCopy = textArea.value;
+        if (navigator.clipboard && textToCopy) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Success feedback: Temporarily change button text
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = 'Copied!';
+                copyBtn.disabled = true; // Briefly disable to prevent spamming
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                    copyBtn.disabled = false;
+                }, 1500); // Reset after 1.5 seconds
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                // Optional: Provide error feedback to the user
+                alert('Failed to copy text.');
+            });
+        } else if (!textToCopy) {
+             // Optional: Feedback if there's nothing to copy
+             // alert('Nothing to copy.');
+        } else {
+            // Fallback for older browsers or insecure contexts (though unlikely for localhost/https)
+            alert('Clipboard API not available. Please copy manually.');
+        }
+    });
+
     cleanBtn.addEventListener('click', () => {
-        previousText = textArea.value; // Store current text for undo
-        let currentText = textArea.value;
+        const textBeforeClean = textArea.value;
+        let currentText = textBeforeClean;
 
         // Apply selected transformations
         currentText = applyTransformations(currentText);
 
-        textArea.value = currentText;
+        // Only add to history if text actually changed
+        if (currentText !== textBeforeClean) {
+            // Add the state *before* cleaning to the undo stack
+            undoStack.push(textBeforeClean);
+            // Limit history size
+            if (undoStack.length > MAX_HISTORY_SIZE) {
+                undoStack.shift(); // Remove the oldest state
+            }
+            textArea.value = currentText;
+            undoBtn.disabled = false; // Enable undo button
+        } else {
+             // Optionally provide feedback if no changes were made
+             // console.log("No changes applied.");
+        }
     });
 
     undoBtn.addEventListener('click', () => {
-        if (previousText !== textArea.value) {
-            const currentText = textArea.value;
-            textArea.value = previousText;
-            previousText = currentText; // Allow redo by clicking undo again
+        if (undoStack.length > 0) {
+            const previousState = undoStack.pop();
+            textArea.value = previousState;
+            // Disable undo button if stack is now empty
+            undoBtn.disabled = undoStack.length === 0;
         } else {
+            // This case should ideally not be reached if button is disabled correctly
             alert('Nothing to undo.');
+            undoBtn.disabled = true;
         }
     });
 
@@ -141,9 +190,25 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', saveOptionsState); // Use 'input' for number fields
     });
 
+    selectAllLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        setCheckboxesState(true);
+    });
+
+    selectNoneLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        setCheckboxesState(false);
+    });
+
+    selectDefaultLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        setDefaultCheckboxesState();
+    });
+
 
     // --- Initialization ---
     loadState(); // Load saved text, options, theme, and find/replace pairs
+    undoBtn.disabled = undoStack.length === 0; // Disable undo initially
 
 
     // --- Theme Handling ---
@@ -455,6 +520,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Helper Functions ---
 
+    function getSettingCheckboxes() {
+        // Select checkboxes only within the main settings sections, excluding find/replace and theme/wrap
+        return document.querySelectorAll('.settings-section .options-container input[type="checkbox"]');
+    }
+
+    function setCheckboxesState(isChecked) {
+        const checkboxes = getSettingCheckboxes();
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = isChecked;
+        });
+        saveOptionsState(); // Save state after changing
+    }
+
+    function setDefaultCheckboxesState() {
+        const checkboxes = getSettingCheckboxes();
+        checkboxes.forEach(checkbox => {
+            // Set based on a default configuration (only 'remove-styles' checked)
+            checkbox.checked = (checkbox.id === 'remove-styles');
+        });
+        // Ensure radio buttons are set to 'no-change'
+        noChangeRadio.checked = true;
+        saveOptionsState(); // Save state after changing
+    }
+
+
     function toSentenceCase(str) {
         // Basic sentence case: capitalize first letter of each sentence.
         // More robust implementation would handle abbreviations, etc.
@@ -509,11 +599,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Add more as needed
         };
         // Use regex to replace whole words only
+        let resultText = text; // Use the input parameter
         Object.keys(shorthandMap).forEach(key => {
             const regex = new RegExp(`\\b${key}\\b`, 'gi');
-            transformedText = text.replace(regex, shorthandMap[key]);
+            resultText = resultText.replace(regex, shorthandMap[key]); // Modify the resultText
         });
-        return transformedText;
+        return resultText; // Return the modified text
     }
 
     function addFindReplacePair(data = null) { // Accept optional data for loading
