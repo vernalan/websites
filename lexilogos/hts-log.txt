@@ -1,0 +1,13 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 30 Apr 2025 11:45:47 at https://www.lexilogos.com/keyboard/sanskrit_devanagari.htm +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.lexilogos.com/keyboard/sanskrit_devanagari.htm -O1 "Z:\home\vernalan\Documents\website-downloads-httrack\lexilogos" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:48:51	Error: 	"Not Found" (404) at link https://www.lexilogos.com/keyboard/font/junicode.ttf (from https://www.lexilogos.com/keyboard/futhark.htm)
+11:48:52	Error: 	"Not Found" (404) at link https://www.lexilogos.com/keyboard/byeloukrainian.htm (from https://www.lexilogos.com/keyboard/ukrainian_latin.htm)
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 minutes 5 seconds : 606 links scanned, 603 files written (30082482 bytes overall) [27020440 bytes received at 146056 bytes/sec], 4349143 bytes transferred using HTTP compression in 257 files, ratio 24%, 86.5 requests per connection
+(2 errors, 0 warnings, 0 messages)

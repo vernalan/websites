@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.lexilogos.com/keyboard/turkmen_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:41 GMT -->
+<head>
+<meta charset="utf-8">
+<title>Turkmen Conversion: Cyrillic &lt;&gt; Latin Alphabet • Lexilogos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Online converter to convert a Turkmen text: Cyrillic-Latin alphabet">
+<meta name="Keywords" content="conversion,turkmen,alphabet,cyrillic,latin,romanization"> 
+<meta property="og:image" content="../images/babel_bruegel.jpg">
+<link rel="shortcut icon" href="https://www.lexilogos.com/favicon.ico">
+<style>
+.cadr { width:94%; color:blue; font-family:Arial; font-size:1em; padding:0.3em; }
+.asx {display:inline-block; padding:0 0.2em 1em 0.2em; text-align:center; color:#0000CC; font-size:1.4em; font-family:Arial Unicode MS, Arial; }
+.asx p{ margin: 0.15em 0 0.15em 0;} 
+</style>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../code/contk.js"></script>
+<script src="../code/clipboard.js"></script>
+<!-- GA -->
+</head>
+<body>
+<div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
+<div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
+<div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
+<span class="kb-t">Turkmen</span> &nbsp; <span class="kb-st">Cyrillic-Latin conversion</span></div>
+<div class="cd"><a href="https://www.lexilogos.com/english/communication.htm"><img src="../images/don_e.png" class="imgdone" title="Donate: Thank you!"></a><br>
+<a href="https://www.lexilogos.com/english/search.htm"><img src="../images/w_bouscateur.gif" class="imgbou" title="Search on Lexilogos &amp; on the web" alt="search"></a><br>
+<a href="https://www.lexilogos.com/clavier/turkmen_conversion.htm"><img src="../images/fra.gif" class="imgflag" alt="French" title="in French / en français"></a>
+</div>
+<div class="esp"></div>
+<div class="ce"><a class="frp" href="turkmen.html">Latin keyboard</a> &nbsp; <a class="frp" href="turkmen_cyrillic.html">Cyrillic keyboard</a> &nbsp; <a class="frp" href="https://www.lexilogos.com/english/turkmen_dictionary.htm">Turkmen dictionary</a></div>
+<div class="esp"></div>
+<div class="center">Type or paste a text: <br>
+<noscript>
+<span class="span-red">Warning! JavaScript is disabled, the functionality of Lexilogos is unavailable.</span><br>
+You must enable JavaScript in your web browser: see the <a class="ext" href="https://www.enable-javascript.com/" target="_blank">instructions</a>.<br><br>
+</noscript>
+<form name="transcription">
+<table class="tab-kbc">
+<tr>
+<td>in <a class="lien" href="https://www.lexilogos.com/clavier/turkmen_cyrillique.htm">Cyrillic</a> script: </td>
+<td>in <a href="https://www.lexilogos.com/clavier/turkmen.htm" class="lien">Latin</a> script:</td>
+</tr>
+<tr>
+<td> 
+<textarea spellcheck="false" id="bar1" name="text1" rows="20" onInput="cyrlat()" onKeyUp="cyrlat()" class="cadr"></textarea>
+<br>
+<br>
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar1" value="copy"> 
+<input type="button" onClick="reset();transcription.text1.focus()" value="clear" class="bf">
+</td>
+<td>
+<textarea spellcheck="false" id="bar2" name="text2" rows="20" onInput="latcyr()" onKeyUp="latcyr()" class="cadr"></textarea>
+<br>
+<br>
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar2" value="copy"> 
+<input type="button" onClick="reset();transcription.text2.focus()" value="clear" class="bf">
+</td>
+</tr>
+</table> 
+<script>
+var clipboard = new Clipboard('.bf');
+clipboard.on('success', function(e) {
+console.log(e); 
+});
+clipboard.on('error', function(e) {
+console.log(e);
+});
+</script>
+</form>
+</div>
+<div class="espb"></div>
+<div class="center">
+<p class="large">Latin &amp; Cyrillic Alphabets</p>
+<div class="asx">a<p>а</p></div>
+<div class="asx">b<p>б</p></div>
+<div class="asx">ç<p>ч</p></div>
+<div class="asx">d<p>д</p></div>
+<div class="asx">e<p>е</p></div>
+<div class="asx">ä<p>ә</p></div>
+<div class="asx">f<p>ф</p></div>
+<div class="asx">g<p>г</p></div>
+<div class="asx">h<p>х</p></div>
+<div class="asx">i<p>и</p></div>
+<div class="asx">j<p>җ</p></div>
+<div class="asx">ž<p>ж</p></div>
+<div class="asx">k<p>к</p></div>
+<div class="asx">l<p>л</p></div>
+<div class="asx">m<p>м</p></div>
+<div class="asx">n<p>н</p></div>
+<div class="asx">ň<p>ң</p></div>
+<div class="asx">o<p>о</p></div>
+<div class="asx">ö<p>ө</p></div>
+<div class="asx">p<p>п</p></div>
+<div class="asx">r<p>р</p></div>
+<div class="asx">s<p>с</p></div>
+<div class="asx">ş<p>ш</p></div>
+<div class="asx">t<p>т</p></div>
+<div class="asx">u<p>у</p></div>
+<div class="asx">ü<p>ү</p></div>
+<div class="asx">w<p>в</p></div>
+<div class="asx">y<p>ы</p></div>
+<div class="asx">ý<p>й</p></div>
+<div class="asx">z<p>з</p></div>
+<div class="esp"></div>
+<div class="asx">A<p>А</p></div>
+<div class="asx">B<p>Б</p></div>
+<div class="asx">Ç<p>Ч</p></div>
+<div class="asx">D<p>Д</p></div>
+<div class="asx">E<p>Е</p></div>
+<div class="asx">Ä<p>Ә</p></div>
+<div class="asx">F<p>Ф</p></div>
+<div class="asx">G<p>Г</p></div>
+<div class="asx">H<p>Х</p></div>
+<div class="asx">I<p>И</p></div>
+<div class="asx">J<p>Җ</p></div>
+<div class="asx">Ž<p>Ж</p></div>
+<div class="asx">K<p>К</p></div>
+<div class="asx">L<p>Л</p></div>
+<div class="asx">M<p>М</p></div>
+<div class="asx">N<p>Н</p></div>
+<div class="asx">Ň<p>Ң</p></div>
+<div class="asx">O<p>О</p></div>
+<div class="asx">Ö<p>Ө</p></div>
+<div class="asx">P<p>П</p></div>
+<div class="asx">R<p>Р</p></div>
+<div class="asx">S<p>С</p></div>
+<div class="asx">Ş<p>Ш</p></div>
+<div class="asx">T<p>Т</p></div>
+<div class="asx">U<p>У</p></div>
+<div class="asx">Ü<p>Ү</p></div>
+<div class="asx">W<p>В</p></div>
+<div class="asx">Y<p>Ы</p></div>
+<div class="asx">Ý<p>Й</p></div>
+<div class="asx">Z<p>З</p></div>
+</div> 
+<div class="espa"></div>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/clavier/turkmen.htm">Turkmen keyboard</a> (Latin alphabet) </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="turkmen_cyrillic.html">Turkmen Cyrillic keyboard</a> </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/english/turkmen_dictionary.htm">Turkmen language</a>: dictionary &amp; grammar </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="index.html">Multilingual keyboard</a>: index </p>
+
+<div class="espb"></div>
+<ul class="nav">
+<li><a href="https://www.lexilogos.com/english/contact.php" title="Share your feedback"><img src="../images/w_enveloppe.gif" class="img-0" alt="contact"></a>
+<a class="pie" href="https://www.lexilogos.com/english/contact.php">Contact</a></li>
+<li><a href="https://www.lexilogos.com/english/search.htm" title="Search on Lexilogos &amp; on the web"><img src="../images/w_bouscateur.gif" class="img-0" alt="search"></a> 
+<a class="pie" href="https://www.lexilogos.com/english/search.htm">Search</a></li>
+<li><a title="updates" class="new" href="https://www.lexilogos.com/english/new.htm">NEW</a>
+<a class="pie" href="https://www.lexilogos.com/english/new.htm">What's new?</a> </li>
+<li><a href="https://www.lexilogos.com/english/index.htm" title="Homepage"><img src="../images/w_accueil.gif" class="img-0" alt="homepage"></a>
+<a class="pie" href="https://www.lexilogos.com/english/index.htm">Homepage</a></li>
+<li><a href="https://www.lexilogos.com/english/lexilogos_introduction.htm" title="Introduction"><img src="../images/w_q.gif" class="img-0" alt="introduction"></a>
+<a class="pie" href="https://www.lexilogos.com/english/lexilogos_introduction.htm">Introduction</a></li>
+<li><a href="https://www.lexilogos.com/english/communication.htm" title="Support Lexilogos!"><img src="../images/w_cor.gif" class="img-0" alt="support"></a>
+<a class="pie" href="https://www.lexilogos.com/english/communication.htm">Donation</a></li>
+</ul>
+<div class="esp"></div>
+<div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
+<div class="espd"></div>
+</body>
+
+<!-- Mirrored from www.lexilogos.com/keyboard/turkmen_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:41 GMT -->
+</html>

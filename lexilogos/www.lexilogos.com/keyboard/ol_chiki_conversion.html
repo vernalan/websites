@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.lexilogos.com/keyboard/ol_chiki_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:47 GMT -->
+<head>
+<meta charset="utf-8">
+<title>Santali Conversion: Ol Chiki-Latin alphabet • Lexilogos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Online tool to convert a Santali text: Ol Chiki-Latin alphabet">
+<meta name="Keywords" content="conversion, ol chiki, santali">
+<meta property="og:image" content="../images/babel_bruegel.jpg">
+<link rel="shortcut icon" href="https://www.lexilogos.com/favicon.ico">
+<style>
+@font-face { font-family:Noto Sans Ol Chiki; src:url(font/NotoSansOlChiki-Regular.ttf); } 
+.cadra { width:94%; color:blue; font-family:Nirmala UI, Noto Sans Ol Chiki; font-size:1em; padding:0.3em; }
+.cadrb { width:94%; color:blue; font-family:Arial; font-size:1.1em; padding:0.3em; }
+.tabl tr { vertical-align:top; text-align:center;}
+.tabl td { padding-left:2em; }
+</style> 
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../code/conol.js"></script>
+<script src="../code/clipboard.js"></script>
+<!-- GA -->
+</head>
+<body>
+<div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
+<div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
+<div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
+<span class="kb-t">Santali</span> &nbsp; <span class="kb-st">Ol Chiki-Latin conversion</span></div>
+<div class="cd"><a href="https://www.lexilogos.com/english/communication.htm"><img src="../images/don_e.png" class="imgdone" title="Donate: Thank you!"></a><br>
+<a href="https://www.lexilogos.com/english/search.htm"><img src="../images/w_bouscateur.gif" class="imgbou" title="Search on Lexilogos &amp; on the web" alt="search"></a><br>
+<a href="https://www.lexilogos.com/clavier/ol_chiki_conversion.htm"><img src="../images/fra.gif" class="imgflag" alt="French" title="in French / en français"></a>
+</div>
+<div class="esp"></div>
+<div class="ce"><a class="frp" href="santali.html">Ol Chiki keyboard</a> &nbsp; <a class="frp" href="https://www.lexilogos.com/english/santali_dictionary.htm">Santali dictionary</a></div>
+<div class="esp"></div>
+<div class="center">Type or paste a text:<br>
+<noscript>
+<span class="span-red">Warning! JavaScript is disabled, the functionality of Lexilogos is unavailable.</span><br>
+You must enable JavaScript in your web browser: see the <a class="ext" href="https://www.enable-javascript.com/" target="_blank">instructions</a>.
+<br><br>
+</noscript>
+<form name="transcription">
+<table class="tab-kbc">
+<tr>
+<td>in <a class="lien" href="santali.html">Ol Chiki</a> script: </td>
+<td>in <a class="lien" href="santali_latin.html">Latin</a> script: </td>
+</tr>
+<tr> 
+<td> 
+<textarea spellcheck="false" id="bar1" name="text1" rows="20" onInput="ollat()" onKeyUp="ollat()" class="cadra"></textarea> <br> <br> 
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar1" value="copy"> 
+<input type="button" class="bf" onClick="reset();transcription.text1.focus()" value="effacer"> </td>
+<td> 
+<textarea spellcheck="false" id="bar2" name="text2" rows="20" onInput="latol()" onKeyUp="latol()" class="cadrb"></textarea> <br> <br> 
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar2" value="copy"> 
+<input type="button" class="bf" onClick="reset();transcription.text2.focus()" value="effacer"> </td>
+</tr>
+</table>
+<script>
+var clipboard = new Clipboard('.bf');
+clipboard.on('success', function(e) {
+console.log(e); 
+});
+clipboard.on('error', function(e) {
+console.log(e);
+});
+</script>
+</form>
+</div>
+
+<div class="espa"></div>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/english/santali_dictionary.htm">Santali dictionary</a> </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="santali.html">Santali keyboard</a> (Ol Chiki)</p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="santali_latin.html">Latin Santali keyboard</a> </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="index.html">multilingual keyboard</a>&#x202F;: index </p>
+
+<div class="espb"></div>
+<ul class="nav">
+<li><a href="https://www.lexilogos.com/english/contact.php" title="Share your feedback"><img src="../images/w_enveloppe.gif" class="img-0" alt="contact"></a>
+<a class="pie" href="https://www.lexilogos.com/english/contact.php">Contact</a></li>
+<li><a href="https://www.lexilogos.com/english/search.htm" title="Search on Lexilogos &amp; on the web"><img src="../images/w_bouscateur.gif" class="img-0" alt="search"></a> 
+<a class="pie" href="https://www.lexilogos.com/english/search.htm">Search</a></li>
+<li><a title="updates" class="new" href="https://www.lexilogos.com/english/new.htm">NEW</a>
+<a class="pie" href="https://www.lexilogos.com/english/new.htm">What's new?</a> </li>
+<li><a href="https://www.lexilogos.com/english/index.htm" title="Homepage"><img src="../images/w_accueil.gif" class="img-0" alt="homepage"></a>
+<a class="pie" href="https://www.lexilogos.com/english/index.htm">Homepage</a></li>
+<li><a href="https://www.lexilogos.com/english/lexilogos_introduction.htm" title="Introduction"><img src="../images/w_q.gif" class="img-0" alt="introduction"></a>
+<a class="pie" href="https://www.lexilogos.com/english/lexilogos_introduction.htm">Introduction</a></li>
+<li><a href="https://www.lexilogos.com/english/communication.htm" title="Support Lexilogos!"><img src="../images/w_cor.gif" class="img-0" alt="support"></a>
+<a class="pie" href="https://www.lexilogos.com/english/communication.htm">Donation</a></li>
+</ul>
+<div class="esp"></div>
+<div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
+<div class="espd"></div>
+</body>
+
+<!-- Mirrored from www.lexilogos.com/keyboard/ol_chiki_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:48 GMT -->
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.lexilogos.com/keyboard/korean_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:45 GMT -->
+<head>
+<meta charset="utf-8">
+<title>Korean Conversion: Hangeul &gt; Latin Alphabet • Lexilogos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Online converter to convert a Korean text (typed in Hangeul characters) to Latin alphabet (romanization of Korean)">
+<meta name="Keywords" content="conversion,alphabet,korean,hangeul,latin,romanization">
+<meta property="og:image" content="../images/babel_bruegel.jpg">
+<link rel="shortcut icon" href="https://www.lexilogos.com/favicon.ico">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<style>
+.cadr { width:94%; color:blue; font-family:Arial; font-size:1.2em; padding:0.3em; }
+.tabl tr { vertical-align:top;}
+.tabl td { padding-left:0.3em; padding-right:0.3em; }
+.tabl td:nth-child(2) { font-size:1.2em; color:#0000FF; font-family:Arial Unicode MS, Arial; padding-left:0.7em; padding-right:0.7em; }
+</style>
+<script src="../code/conkr.js"></script>
+<script src="../code/clipboard.js"></script>
+<!-- GA -->
+</head>
+<body>
+<div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
+<div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
+<div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
+<span class="kb-t">Korean</span> &nbsp; <span class="kb-st">Hangeul &gt; Latin conversion</span></div>
+<div class="cd"><a href="https://www.lexilogos.com/english/communication.htm"><img src="../images/don_e.png" class="imgdone" title="Donate: Thank you!"></a><br>
+<a href="https://www.lexilogos.com/english/search.htm"><img src="../images/w_bouscateur.gif" class="imgbou" title="Search on Lexilogos &amp; on the web" alt="search"></a><br>
+<a href="https://www.lexilogos.com/clavier/coreen_conversion.htm"><img src="../images/fra.gif" class="imgflag" alt="French" title="in French / en français"></a> 
+</div>
+<div class="esp"></div>
+<div class="ce"><a class="frp" href="korean.html">keyboard</a> &nbsp; <a class="frp" href="https://www.lexilogos.com/english/korean_alphabet.htm">alphabet</a> &nbsp; <a class="frp" href="https://www.lexilogos.com/english/korean_dictionary.htm">Korean dictionary</a></div>
+<div class="esp"></div>
+<div class="center">
+<noscript>
+<span class="span-red">Warning! JavaScript is disabled, the functionality of Lexilogos is unavailable.</span><br>
+You must enable JavaScript in your web browser: see the <a class="ext" href="https://www.enable-javascript.com/" target="_blank">instructions</a>.
+<br><br>
+</noscript>
+<form name="transcription">
+<table class="tab-kbc">
+<tr>
+<td>Type or paste a text<br>
+in Korean alphabet <a class="lien" href="korean.html">한글</a> </td>
+<td>Result<br>
+in Latin script: </td>
+</tr>
+<tr>
+<td> 
+<textarea autofocus spellcheck="false" id="bar1" name="text1" rows="16" onInput="corlat()" onKeyUp="corlat()" class="cadr"></textarea> <br> <br> 
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar1" value="copy"> 
+<input type="button" class="bf" onClick="reset();transcription.text1.focus()" value="clear"> </td>
+<td> 
+<textarea spellcheck="false" id="bar2" name="text2" rows="16" class="cadr"></textarea> <br> <br> 
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar2" value="copy"> 
+<input type="button" class="bf" onClick="reset();transcription.text2.focus()" value="clear"> </td>
+</tr>
+</table>
+<script>
+var clipboard = new Clipboard('.bf');
+clipboard.on('success', function(e) {
+console.log(e); 
+});
+clipboard.on('error', function(e) {
+console.log(e);
+});
+</script>
+</form>
+</div>
+<div class="espb"></div>
+<div class="pa"><b>Notes</b> 
+<ul>
+<li>The subscribed letters g, d, b, r become before a consonant or at the end of the word: k, t, p, l.</li>
+<li>The finals -ss,-s, -cc, -j are subscribed -t.</li>
+</ul>
+<br>
+<p>This converter doesn't admit special phonetic rules for these cases:</p>
+<table class="tabl">
+<tr> 
+<td colspan="4">assimilation of consonants:</td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>백마</td>
+<td> Baekma </td>
+<td> &gt; Baengma </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>신문로</td>
+<td> Sinmunro </td>
+<td> &gt; Sinmunno </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>종로</span></td>
+<td> Jongro </td>
+<td> &gt; Jongno</td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>왕십리</td>
+<td> Wangsipri </td>
+<td> &gt; Wangsimni </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>별내</span></td>
+<td> Byeolnae </td>
+<td> &gt; Byeollae </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>신라</td>
+<td> Sinra </td>
+<td> &gt; Silla</td>
+</tr>
+<tr> 
+<td colspan="4"> n, r</td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>학여울</span></td>
+<td> Hagyeoul </td>
+<td> &gt; Hangnyeoul </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>알약</td>
+<td> aryak </td>
+<td> &gt; allyak </td>
+</tr>
+<tr> 
+<td>palatizations</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>해돋이</td>
+<td> haedodi </td>
+<td> &gt; haedoji </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>같이</td>
+<td> gati </td>
+<td> &gt; gachi </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>맞히다</span></td>
+<td> majhida </td>
+<td> &gt; machida </td>
+</tr>
+<tr> 
+<td>g, b, d, j, h</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>좋고</td>
+<td> johgo </td>
+<td> &gt; joko </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>놓다</td>
+<td> nohda </td>
+<td> &gt; nota</td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>잡혀</td>
+<td> japhyeo </td>
+<td> &gt; japyeo </td>
+</tr>
+<tr> 
+<td>&nbsp;</td>
+<td>낳지</td>
+<td> nahji </td>
+<td> &gt; nachi </td>
+</tr>
+</table> 
+</div>
+<div class="espa"></div>
+<p class="pp"><span class="jb">•</span> <a href="https://www.korean.go.kr/front_eng/roman/roman_01.do" target="_blank">Principles of romanization</a> of Korean, by the National Institute of the Korean Language (<span class="xa">국립국어원</span>) </p>
+<div class="espb"></div>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="korean.html">Korean keyboard</a> (Hangeul) </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/english/korean_dictionary.htm">Korean language</a>: dictionary &amp; grammar </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/english/korean_alphabet.htm">Korean alphabet</a> </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="index.html">Multilingual keyboard</a>: index </p>
+
+<div class="espb"></div>
+<ul class="nav">
+<li><a href="https://www.lexilogos.com/english/contact.php" title="Share your feedback"><img src="../images/w_enveloppe.gif" class="img-0" alt="contact"></a>
+<a class="pie" href="https://www.lexilogos.com/english/contact.php">Contact</a></li>
+<li><a href="https://www.lexilogos.com/english/search.htm" title="Search on Lexilogos &amp; on the web"><img src="../images/w_bouscateur.gif" class="img-0" alt="search"></a> 
+<a class="pie" href="https://www.lexilogos.com/english/search.htm">Search</a></li>
+<li><a title="updates" class="new" href="https://www.lexilogos.com/english/new.htm">NEW</a>
+<a class="pie" href="https://www.lexilogos.com/english/new.htm">What's new?</a> </li>
+<li><a href="https://www.lexilogos.com/english/index.htm" title="Homepage"><img src="../images/w_accueil.gif" class="img-0" alt="homepage"></a>
+<a class="pie" href="https://www.lexilogos.com/english/index.htm">Homepage</a></li>
+<li><a href="https://www.lexilogos.com/english/lexilogos_introduction.htm" title="Introduction"><img src="../images/w_q.gif" class="img-0" alt="introduction"></a>
+<a class="pie" href="https://www.lexilogos.com/english/lexilogos_introduction.htm">Introduction</a></li>
+<li><a href="https://www.lexilogos.com/english/communication.htm" title="Support Lexilogos!"><img src="../images/w_cor.gif" class="img-0" alt="support"></a>
+<a class="pie" href="https://www.lexilogos.com/english/communication.htm">Donation</a></li>
+</ul>
+<div class="esp"></div>
+<div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
+<div class="espd"></div>
+</body>
+
+<!-- Mirrored from www.lexilogos.com/keyboard/korean_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:45 GMT -->
+</html>

@@ -1,0 +1,147 @@
+//  copyright lexilogos.com
+var car;
+
+function transcrire() {
+car = document.conversion.saisie.value;
+car = car.replace(/a/g, "𐡀");
+car = car.replace(/ʾ/g, "𐡀");
+car = car.replace(/b/g, "𐡁");
+car = car.replace(/g/g, "𐡂");
+car = car.replace(/d/g, "𐡃");
+car = car.replace(/h/g, "𐡄");
+car = car.replace(/[wvu]/g, "𐡅");
+car = car.replace(/z/g, "𐡆");
+car = car.replace(/[HḤḥ]/g, "𐡇");
+car = car.replace(/[TṬṭ]/g, "𐡈");
+car = car.replace(/[yi]/g, "𐡉");
+car = car.replace(/k/g, "𐡊");
+car = car.replace(/l/g, "𐡋");
+car = car.replace(/m/g, "𐡌");
+car = car.replace(/n/g, "𐡍");
+car = car.replace(/s/g, "𐡎");
+car = car.replace(/-/g, "𐡏");
+car = car.replace(/ʿ/g, "𐡏");
+car = car.replace(/[oêè]/g, "𐡏");
+car = car.replace(/p/g, "𐡐");
+car = car.replace(/[SṢṣ]/g, "𐡑");
+car = car.replace(/q/g, "𐡒");
+car = car.replace(/r/g, "𐡓"); 
+car = car.replace(/[cš]/g, "𐡔");
+car = car.replace(/t/g, "𐡕");
+//section sign car = car.replace(/"/g, "𐡗");
+
+car=car.replace(/ܐ/g, "𐡀");
+car=car.replace(/ܒ/g, "𐡁");
+car=car.replace(/ܓ/g, "𐡂");
+car=car.replace(/ܕ/g, "𐡃");
+car=car.replace(/ܗ/g, "𐡄");
+car=car.replace(/ܘ/g, "𐡅");
+car=car.replace(/ܙ/g, "𐡆");
+car=car.replace(/ܚ/g, "𐡇");
+car=car.replace(/ܛ/g, "𐡈");
+car=car.replace(/ܝ/g, "𐡉");
+car=car.replace(/ܟ/g, "𐡊");
+car=car.replace(/ܠ/g, "𐡋");
+car=car.replace(/ܡ/g, "𐡌");
+car=car.replace(/ܢ/g, "𐡍");
+car=car.replace(/ܣ/g, "𐡎");
+car=car.replace(/ܥ/g, "𐡏");
+car=car.replace(/ܦ/g, "𐡐");
+car=car.replace(/ܨ/g, "𐡑");
+car=car.replace(/ܩ/g, "𐡒");
+car=car.replace(/ܪ/g, "𐡓");
+car=car.replace(/ܫ/g, "𐡔");
+car=car.replace(/ܬ/g, "𐡕");
+
+car = car.replace(/𐤀/g, "ܐ");
+car = car.replace(/𐤁/g, "ܒ");
+car = car.replace(/𐤂/g, "ܓ");
+car = car.replace(/𐤃/g, "ܕ");
+car = car.replace(/𐤄/g, "ܗ");
+car = car.replace(/𐤅/g, "ܘ");
+car = car.replace(/𐤆/g, "ܙ");
+car = car.replace(/𐤇/g, "ܚ");
+car = car.replace(/𐤈/g, "ܛ");
+car = car.replace(/𐤉/g, "ܝ");
+car = car.replace(/𐤊/g, "ܟ");
+car = car.replace(/𐤋/g, "ܠ");
+car = car.replace(/𐤌/g, "ܡ");
+car = car.replace(/𐤍/g, "ܢ");
+car = car.replace(/𐤎/g, "ܣ");
+car = car.replace(/𐤏/g, "ܥ");
+car = car.replace(/𐤐/g, "ܦ");
+car = car.replace(/𐤑/g, "ܨ");
+car = car.replace(/𐤒/g, "ܩ");
+car = car.replace(/𐤓/g, "ܪ");
+car = car.replace(/𐤔/g, "ܫ");
+car = car.replace(/𐤕/g, "ܬ");
+
+car = car.replace(/א/g, "ܐ");
+car = car.replace(/ב/g, "ܒ");
+car = car.replace(/ג/g, "ܓ");
+car = car.replace(/ד/g, "ܕ");
+car = car.replace(/ה/g, "ܗ");
+car = car.replace(/ו/g, "ܘ");
+car = car.replace(/ז/g, "ܙ");
+car = car.replace(/ח/g, "ܚ");
+car = car.replace(/ט/g, "ܛ");
+car = car.replace(/י/g, "ܝ");
+car = car.replace(/כ/g, "ܟ");
+car = car.replace(/ך/g, "ܟ");
+car = car.replace(/ל/g, "ܠ");
+car = car.replace(/מ/g, "ܡ");
+car = car.replace(/ם/g, "ܡ");
+car = car.replace(/נ/g, "ܢ");
+car = car.replace(/ן/g, "ܢ");
+car = car.replace(/ס/g, "ܣ");
+car = car.replace(/ע/g, "ܥ");
+car = car.replace(/פ/g, "ܦ");
+car = car.replace(/ף/g, "ܦ");
+car = car.replace(/צ/g, "ܨ");
+car = car.replace(/ץ/g, "ܨ");
+car = car.replace(/ק/g, "ܩ");
+car = car.replace(/ר/g, "ܪ");
+car = car.replace(/ש/g, "ܫ");
+car = car.replace(/ת/g, "ܬ");
+
+car = car.replace(/ا/g, "ܐ");
+car = car.replace(/ب/g, "ܒ");
+car = car.replace(/ج/g, "ܓ");
+car = car.replace(/د/g, "ܕ");
+car = car.replace(/ذ/g, "ܕ");
+car = car.replace(/ه/g, "ܗ");
+car = car.replace(/و/g, "ܘ");
+car = car.replace(/ز/g, "ܙ");
+car = car.replace(/ح/g, "ܚ");
+car = car.replace(/ط/g, "ܛ");
+car = car.replace(/ي/g, "ܝ");
+car = car.replace(/ك/g, "ܟ");
+car = car.replace(/ل/g, "ܠ");
+car = car.replace(/م/g, "ܡ");
+car = car.replace(/ن/g, "ܢ");
+car = car.replace(/ع/g, "ܥ");
+car = car.replace(/ف/g, "ܦ");
+car = car.replace(/ص/g, "ܨ");
+car = car.replace(/ق/g, "ܩ");
+car = car.replace(/ر/g, "ܪ");
+car = car.replace(/س/g, "ܫ");
+car = car.replace(/ش/g, "ܫ");
+car = car.replace(/ت/g, "ܬ");
+car = car.replace(/ث/g, "ܬ"); 
+
+startPos = document.conversion.saisie.selectionStart;
+endPos = document.conversion.saisie.selectionEnd;
+
+beforeLen = document.conversion.saisie.value.length;
+afterLen = car.length;
+adjustment = afterLen - beforeLen;
+
+document.conversion.saisie.value = car;
+
+document.conversion.saisie.selectionStart = startPos + adjustment;
+document.conversion.saisie.selectionEnd = endPos + adjustment;
+
+var obj = document.conversion.saisie;
+obj.focus();
+obj.scrollTop = obj.scrollHeight;
+}

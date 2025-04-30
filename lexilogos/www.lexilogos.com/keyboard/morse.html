@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.lexilogos.com/keyboard/morse.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:37 GMT -->
+<head>
+<meta charset="utf-8">
+<title>Morse Code - Online Conversion • Lexilogos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Online conversion Morse Code and Latin alphabet">
+<meta name="Keywords" content="morse,code,conversion">
+<meta property="og:image" content="../images/babel_bruegel.jpg">
+<link rel="shortcut icon" href="https://www.lexilogos.com/favicon.ico">
+<style>
+.bt, .bt:hover, .bt:visited {text-decoration:none; cursor:pointer; width:20pt; font-size:1em; color:#CC0033; font-family:Arial; font-weight:bolder;} 
+.cadr { width:94%; color:#0000FF; font-family:Arial; padding:0.3em; }
+.tabl {margin:auto;}
+.tabl tr { vertical-align:top; }
+.tabl td { text-align:left; white-space: nowrap; }
+.mo {font-size:1.4em; color:#CC0033; }
+</style>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../code/conmor.js"></script>
+<script src="../code/clipboard.js"></script>
+<script src="../code/savemorse.js"></script>
+<!-- GA -->
+</head>
+<body>
+<div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
+<div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
+<div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
+<span class="kb-t">Morse conversion</span><br>
+<span class="kb-t">−− −−− ·−· ··· ·</span> </div>
+<div class="cd"><a href="https://www.lexilogos.com/english/communication.htm"><img src="../images/don_e.png" class="imgdone" title="Donate: Thank you!"></a><br>
+<a href="https://www.lexilogos.com/english/search.htm"><img src="../images/w_bouscateur.gif" class="imgbou" title="Search on Lexilogos &amp; on the web" alt="search"></a><br>
+<a href="https://www.lexilogos.com/clavier/morse.htm"><img src="../images/fra.gif" class="imgflag" alt="French" title="in French / en français"></a> 
+</div>
+<div class="esp"></div>
+<br>
+<br>
+<div class="center"> Type or paste a text:<br>
+<noscript>
+<span class="span-red">Warning! JavaScript is disabled, the functionality of Lexilogos is unavailable.</span><br>
+You must enable JavaScript in your web browser: see the <a class="ext" href="https://www.enable-javascript.com/" target="_blank">instructions</a>.<br><br>
+</noscript>
+<form name="transcription">
+<table class="tab-kbc">
+<tr> 
+<td>&nbsp;</td>
+<td> 
+<input type="button" class="bt" onclick="alfa(this.value);morlat()" value="−"> &nbsp; 
+<input type="button" class="bt" onclick="alfa(this.value);morlat()" value="·"> &nbsp; 
+<input type="button" class="bt" onclick="alfa(this.value);morlat()" value=" " title="space">
+</td>
+</tr>
+<tr>
+<td>in Latin alphabet:</td>
+<td>in Morse code:</td>
+</tr>
+<tr> 
+<td> 
+<textarea autofocus spellcheck="false" id="bar1" name="text1" rows="20" onInput="latmor()" onKeyup="latmor()" class="cadr"></textarea> 
+<br> <br> 
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar1" value="copy"> 
+<input type="button" class="bf" onClick="reset();transcription.texta.focus()" value="clear"> </td>
+<td> 
+<textarea spellcheck="false" id="bar2" name="text2" rows="20" onInput="cam();morlat();" onKeyup="cam();morlat();" class="cadr"></textarea> 
+<br> <br> 
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar2" value="copy"> 
+<input type="button" class="bf" onClick="save()" value="save"> 
+<input type="button" class="bf" onClick="reset();transcription.textb.focus()" value="clear"> </td>
+</tr>
+</table>
+<script>
+var clipboard = new Clipboard('.bf');
+clipboard.on('success', function(e) {
+console.log(e); 
+});
+clipboard.on('error', function(e) {
+console.log(e);
+});
+</script>
+</form>
+</div>
+<div class="espb"></div>
+<div class="pa"> <b>Instructions:</b>
+<p>If you use the key (at the top right of the page), type a space after every character to convert it. </p>
+<br>
+Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
+</div>
+<div class="espa"></div>
+
+<div class="center">
+<p class="large">Morse Code</p>
+<div class="boxdeva">
+<table class="tabl">
+<tr> 
+<td>A</td>
+<td class="mo">·&#8722;</td>
+</tr>
+<tr> 
+<td>B</td>
+<td class="mo">&#8722;···</td>
+</tr>
+<tr> 
+<td>C</td>
+<td class="mo">&#8722;·&#8722;·</td>
+</tr>
+<tr> 
+<td>D</td>
+<td class="mo">&#8722;··</td>
+</tr>
+<tr> 
+<td>E</td>
+<td class="mo">·</td>
+</tr>
+<tr> 
+<td>F</td>
+<td class="mo">··&#8722;·</td>
+</tr>
+<tr> 
+<td>G</td>
+<td class="mo">&#8722;&#8722;·</td>
+</tr>
+<tr> 
+<td>H</td>
+<td class="mo">····</td>
+</tr>
+<tr> 
+<td>I</td>
+<td class="mo">··</td>
+</tr>
+<tr> 
+<td>J</td>
+<td class="mo">·&#8722;&#8722;&#8722;</td>
+</tr>
+</table>
+</div>
+<div class="boxdeva">
+<table class="tabl">
+<tr> 
+<td>K</td>
+<td class="mo">&#8722;·&#8722;</td>
+</tr>
+<tr> 
+<td>L</td>
+<td class="mo">·&#8722;··</td>
+</tr>
+<tr> 
+<td>M</td>
+<td class="mo">&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>N</td>
+<td class="mo">&#8722;·</td>
+</tr>
+<tr> 
+<td>O</td>
+<td class="mo">&#8722;&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>P</td>
+<td class="mo">·&#8722;&#8722;·</td>
+</tr>
+<tr> 
+<td>Q</td>
+<td class="mo">&#8722;&#8722;·&#8722;</td>
+</tr>
+<tr> 
+<td>R</td>
+<td class="mo">·&#8722;·</td>
+</tr>
+<tr> 
+<td>S</td>
+<td class="mo">···</td>
+</tr>
+<tr> 
+<td>T</td>
+<td class="mo">&#8722;</td>
+</tr>
+</table>
+</div>
+<div class="boxdeva">
+<table class="tabl">
+<tr> 
+<td>U</td>
+<td class="mo">··&#8722;</td>
+</tr>
+<tr> 
+<td>V</td>
+<td class="mo">···&#8722;</td>
+</tr>
+<tr> 
+<td>W</td>
+<td class="mo">·&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>X</td>
+<td class="mo">&#8722;··&#8722;</td>
+</tr>
+<tr> 
+<td>Y</td>
+<td class="mo">&#8722;·&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>Z</td>
+<td class="mo">&#8722;&#8722;··</td>
+</tr>
+</table>
+</div>
+<div class="boxdeva">
+<table class="tabl">
+<tr> 
+<td>0</td>
+<td class="mo">&#8722;&#8722;&#8722;&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>1</td>
+<td class="mo">·&#8722;&#8722;&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>2</td>
+<td class="mo">··&#8722;&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>3</td>
+<td class="mo">···&#8722;&#8722;</td>
+</tr>
+<tr> 
+<td>4</td>
+<td class="mo"> ····&#8722;</td>
+</tr>
+<tr> 
+<td>5</td>
+<td class="mo">·····</td>
+</tr>
+<tr> 
+<td>6</td>
+<td class="mo">&#8722;····</td>
+</tr>
+<tr> 
+<td>7</td>
+<td class="mo">&#8722;&#8722;···</td>
+</tr>
+<tr> 
+<td>8</td>
+<td class="mo">&#8722;&#8722;&#8722;··</td>
+</tr>
+<tr> 
+<td>9</td>
+<td class="mo">&#8722;&#8722;&#8722;&#8722;·</td>
+</tr>
+</table> 
+</div>
+</div>
+<div class="espa"></div> 
+
+<p class="pp"><span class="jb">•</span> <a href="https://morsecode.world/international/translator.html" target="_blank">MorseCode.World</a>: conversion in Morse with the sound </p>
+<div class="espb"></div>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="index.html">Multilingual keyboard</a> </p>
+
+<div class="espb"></div>
+<ul class="nav">
+<li><a href="https://www.lexilogos.com/english/contact.php" title="Share your feedback"><img src="../images/w_enveloppe.gif" class="img-0" alt="contact"></a>
+<a class="pie" href="https://www.lexilogos.com/english/contact.php">Contact</a></li>
+<li><a href="https://www.lexilogos.com/english/search.htm" title="Search on Lexilogos &amp; on the web"><img src="../images/w_bouscateur.gif" class="img-0" alt="search"></a> 
+<a class="pie" href="https://www.lexilogos.com/english/search.htm">Search</a></li>
+<li><a title="updates" class="new" href="https://www.lexilogos.com/english/new.htm">NEW</a>
+<a class="pie" href="https://www.lexilogos.com/english/new.htm">What's new?</a> </li>
+<li><a href="https://www.lexilogos.com/english/index.htm" title="Homepage"><img src="../images/w_accueil.gif" class="img-0" alt="homepage"></a>
+<a class="pie" href="https://www.lexilogos.com/english/index.htm">Homepage</a></li>
+<li><a href="https://www.lexilogos.com/english/lexilogos_introduction.htm" title="Introduction"><img src="../images/w_q.gif" class="img-0" alt="introduction"></a>
+<a class="pie" href="https://www.lexilogos.com/english/lexilogos_introduction.htm">Introduction</a></li>
+<li><a href="https://www.lexilogos.com/english/communication.htm" title="Support Lexilogos!"><img src="../images/w_cor.gif" class="img-0" alt="support"></a>
+<a class="pie" href="https://www.lexilogos.com/english/communication.htm">Donation</a></li>
+</ul>
+<div class="esp"></div>
+<div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
+<div class="espd"></div>
+</body>
+
+<!-- Mirrored from www.lexilogos.com/keyboard/morse.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:38 GMT -->
+</html>
