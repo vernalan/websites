@@ -7,11 +7,11 @@ car = document.conversion.saisie.value;
 //? car = car.replace(/্-/g, "\u200d্"); 
 
 car = car.replace(/a/g, "অ");
-car = car.replace(/[Aāâ]/g, "আ");
+car = car.replace(/[Aā]/g, "আ");
 car = car.replace(/i/g, "ই");
-car = car.replace(/[Iīî]/g, "ঈ");
+car = car.replace(/[Iī]/g, "ঈ");
 car = car.replace(/u/g, "উ");
-car = car.replace(/[Uūû]/g, "ঊ");
+car = car.replace(/[Uū]/g, "ঊ");
 car = car.replace(/অঅ/g, "আ");
 car = car.replace(/ইই/g, "ঈ");
 car = car.replace(/উউ/g, "ঊ");

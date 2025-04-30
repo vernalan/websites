@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/french.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:11 GMT -->
 <head>
 <meta charset="utf-8">
-<title>French Keyboard Online • Lexilogos</title>
+<title>French Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online French keyboard to type a text with the special characters (letters with a diacritic)">
 <meta name="Keywords" content="french, keyboard, online, alphabet, punctuation">
@@ -14,11 +12,11 @@
 .bt, .bt:visited{ text-decoration:none; cursor:pointer; padding:0.2em 0em; width:1.6em; font-size:1.2em; font-family:Noto Sans, Arial; font-style:normal; font-weight:normal; color:#CC0033; background-color: #E9E9E9; border:1px solid #666; border-radius: 4px; }
 .bt:hover { color:#0000FF; background-color:#FFFF7D; }
 .cadr { width:80%; color:#0000FF; font-family:Noto Sans, Arial; font-size:1em; padding:0.3em; }
-.asx {display:inline-block; padding:0 0.5em 1em 0.5em; text-align:center; color:#CC0033; font-size:1em; font-family:Arial; }
-.asx p{ margin: 0.15em 0 0.15em 0; color:#330066; } 
+.tabl tr { vertical-align:top; text-align:center; }
+.tabl td { padding-left:0.5em; padding-right:0.5em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carfra.js"></script>
 <script>
 var ca;
@@ -32,7 +30,7 @@ document.bp.submit();
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a> </div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a> </div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -197,7 +195,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -211,44 +209,44 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
 <div class="espc"></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="À"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="à"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Â"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="â"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Æ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="æ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ç"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ç"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="É"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="é"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="È"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="è"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ê"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ê"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ë"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ë"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Î"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="î"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ï"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ï"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ô"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ô"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Œ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="œ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ù"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ù"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Û"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="û"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ü"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ü"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ÿ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ÿ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="À"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="à"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Â"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="â"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Æ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="æ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ç"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ç"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="É"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="é"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="È"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="è"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ê"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ê"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ë"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ë"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Î"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="î"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ï"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ï"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ô"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ô"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Œ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="œ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ù"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ù"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Û"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="û"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ü"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ü"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ÿ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ÿ"></p></div>
 
 
 <div class="esp"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="«"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="“"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="”"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="—"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="»"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="–"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="’"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="…"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#x2027;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#x202F;" title="narrow no-break space"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="@"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="«"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="“"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="”"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="—"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="»"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="–"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="’"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="…"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#x2027;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#x202F;" title="narrow no-break space"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="@"></div>
 
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="¼"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="½"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="¾"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="€"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="¼"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="½"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="¾"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="€"></div>
 
 <div class="espd"></div>
 <a class="lb" href="#" onclick='href="http://rali.iro.umontreal.ca/Reacc/Reacc.fr.cgi/1?mySubmit=1&input_text=" + conversion.saisie.value.replace(/\n/gi,"%0A")' target="_blank">accent marks</a> &nbsp; 
@@ -278,38 +276,91 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]<br>
 <b>Note</b>:
 <p>To type the French accent marks, you can use [alt] and one of these number:</p>
 <br>
-<div class="asx">Œ<p>0140</p></div>
-<div class="asx">À<p>183</p></div>
-<div class="asx">Â<p>182</p></div>
-<div class="asx">Ç<p>128</p></div>
-<div class="asx">È<p>212</p></div>
-<div class="asx">É<p>144</p></div>
-<div class="asx">Ê<p>210</p></div>
-<div class="asx">Ë<p>211</p></div>
-<div class="asx">Î<p>215</p></div>
-<div class="asx">Ï<p>216</p></div>
-<div class="asx">Ô<p>226</p></div>
-<div class="asx">Ù<p>235</p></div>
-<div class="asx">Û<p>234</p></div>
-<div class="asx">Ü<p>154</p></div>
-<div class="esp"></div>
-<div class="asx">œ<p>0156</p></div>
-<div class="asx">à<p>133</p></div>
-<div class="asx">â<p>131</p></div>
-<div class="asx">ç<p>135</p></div>
-<div class="asx">è<p>138</p></div>
-<div class="asx">é<p>130</p></div>
-<div class="asx">ê<p>136</p></div>
-<div class="asx">ë<p>137</p></div>
-<div class="asx">î<p>140</p></div>
-<div class="asx">ï<p>139</p></div>
-<div class="asx">ô<p>147</p></div>
-<div class="asx">ù<p>151</p></div>
-<div class="asx">û<p>150</p></div>
-<div class="asx">ü<p>129</p></div>
-<div class="esp"></div>
-<div class="asx">«<p>174</p></div>
-<div class="asx">»<p>175</p></div>
+<table class="tabl">
+<tr class="cr"> 
+<td>Œ</td>
+<td>À</td>
+<td>Â</td>
+<td>Ç</td>
+<td>È</td>
+<td>É</td>
+<td>Ê</td>
+<td>Ë</td>
+<td>Î</td>
+<td>Ï</td>
+<td>Ô</td>
+<td>Ù</td>
+<td>Û</td>
+<td>Ü</td>
+</tr>
+
+<tr> 
+<td>0140</td>
+<td>183</td>
+<td>182</td>
+<td>128</td>
+<td>212</td>
+<td>144</td>
+<td>210</td>
+<td>211</td>
+<td>215</td>
+<td>216</td>
+<td>226</td>
+<td>235</td>
+<td>234</td>
+<td>154</td>
+</tr>
+<tr> 
+<td colspan="14">&nbsp;</td>
+</tr>
+<tr class="cr"> 
+<td>œ</td>
+<td>à</td>
+<td>â</td>
+<td>ç</td>
+<td>è</td>
+<td>é</td>
+<td>ê</td>
+<td>ë</td>
+<td>î</td>
+<td>ï</td>
+<td>ô</td>
+<td>ù</td>
+<td>û</td>
+<td>ü</td>
+</tr>
+
+<tr> 
+<td>0156</td>
+<td>133</td>
+<td>131</td>
+<td>135</td>
+<td>138</td>
+<td>130</td>
+<td>136</td>
+<td>137</td>
+<td>140</td>
+<td>139</td>
+<td>147</td>
+<td>151</td>
+<td>150</td>
+<td>129</td>
+</tr>
+<tr> 
+<td colspan="14">&nbsp;</td>
+</tr>
+<tr> 
+<td class="cr">«</td>
+<td class="cr">»</td>
+<td colspan="12">&nbsp;</td>
+</tr>
+
+<tr> 
+<td>174</td>
+<td>175</td>
+<td colspan="12">&nbsp;</td>
+</tr>
+</table>
 </div>
 <div class="espa"></div>
 <p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/english/french_dictionary.htm">French language</a>: dictionary, pronunciation, grammar </p>
@@ -335,6 +386,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]<br>
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/french.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:11 GMT -->
 </html>

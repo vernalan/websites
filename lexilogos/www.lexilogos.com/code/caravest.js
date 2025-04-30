@@ -20,7 +20,7 @@ car = car.replace(/[əE]/g, "𐬆");
 car = car.replace(/ə̄/g, "𐬇");
 car = car.replace(/e/g, "𐬈");
 car = car.replace(/ē/g, "𐬉");
-car = car.replace(/𐬈=/g, "𐬉");
+car = car.replace(/𐬈=/g, "𐬈");
 car = car.replace(/𐬉=/g, "𐬆");
 car = car.replace(/𐬆=/g, "𐬇");
 car = car.replace(/𐬇=/g, "𐬈");

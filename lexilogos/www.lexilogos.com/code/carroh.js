@@ -98,8 +98,8 @@ car = car.replace(/ࣥࣥ/g, "ࣨ"); //OO
 car = car.replace(/ࣥࣤ/g, "ࣨ"); //Oo
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 car = car.replace(/0=/g, "٠");
 car = car.replace(/1=/g, "١");

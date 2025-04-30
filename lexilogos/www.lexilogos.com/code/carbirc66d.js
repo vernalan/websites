@@ -9,14 +9,14 @@ car = car.replace(/်္/g, "္");
 car = car.replace(/a/g, "အ");
 car = car.replace(/[Aā]/g, "အ"); //same
 car = car.replace(/i/g, "ဣ");
-car = car.replace(/[Iīî]/g, "ဤ");
+car = car.replace(/[Iī]/g, "ဤ");
 car = car.replace(/u/g, "ဥ");
-car = car.replace(/[Uūû]/g, "ဦ");
+car = car.replace(/[Uū]/g, "ဦ");
 car = car.replace(/ဣဣ/g, "ဤ");
 car = car.replace(/ဥဥ/g, "ဦ");
 car = car.replace(/e/g, "ဧ");
 car = car.replace(/o/g, "ဩ");
-car = car.replace(/[Oōô]/g, "ဪ");
+car = car.replace(/[Oō]/g, "ဪ");
 car = car.replace(/ဩဩ/g, "ဪ");
 
 // doubles voyelles

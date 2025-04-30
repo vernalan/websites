@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/ottoman_turkish.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:56 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Ottoman Turkish Keyboard Online • Arabic Alphabet • Lexilogos</title>
+<title>Ottoman Turkish Keyboard Online • Arabic Alphabet • LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Ottoman Turkish keyboard to type a text with the Arabic alphabet">
 <meta name="Keywords" content="turkish,ottoman,arabic,keyboard,alphabet">
@@ -16,13 +14,13 @@
 .cadr {width:80%; font-size:1.8em; color:#0000FF; font-family:Simplified Arabic, Times New Roman; direction:rtl; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carot840f.js?ver=10"></script> 
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -189,7 +187,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
  
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows=4 class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows=4 class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -203,78 +201,78 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
 <div class="rtl">
-<div class="as">a<p><input type="button" value="ا" onclick="alfa(this.value)" class="btb"></p></div>
-<div class="as">ā<p><input type="button" value="آ" onclick="alfa(this.value)" class="btb"></p></div>
-<div class="as">b<p><input type="button" value="ب" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">p<p><input type="button" value="پ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">t<p><input type="button" value="ت" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">'t<p><input type="button" value="ث" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">c<p><input type="button" value="ج" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">ç<p><input type="button" value="چ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">H<p><input type="button" value="ح" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">'H<p><input type="button" value="خ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">d<p><input type="button" value="د" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">'d<p><input type="button" value="ذ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">r<p><input type="button" value="ر" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">z<p><input type="button" value="ز" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">j<p><input type="button" value="ژ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">s<p><input type="button" value="س" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">'s<p><input type="button" value="ش" onclick="alfa(this.value)" class="bt"></p></div>
+<div class="as">a<p><input type="button" value="ا" onclick="alpha(this.value)" class="btb"></p></div>
+<div class="as">ā<p><input type="button" value="آ" onclick="alpha(this.value)" class="btb"></p></div>
+<div class="as">b<p><input type="button" value="ب" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">p<p><input type="button" value="پ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">t<p><input type="button" value="ت" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">'t<p><input type="button" value="ث" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">c<p><input type="button" value="ج" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">ç<p><input type="button" value="چ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">H<p><input type="button" value="ح" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">'H<p><input type="button" value="خ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">d<p><input type="button" value="د" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">'d<p><input type="button" value="ذ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">r<p><input type="button" value="ر" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">z<p><input type="button" value="ز" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">j<p><input type="button" value="ژ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">s<p><input type="button" value="س" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">'s<p><input type="button" value="ش" onclick="alpha(this.value)" class="bt"></p></div>
 <div class="esp mobnul"></div>
-<div class="as">S<p><input type="button" value="ص" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">D<p><input type="button" value="ض" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">T<p><input type="button" value="ط" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">Z<p><input type="button" value="ظ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">G<p><input type="button" value="ع" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">'G<p><input type="button" value="غ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">f<p><input type="button" value="ف" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">q<p><input type="button" value="ق" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">k<p><input type="button" value="ك" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">g<p><input type="button" value="گ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">ñ<p><input type="button" value="ڭ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">l<p><input type="button" value="ل" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">m<p><input type="button" value="م" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">n<p><input type="button" value="ن" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">h<p><input type="button" value="ه" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">v<p><input type="button" value="و" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">y<p><input type="button" value="&#x06CC;" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">-<p><input type="button" value="ء" onclick="alfa(this.value)" class="bt"></p></div>
+<div class="as">S<p><input type="button" value="ص" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">D<p><input type="button" value="ض" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">T<p><input type="button" value="ط" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">Z<p><input type="button" value="ظ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">G<p><input type="button" value="ع" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">'G<p><input type="button" value="غ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">f<p><input type="button" value="ف" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">q<p><input type="button" value="ق" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">k<p><input type="button" value="ك" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">g<p><input type="button" value="گ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">ñ<p><input type="button" value="ڭ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">l<p><input type="button" value="ل" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">m<p><input type="button" value="م" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">n<p><input type="button" value="ن" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">h<p><input type="button" value="ه" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">v<p><input type="button" value="و" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">y<p><input type="button" value="&#x06CC;" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">-<p><input type="button" value="ء" onclick="alpha(this.value)" class="bt"></p></div>
 </div>
 <div class="esp"></div>
 
-<div class="as"><input type="button" value="ئ" onclick="alfa(this.value)" class="bt"></div>
-<div class="as"><input type="button" value="ؤ" onclick="alfa(this.value)" class="bt"></div>
-<!-- div class="as"><input type="button" value="ة" onclick="alfa(this.value)" class="bt"></div -->
-<div class="as"><input type="button" value="&#x0625;" onclick="alfa(this.value)" class="btb"></div>
-<div class="as"><input type="button" value="&#x0623;" onclick="alfa(this.value)" class="btb"></div>
-<div class="as"><input type="button" value="&#x0622;" onclick="alfa(this.value)" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x064E;" onclick="alfa('&#x064E;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x064B;" onclick="alfa('&#x064B;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x064F;" onclick="alfa('&#x064F;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x064C;" onclick="alfa('&#x064C;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x0651;" onclick="alfa('&#x0651;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x0652;" onclick="alfa('&#x0652;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x0650;" onclick="alfa('&#x0650;')" class="btb"></div>
-<div class="as"><input type="button" value="&#x25CC;&#x064D;" onclick="alfa('&#x064D;')" class="btb"></div>
+<div class="as"><input type="button" value="ئ" onclick="alpha(this.value)" class="bt"></div>
+<div class="as"><input type="button" value="ؤ" onclick="alpha(this.value)" class="bt"></div>
+<!-- div class="as"><input type="button" value="ة" onclick="alpha(this.value)" class="bt"></div -->
+<div class="as"><input type="button" value="&#x0625;" onclick="alpha(this.value)" class="btb"></div>
+<div class="as"><input type="button" value="&#x0623;" onclick="alpha(this.value)" class="btb"></div>
+<div class="as"><input type="button" value="&#x0622;" onclick="alpha(this.value)" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x064E;" onclick="alpha('&#x064E;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x064B;" onclick="alpha('&#x064B;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x064F;" onclick="alpha('&#x064F;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x064C;" onclick="alpha('&#x064C;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x0651;" onclick="alpha('&#x0651;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x0652;" onclick="alpha('&#x0652;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x0650;" onclick="alpha('&#x0650;')" class="btb"></div>
+<div class="as"><input type="button" value="&#x25CC;&#x064D;" onclick="alpha('&#x064D;')" class="btb"></div>
 <div class="esp"></div>
-<div class="as"><input type="button" value="؟" onclick="alfa(this.value)" class="bt"></div>
-<div class="as"><input type="button" value="؛" onclick="alfa(this.value)" class="bt"></div>
-<div class="as"><input type="button" value="،" onclick="alfa(this.value)" class="bt"></div>
-<div class="as"><input type="button" value="ـ" onclick="alfa(this.value)" class="bt"></div>
+<div class="as"><input type="button" value="؟" onclick="alpha(this.value)" class="bt"></div>
+<div class="as"><input type="button" value="؛" onclick="alpha(this.value)" class="bt"></div>
+<div class="as"><input type="button" value="،" onclick="alpha(this.value)" class="bt"></div>
+<div class="as"><input type="button" value="ـ" onclick="alpha(this.value)" class="bt"></div>
 <div class="esp"></div>
-<div class="as">0<p><input type="button" class="bt" onclick="alfa(this.value)" value="٠"></p></div>
-<div class="as">1<p><input type="button" class="bt" onclick="alfa(this.value)" value="١"></p></div>
-<div class="as">2<p><input type="button" class="bt" onclick="alfa(this.value)" value="٢"></p></div>
-<div class="as">3<p><input type="button" class="bt" onclick="alfa(this.value)" value="٣"></p></div>
-<div class="as">4<p><input type="button" class="bt" onclick="alfa(this.value)" value="٤"></p></div>
-<div class="as">5<p><input type="button" class="bt" onclick="alfa(this.value)" value="٥"></p></div>
-<div class="as">6<p><input type="button" class="bt" onclick="alfa(this.value)" value="٦"></p></div>
-<div class="as">7<p><input type="button" class="bt" onclick="alfa(this.value)" value="٧"></p></div>
-<div class="as">8<p><input type="button" class="bt" onclick="alfa(this.value)" value="٨"></p></div>
-<div class="as">9<p><input type="button" class="bt" onclick="alfa(this.value)" value="٩"></p></div>
+<div class="as">0<p><input type="button" class="bt" onclick="alpha(this.value)" value="٠"></p></div>
+<div class="as">1<p><input type="button" class="bt" onclick="alpha(this.value)" value="١"></p></div>
+<div class="as">2<p><input type="button" class="bt" onclick="alpha(this.value)" value="٢"></p></div>
+<div class="as">3<p><input type="button" class="bt" onclick="alpha(this.value)" value="٣"></p></div>
+<div class="as">4<p><input type="button" class="bt" onclick="alpha(this.value)" value="٤"></p></div>
+<div class="as">5<p><input type="button" class="bt" onclick="alpha(this.value)" value="٥"></p></div>
+<div class="as">6<p><input type="button" class="bt" onclick="alpha(this.value)" value="٦"></p></div>
+<div class="as">7<p><input type="button" class="bt" onclick="alpha(this.value)" value="٧"></p></div>
+<div class="as">8<p><input type="button" class="bt" onclick="alpha(this.value)" value="٨"></p></div>
+<div class="as">9<p><input type="button" class="bt" onclick="alpha(this.value)" value="٩"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -313,6 +311,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/ottoman_turkish.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:56 GMT -->
 </html>

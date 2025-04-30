@@ -102,8 +102,8 @@ car = car.replace(/я/g, "يا");
 car = car.replace(/[ъь]/g, "ء");
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

@@ -34,8 +34,8 @@ car = car.replace(/č=/g, "č̣");
 car = car.replace(/č̣=/g, "c");
 
 
-// car = car.replace(/</g, "ˁ");
-// car = car.replace(/>/g, "ȝ");
+// car = car.replace(/\</g, "ˁ");
+// car = car.replace(/\>/g, "ȝ");
 
 car = car.replace(/a/g, "ꜣ");
 car = car.replace(/ꜣ=/g, "ꜥ");

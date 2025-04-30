@@ -121,8 +121,8 @@ car = car.replace (/ޜއ/g, "ޜ");
 
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

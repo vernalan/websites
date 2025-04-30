@@ -162,7 +162,7 @@ car = car.replace(/\u200b\ཿ/g, "ཿ");
 
 
 //separation
-car = car.replace(/,/g, "\'");
+car = car.replace(/\,/g, "\'");
 car = car.replace(/\u200b\'/g, "་");
 car = car.replace(/\'/g, "་");
 car = car.replace(/\u200b\ /g, "");

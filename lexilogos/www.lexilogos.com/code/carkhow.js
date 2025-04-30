@@ -98,8 +98,8 @@ car = car.replace(/ڵ'/g, "ل");
 
 car = car.replace(/ی'/g, "ي");
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 car = car.replace(/&&/g, "ّ");
 car = car.replace(/&ا/g, "َ");

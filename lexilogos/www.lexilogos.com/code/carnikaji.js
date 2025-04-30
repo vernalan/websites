@@ -323,7 +323,7 @@ car = car.replace(/レ=/g, "ㇾ");
 car = car.replace(/ロ=/g, "ㇿ");
 
 car = car.replace(/\./g, "。");
-car = car.replace(/,/g, "、");
+car = car.replace(/\,/g, "、");
 car = car.replace(/\!/g, "！");
 car = car.replace(/\?/g, "？");
 car = car.replace(/\:/g, "：");
@@ -331,8 +331,8 @@ car = car.replace(/\(/g, "（");
 car = car.replace(/\)/g, "）");
 car = car.replace(/\[/g, "［");
 car = car.replace(/\]/g, "］");
-car = car.replace(/«/g, "「");
-car = car.replace(/»/g, "」");
+car = car.replace(/\«/g, "「");
+car = car.replace(/\»/g, "」");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

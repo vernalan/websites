@@ -12,8 +12,8 @@ car = car.replace(/[UūŪ]/g, "ᬊ");
 car = car.replace(/ᬅᬅ/g, "ᬆ");
 car = car.replace(/ᬇᬇ/g, "ᬈ");
 car = car.replace(/ᬉᬉ/g, "ᬊ");
-car = car.replace(/[Eēê]/g, "ᬏ");
-car = car.replace(/[Oōô]/g, "ᬑ");
+car = car.replace(/[eē]/g, "ᬏ");
+car = car.replace(/[oō]/g, "ᬑ");
 car = car.replace(/ᬅᬇ/g, "ᬐ");
 car = car.replace(/ᬅᬉ/g, "ᬒ");
 

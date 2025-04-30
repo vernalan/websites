@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/arabian_south.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:46:57 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Old South Arabian Keyboard Online • Lexilogos</title>
+<title>Old South Arabian Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Old South Arabian keyboard to type a text with the Arabian script (Musnad)">
 <meta name="Keywords" content="arabian, script">
@@ -18,12 +16,12 @@
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <script src="../code/carars.js"></script>
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -187,7 +185,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -201,44 +199,44 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame"> 
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame"> 
 <div class="espc"></div>
-<div class="as">h<p class="arab">ه</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68192;"></p></div>
-<div class="as">l<p class="arab">ل</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68193;"></p></div>
-<div class="as">Ḥ<p class="arab">ح</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68194;"></p></div>
-<div class="as">m<p class="arab">م</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68195;"></p></div>
-<div class="as">q<p class="arab">ق</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68196;"></p></div>
-<div class="as">w<p class="arab">و</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68197;"></p></div>
-<div class="as">s² ś<p class="arab">ش</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68198;"></p></div>
-<div class="as">r<p class="arab">ر</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68199;"></p></div>
-<div class="as">b<p class="arab">ب</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68200;"></p></div>
-<div class="as">t<p class="arab">ت</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68201;"></p></div>
-<div class="as">s¹ š<p class="arab">س</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68202;"></p></div>
-<div class="as">k<p class="arab">ك</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68203;"></p></div>
-<div class="as">n<p class="arab">ن</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68204;"></p></div>
-<div class="as">ḫ<p class="arab">خ</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68205;"></p></div>
-<div class="as">Ṣ<p class="arab">ص</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68206;"></p></div>
-<div class="as">s³ s<p class="arab">س</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68207;"></p></div>
-<div class="as">f<p class="arab">ف</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68208;"></p></div>
+<div class="as">h<p class="arab">ه</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68192;"></p></div>
+<div class="as">l<p class="arab">ل</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68193;"></p></div>
+<div class="as">Ḥ<p class="arab">ح</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68194;"></p></div>
+<div class="as">m<p class="arab">م</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68195;"></p></div>
+<div class="as">q<p class="arab">ق</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68196;"></p></div>
+<div class="as">w<p class="arab">و</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68197;"></p></div>
+<div class="as">s² ś<p class="arab">ش</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68198;"></p></div>
+<div class="as">r<p class="arab">ر</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68199;"></p></div>
+<div class="as">b<p class="arab">ب</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68200;"></p></div>
+<div class="as">t<p class="arab">ت</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68201;"></p></div>
+<div class="as">s¹ š<p class="arab">س</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68202;"></p></div>
+<div class="as">k<p class="arab">ك</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68203;"></p></div>
+<div class="as">n<p class="arab">ن</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68204;"></p></div>
+<div class="as">ḫ<p class="arab">خ</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68205;"></p></div>
+<div class="as">Ṣ<p class="arab">ص</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68206;"></p></div>
+<div class="as">s³ s<p class="arab">س</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68207;"></p></div>
+<div class="as">f<p class="arab">ف</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68208;"></p></div>
 <div class="esp mobnul"></div>
-<div class="as">a<p class="arab">ا</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68209;"></p></div>
-<div class="as">A<p class="arab">ع</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68210;"></p></div>
-<div class="as">Ṡ<p class="arab">ض</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68211;"></p></div>
-<div class="as">g<p class="arab">ج</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68212;"></p></div>
-<div class="as">d<p class="arab">د</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68213;"></p></div>
-<div class="as">Ġ<p class="arab">غ</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68214;"></p></div>
-<div class="as">Ṭ<p class="arab">ط</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68215;"></p></div>
-<div class="as">z<p class="arab">ز</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68216;"></p></div>
-<div class="as">ḏ<p class="arab">ذ</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68217;"></p></div>
-<div class="as">y<p class="arab">ي</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68218;"></p></div>
-<div class="as">ṯ<p class="arab">ث</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68219;"></p></div>
-<div class="as">ṱ <p class="arab">ظ</p><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68220;"></p></div>
+<div class="as">a<p class="arab">ا</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68209;"></p></div>
+<div class="as">A<p class="arab">ع</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68210;"></p></div>
+<div class="as">Ṡ<p class="arab">ض</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68211;"></p></div>
+<div class="as">g<p class="arab">ج</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68212;"></p></div>
+<div class="as">d<p class="arab">د</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68213;"></p></div>
+<div class="as">Ġ<p class="arab">غ</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68214;"></p></div>
+<div class="as">Ṭ<p class="arab">ط</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68215;"></p></div>
+<div class="as">z<p class="arab">ز</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68216;"></p></div>
+<div class="as">ḏ<p class="arab">ذ</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68217;"></p></div>
+<div class="as">y<p class="arab">ي</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68218;"></p></div>
+<div class="as">ṯ<p class="arab">ث</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68219;"></p></div>
+<div class="as">ṱ <p class="arab">ظ</p><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68220;"></p></div>
 <div class="esp"></div>
-<div class="as">1<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68221;"></p></div>
-<div class="as">5<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68205;"></p></div>
-<div class="as">10<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68210;"></p></div>
-<div class="as">50<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68222;"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68223;" title="numeric indicator"></p></div>
+<div class="as">1<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68221;"></p></div>
+<div class="as">5<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68205;"></p></div>
+<div class="as">10<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68210;"></p></div>
+<div class="as">50<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68222;"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68223;" title="numeric indicator"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -281,6 +279,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/arabian_south.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:46:57 GMT -->
 </html>

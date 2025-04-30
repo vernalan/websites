@@ -87,8 +87,8 @@ car = car.replace(/U/g, "أُ");
 
 car = car.replace(/_/g, "ـ");
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

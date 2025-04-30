@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tatar_latin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:31 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Tatar Latin Keyboard • Lexilogos</title>
+<title>Tatar Latin Keyboard LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online keyboard to type a Tatar text in the Latin alphabet">
 <meta name="Keywords" content="alphabet,tatar,keyboard,latin">
@@ -16,13 +14,13 @@
 .cadr { width:80%; color:#0000FF; font-family:Noto Sans, Arial; font-size:1em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/cartatlat.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -189,7 +187,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="8" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="8" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -203,18 +201,18 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
-<div class="as"><p><input type="button" value="Ä" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ä" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ç" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ç" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ğ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ğ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="I" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ı" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="İ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="i" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ñ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ñ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ö" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ö" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ş" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ş" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ü" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ü" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><input type="button" value="’" onclick="alfa(this.value)" class="bt"></div>
+<div class="as"><p><input type="button" value="Ä" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ä" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ç" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ç" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ğ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ğ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="I" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ı" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="İ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="i" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ñ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ñ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ö" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ö" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ş" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ş" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ü" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ü" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><input type="button" value="’" onclick="alpha(this.value)" class="bt"></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -255,6 +253,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tatar_latin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:31 GMT -->
 </html>

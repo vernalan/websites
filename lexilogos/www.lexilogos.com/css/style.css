@@ -254,8 +254,9 @@ sup { font-size:0.7em; line-height:0.8em; }
 ul li{ line-height:1.6em; }
 
 .py { color:#006600; font-family:Arial; }
-.zh { color:#CC0033; font-size:1.5em; }
-.zht { color:#0000FF; font-size:1.5em; }
+.zh { color:#CC0033; font-size:1.5em; font-family:Arial; }
+.zht { color:#0000FF; font-size:1.5em; font-family:Arial; }
+
 
 /* colors */
 .cr { color:#CC0033; }
@@ -270,8 +271,8 @@ ul li{ line-height:1.6em; }
 .xai { color:#0000CC; font-family:Arial; font-style:italic; }
 .xal { color:#0000CC; font-family:Arial; font-size:1.2em; }
 .xas { color:#0000CC; font-family:Arial; font-size:1.2em; padding-left:0.15em; padding-right:0.15em; }
-.x-zh { color:#0000CC; font-size:1.2em; padding-left:0.15em; padding-right:0.15em; }
-.x-zhx { color:#0000CC;  font-size:1.4em; padding-left:0.15em; padding-right:0.15em; }
+.x-zh { color:#0000CC; font-family:Arial; font-size:1.2em; padding-left:0.15em; padding-right:0.15em; }
+.x-zhx { color:#0000CC; font-family:Arial; font-size:1.4em; padding-left:0.15em; padding-right:0.15em; }
 .x-ni { color:#0000CC; font-family:MS UI Gothic; font-size:1.2em; padding-left:0.15em; padding-right:0.15em; }
 .x-heb { color:#0000CC; font-family:Times New Roman, Arial; font-size:1.2em; padding-left:0.15em; padding-right:0.15em; }
 .x-arabe { color:#0000CC; font-family:Times New Roman, Arial; font-size:1.2em; padding-left:0.15em; padding-right:0.15em; }

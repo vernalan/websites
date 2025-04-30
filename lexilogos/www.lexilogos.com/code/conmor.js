@@ -30,11 +30,11 @@ function latmor() {
     car = car.replace(/\"/g, "·−··−· ");
     car = car.replace(/\(/g, "−·−−· ");
     car = car.replace(/\)/g, "−·−−·− ");
-    car = car.replace(/,/g, "−−··−− ");
+    car = car.replace(/\,/g, "−−··−− ");
     car = car.replace(/\./g, "·−·−·− ");
     car = car.replace(/\//g, "−··−· ");
     car = car.replace(/\:/g, "−−−··· ");
-    car = car.replace(/;/g, "−·−·−· ");
+    car = car.replace(/\;/g, "−·−·−· ");
     car = car.replace(/\?/g, "··−−·· ");
     car = car.replace(/\@/g, "·−−·−· ");
     car = car.replace(/\_/g, "··−−·− ");
@@ -236,7 +236,7 @@ function morlat() {
     document.transcription.text1.value = car;
 }
 
-function alfa(item) {
+function alpha(item) {
     var input = document.forms['transcription'].elements['text2'];
     input.focus();
     if (typeof input.selectionStart !== undefined) {

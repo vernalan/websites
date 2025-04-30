@@ -13,8 +13,8 @@ car = car.replace(/[UūŪ]/g, "𑼉");
 car = car.replace(/𑼄𑼄/g, "𑼅");
 car = car.replace(/𑼆𑼆/g, "𑼇");
 car = car.replace(/𑼈𑼈/g, "𑼉");
-car = car.replace(/[Eēê]/g, "𑼎");
-car = car.replace(/[Oōô]/g, "𑼐");
+car = car.replace(/[eē]/g, "𑼎");
+car = car.replace(/[oō]/g, "𑼐");
 car = car.replace(/𑼄𑼆/g, "𑼏");
 
 // suppression du virama
@@ -156,9 +156,6 @@ car = car.replace(/R/g, "𑼂");
 car = car.replace(/\|/g, "𑽃");
 car = car.replace(/\//g, "𑽃");
 car = car.replace(/𑽃𑽃/g, "𑽄");
-
-// nuqta
-car = car.replace(/=/g, "𑽚");
 
 car = car.replace(/0/g, "𑽐");
 car = car.replace(/1/g, "𑽑");

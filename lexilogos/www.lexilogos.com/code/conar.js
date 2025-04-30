@@ -194,7 +194,7 @@ car = car.replace(/A/g, "إ");
 car = car.replace(/ءا/g, "أ");
 car = car.replace(/_/g, "ـ");
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 document.transcription.text1.value=car;
 }

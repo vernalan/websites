@@ -5,19 +5,19 @@ function transcrire() {
 car = document.conversion.saisie.value;
 
 car = car.replace(/a/g, "અ");
-car = car.replace(/[Aāâ]/g, "આ");
+car = car.replace(/[Aā]/g, "આ");
 car = car.replace(/i/g, "ઇ");
-car = car.replace(/[Iīî]/g, "ઈ");
+car = car.replace(/[Iī]/g, "ઈ");
 car = car.replace(/u/g, "ઉ");
-car = car.replace(/[Uūû]/g, "ઊ");
+car = car.replace(/[Uū]/g, "ઊ");
 car = car.replace(/અઅ/g, "આ");
 car = car.replace(/ઇઇ/g, "ઈ");
 car = car.replace(/ઉઉ/g, "ઊ");
 car = car.replace(/e/g, "એ");
-car = car.replace(/[Eēê]/g, "ઍ");
+car = car.replace(/[Eē]/g, "ઍ");
 car = car.replace(/એએ/g, "ઍ");
 car = car.replace(/o/g, "ઓ");
-car = car.replace(/[Oōô]/g, "ઑ");
+car = car.replace(/[Oō]/g, "ઑ");
 car = car.replace(/ઓઓ/g, "ઑ");
 car = car.replace(/અઇ/g, "ઐ");
 car = car.replace(/અઉ/g, "ઔ");

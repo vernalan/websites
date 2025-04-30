@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/thai.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:53 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Thai keyboard Online • Lexilogos</title>
+<title>Thai keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online keyboard to type a text with the Thai characters">
 <meta name="Keywords" content="thai,keyboard,alphabet">
@@ -18,13 +16,13 @@
 .cadr { width:80%; color:#0000FF; font-family:Noto Serif Thai, Tahoma, Leelawadee UI; font-size:1.7em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carthai.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -190,7 +188,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="4" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="4" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -204,128 +202,128 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
 <div class="boxdeva">
 <div class="boxdevc">
-<div class="asd">k<p><input type="button" class="bt" title="ko kai" onclick="alfa(this.value)" value="&#x0E01;"></div>
-<div class="asd">k&#x0304;h<p><input type="button" class="bt" title="kho khai" onclick="alfa(this.value)" value="&#x0E02;"></div>
-<div class="asd grey">&#x1E33;&#x0304;h<p><input type="button" class="bt" title="kho khuat (obsolete)" onclick="alfa(this.value)" value="&#x0E03;"></div>
-<div class="asd">kh<p><input type="button" class="bt" title="kho khwai" onclick="alfa(this.value)" value="&#x0E04;"></div>
-<div class="asd grey">k&#x031B;h<p><input type="button" class="bt" title="kho khon (obsolete)" onclick="alfa(this.value)" value="&#x0E05;"></div>
-<div class="asd">&#x1E33;h<p><input type="button" class="bt" title="kho rakhang" onclick="alfa(this.value)" value="&#x0E06;"></div>
-<div class="asd">ng<p><input type="button" class="bt" title="ngo ngu" onclick="alfa(this.value)" value="&#x0E07;"></div>
+<div class="asd">k<p><input type="button" class="bt" title="ko kai" onclick="alpha(this.value)" value="&#x0E01;"></div>
+<div class="asd">k&#x0304;h<p><input type="button" class="bt" title="kho khai" onclick="alpha(this.value)" value="&#x0E02;"></div>
+<div class="asd grey">&#x1E33;&#x0304;h<p><input type="button" class="bt" title="kho khuat (obsolete)" onclick="alpha(this.value)" value="&#x0E03;"></div>
+<div class="asd">kh<p><input type="button" class="bt" title="kho khwai" onclick="alpha(this.value)" value="&#x0E04;"></div>
+<div class="asd grey">k&#x031B;h<p><input type="button" class="bt" title="kho khon (obsolete)" onclick="alpha(this.value)" value="&#x0E05;"></div>
+<div class="asd">&#x1E33;h<p><input type="button" class="bt" title="kho rakhang" onclick="alpha(this.value)" value="&#x0E06;"></div>
+<div class="asd">ng<p><input type="button" class="bt" title="ngo ngu" onclick="alpha(this.value)" value="&#x0E07;"></div>
 <div class="esp"></div>
-<div class="asd">c<p><input type="button" class="bt" title="cho chan" onclick="alfa(this.value)" value="&#x0E08;"></div>
-<div class="asd">c&#x0304;h<p><input type="button" class="bt" title="cho ching" onclick="alfa(this.value)" value="&#x0E09;"></div>
-<div class="asd">ch<p><input type="button" class="bt" title="cho chang" onclick="alfa(this.value)" value="&#x0E0A;"></div>
-<div class="asd">s<p><input type="button" class="bt" title="so so" onclick="alfa(this.value)" value="&#x0E0B;"></div>
-<div class="asd">c&#x0323;h<p><input type="button" class="bt" title="cho choe" onclick="alfa(this.value)" value="&#x0E0C;"></div>
-<div class="asd">&#x1EF5;<p><input type="button" class="bt" title="yo ying" onclick="alfa(this.value)" value="&#x0E0D;"></div>
+<div class="asd">c<p><input type="button" class="bt" title="cho chan" onclick="alpha(this.value)" value="&#x0E08;"></div>
+<div class="asd">c&#x0304;h<p><input type="button" class="bt" title="cho ching" onclick="alpha(this.value)" value="&#x0E09;"></div>
+<div class="asd">ch<p><input type="button" class="bt" title="cho chang" onclick="alpha(this.value)" value="&#x0E0A;"></div>
+<div class="asd">s<p><input type="button" class="bt" title="so so" onclick="alpha(this.value)" value="&#x0E0B;"></div>
+<div class="asd">c&#x0323;h<p><input type="button" class="bt" title="cho choe" onclick="alpha(this.value)" value="&#x0E0C;"></div>
+<div class="asd">&#x1EF5;<p><input type="button" class="bt" title="yo ying" onclick="alpha(this.value)" value="&#x0E0D;"></div>
 <div class="esp"></div>
-<div class="asd">&#x1E0D;<p><input type="button" class="bt" title="do chada" onclick="alfa(this.value)" value="&#x0E0E;"></div>
-<div class="asd">&#x1E6D;<p><input type="button" class="bt" title="to patak" onclick="alfa(this.value)" value="&#x0E0F;"></div>
-<div class="asd">&#x1E6D;&#x0304;h<p><input type="button" class="bt" title="tho than" onclick="alfa(this.value)" value="&#x0E10;"></div>
-<div class="asd">&#x1E6F;h<p><input type="button" class="bt" title="tho nangmontho" onclick="alfa(this.value)" value="&#x0E11;"></div>
-<div class="asd">t&#x031B;h<p><input type="button" class="bt" title="tho phuthao" onclick="alfa(this.value)" value="&#x0E12;"></div>
-<div class="asd">&#x1E47;<p><input type="button" class="bt" title="no nen" onclick="alfa(this.value)" value="&#x0E13;"></div>
+<div class="asd">&#x1E0D;<p><input type="button" class="bt" title="do chada" onclick="alpha(this.value)" value="&#x0E0E;"></div>
+<div class="asd">&#x1E6D;<p><input type="button" class="bt" title="to patak" onclick="alpha(this.value)" value="&#x0E0F;"></div>
+<div class="asd">&#x1E6D;&#x0304;h<p><input type="button" class="bt" title="tho than" onclick="alpha(this.value)" value="&#x0E10;"></div>
+<div class="asd">&#x1E6F;h<p><input type="button" class="bt" title="tho nangmontho" onclick="alpha(this.value)" value="&#x0E11;"></div>
+<div class="asd">t&#x031B;h<p><input type="button" class="bt" title="tho phuthao" onclick="alpha(this.value)" value="&#x0E12;"></div>
+<div class="asd">&#x1E47;<p><input type="button" class="bt" title="no nen" onclick="alpha(this.value)" value="&#x0E13;"></div>
 <div class="esp"></div> 
-<div class="asd">d<p><input type="button" class="bt" title="do dek" onclick="alfa(this.value)" value="&#x0E14;"></div>
-<div class="asd">t<p><input type="button" class="bt" title="to tao" onclick="alfa(this.value)" value="&#x0E15;"></div>
-<div class="asd">t&#x0304;h<p><input type="button" class="bt" title="tho thung" onclick="alfa(this.value)" value="&#x0E16;"></div>
-<div class="asd">th<p><input type="button" class="bt" title="tho thahan" onclick="alfa(this.value)" value="&#x0E17;"></div>
-<div class="asd">&#x1E6D;h<p><input type="button" class="bt" title="tho thong" onclick="alfa(this.value)" value="&#x0E18;"></div>
-<div class="asd">n<p><input type="button" class="bt" title="no nu" onclick="alfa(this.value)" value="&#x0E19;"></div>
+<div class="asd">d<p><input type="button" class="bt" title="do dek" onclick="alpha(this.value)" value="&#x0E14;"></div>
+<div class="asd">t<p><input type="button" class="bt" title="to tao" onclick="alpha(this.value)" value="&#x0E15;"></div>
+<div class="asd">t&#x0304;h<p><input type="button" class="bt" title="tho thung" onclick="alpha(this.value)" value="&#x0E16;"></div>
+<div class="asd">th<p><input type="button" class="bt" title="tho thahan" onclick="alpha(this.value)" value="&#x0E17;"></div>
+<div class="asd">&#x1E6D;h<p><input type="button" class="bt" title="tho thong" onclick="alpha(this.value)" value="&#x0E18;"></div>
+<div class="asd">n<p><input type="button" class="bt" title="no nu" onclick="alpha(this.value)" value="&#x0E19;"></div>
 <div class="esp"></div>
-<div class="asd">b<p><input type="button" class="bt" title="bo baimai" onclick="alfa(this.value)" value="&#x0E1A;"></div>
-<div class="asd">p<p><input type="button" class="bt" title="po pla" onclick="alfa(this.value)" value="&#x0E1B;"></div>
-<div class="asd">p&#x0304;h<p><input type="button" class="bt" title="pho phung" onclick="alfa(this.value)" value="&#x0E1C;"></div>
-<div class="asd">ph<p><input type="button" class="bt" title="pho phan" onclick="alfa(this.value)" value="&#x0E1E;"></div>
-<div class="asd">p&#x0323;h<p><input type="button" class="bt" title="pho samphao" onclick="alfa(this.value)" value="&#x0E20;"></div>
-<div class="asd">m<p><input type="button" class="bt" title="mo ma" onclick="alfa(this.value)" value="&#x0E21;"></div>
+<div class="asd">b<p><input type="button" class="bt" title="bo baimai" onclick="alpha(this.value)" value="&#x0E1A;"></div>
+<div class="asd">p<p><input type="button" class="bt" title="po pla" onclick="alpha(this.value)" value="&#x0E1B;"></div>
+<div class="asd">p&#x0304;h<p><input type="button" class="bt" title="pho phung" onclick="alpha(this.value)" value="&#x0E1C;"></div>
+<div class="asd">ph<p><input type="button" class="bt" title="pho phan" onclick="alpha(this.value)" value="&#x0E1E;"></div>
+<div class="asd">p&#x0323;h<p><input type="button" class="bt" title="pho samphao" onclick="alpha(this.value)" value="&#x0E20;"></div>
+<div class="asd">m<p><input type="button" class="bt" title="mo ma" onclick="alpha(this.value)" value="&#x0E21;"></div>
 <div class="esp"></div>
-<div class="asd">f&#x0304;<p><input type="button" class="bt" title="fo fa" onclick="alfa(this.value)" value="&#x0E1D;"></div>
-<div class="asd">f<p><input type="button" class="bt" title="fo fan" onclick="alfa(this.value)" value="&#x0E1F;"></div>
+<div class="asd">f&#x0304;<p><input type="button" class="bt" title="fo fa" onclick="alpha(this.value)" value="&#x0E1D;"></div>
+<div class="asd">f<p><input type="button" class="bt" title="fo fan" onclick="alpha(this.value)" value="&#x0E1F;"></div>
 <div class="esp"></div>
 <div class="boxdevb">
-<div class="asd">y<p><input type="button" class="bt" title="yo yak" onclick="alfa(this.value)" value="&#x0E22;"></div>
-<div class="asd">r<p><input type="button" class="bt" title="ro rua" onclick="alfa(this.value)" value="&#x0E23;"></div>
-<div class="asd">l<p><input type="button" class="bt" title="lo ling" onclick="alfa(this.value)" value="&#x0E25;"></div>
-<div class="asd">w<p><input type="button" class="bt" title="wo waen" onclick="alfa(this.value)" value="&#x0E27;"></div>
+<div class="asd">y<p><input type="button" class="bt" title="yo yak" onclick="alpha(this.value)" value="&#x0E22;"></div>
+<div class="asd">r<p><input type="button" class="bt" title="ro rua" onclick="alpha(this.value)" value="&#x0E23;"></div>
+<div class="asd">l<p><input type="button" class="bt" title="lo ling" onclick="alpha(this.value)" value="&#x0E25;"></div>
+<div class="asd">w<p><input type="button" class="bt" title="wo waen" onclick="alpha(this.value)" value="&#x0E27;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">&#x1E63;&#x0304;<p><input type="button" class="bt" title="so sala" onclick="alfa(this.value)" value="&#x0E28;"></div>
-<div class="asd">s&#x031B;&#x0304;<p><input type="button" class="bt" title="so rusi" onclick="alfa(this.value)" value="&#x0E29;"></div>
-<div class="asd">s&#x0304;<p><input type="button" class="bt" title="so sua" onclick="alfa(this.value)" value="&#x0E2A;"></div>
-<div class="asd">h&#x0304;<p><input type="button" class="bt" title="ho hip" onclick="alfa(this.value)" value="&#x0E2B;"></div>
-<div class="asd">&#x1E37;<p><input type="button" class="bt" title="lo chula" onclick="alfa(this.value)" value="&#x0E2C;"></div>
-<div class="asd">x<p><input type="button" class="bt" title="o ang" onclick="alfa(this.value)" value="&#x0E2D;"></div>
-<div class="asd">&#x1E25;<p><input type="button" class="bt" title="ho nokhuk" onclick="alfa(this.value)" value="&#x0E2E;"></div>
+<div class="asd">&#x1E63;&#x0304;<p><input type="button" class="bt" title="so sala" onclick="alpha(this.value)" value="&#x0E28;"></div>
+<div class="asd">s&#x031B;&#x0304;<p><input type="button" class="bt" title="so rusi" onclick="alpha(this.value)" value="&#x0E29;"></div>
+<div class="asd">s&#x0304;<p><input type="button" class="bt" title="so sua" onclick="alpha(this.value)" value="&#x0E2A;"></div>
+<div class="asd">h&#x0304;<p><input type="button" class="bt" title="ho hip" onclick="alpha(this.value)" value="&#x0E2B;"></div>
+<div class="asd">&#x1E37;<p><input type="button" class="bt" title="lo chula" onclick="alpha(this.value)" value="&#x0E2C;"></div>
+<div class="asd">x<p><input type="button" class="bt" title="o ang" onclick="alpha(this.value)" value="&#x0E2D;"></div>
+<div class="asd">&#x1E25;<p><input type="button" class="bt" title="ho nokhuk" onclick="alpha(this.value)" value="&#x0E2E;"></div>
 </div>
 </div>
 <div class="boxdevc">
-<div class="as virama"><input type="button" class="bt" title="phinthu" onclick="alfa('&#x0E3A;')" value="&#x25CC;&#x0E3A;"></div>
+<div class="as virama"><input type="button" class="bt" title="phinthu" onclick="alpha('&#x0E3A;')" value="&#x25CC;&#x0E3A;"></div>
 </div>
 </div>
 
 <div class="boxdeva">
 <div class="boxdevb">
-<div class="asd">&#x25CC;&#x0300;<p><input type="button" class="bt" title="ton bas - mai ek" onclick="alfa('&#x0E48;')" value="&#x25CC;&#x0E48;"></div>
-<div class="asd">&#x25CC;&#x0302;<p><input type="button" class="bt" title="ton descendant- mai tho" onclick="alfa('&#x0E49;')" value="&#x25CC;&#x0E49;"></div>
-<div class="asd">&#x25CC;&#x0301;<p><input type="button" class="bt" title="ton haut - mai tri" onclick="alfa('&#x0E4A;')" value="&#x25CC;&#x0E4A;"></div>
-<div class="asd">&#x25CC;&#x030C;<p><input type="button" class="bt" title="ton montant - mai chattawa" onclick="alfa('&#x0E4B;')" value="&#x25CC;&#x0E4B;"></div>
+<div class="asd">&#x25CC;&#x0300;<p><input type="button" class="bt" title="ton bas - mai ek" onclick="alpha('&#x0E48;')" value="&#x25CC;&#x0E48;"></div>
+<div class="asd">&#x25CC;&#x0302;<p><input type="button" class="bt" title="ton descendant- mai tho" onclick="alpha('&#x0E49;')" value="&#x25CC;&#x0E49;"></div>
+<div class="asd">&#x25CC;&#x0301;<p><input type="button" class="bt" title="ton haut - mai tri" onclick="alpha('&#x0E4A;')" value="&#x25CC;&#x0E4A;"></div>
+<div class="asd">&#x25CC;&#x030C;<p><input type="button" class="bt" title="ton montant - mai chattawa" onclick="alpha('&#x0E4B;')" value="&#x25CC;&#x0E4B;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">&#x25CC;&#x0306;<p><input type="button" class="bt" title="mai taikhu" onclick="alfa('&#x0E47;')" value="&#x25CC;&#x0E47;"></div>
-<div class="asd">&#x25CC;&#x0312;<p><input type="button" class="bt" title="thanthakhat (annulation)" onclick="alfa('&#x0E4C;')" value="&#x25CC;&#x0E4C;"></div>
-<div class="asd">&#x25CC;&#x0303;<p><input type="button" class="bt" title="nikkhahit (nasale finale)" onclick="alfa('&#x0E4D;')" value="&#x25CC;&#x0E4D;"></div>
-<div class="asd">&#x25CC;&#x030A;<p><input type="button" class="bt" title="yamakkan" onclick="alfa('&#x0E4E;')" value="&#x25CC;&#x0E4E;"></div>
+<div class="asd">&#x25CC;&#x0306;<p><input type="button" class="bt" title="mai taikhu" onclick="alpha('&#x0E47;')" value="&#x25CC;&#x0E47;"></div>
+<div class="asd">&#x25CC;&#x0312;<p><input type="button" class="bt" title="thanthakhat (annulation)" onclick="alpha('&#x0E4C;')" value="&#x25CC;&#x0E4C;"></div>
+<div class="asd">&#x25CC;&#x0303;<p><input type="button" class="bt" title="nikkhahit (nasale finale)" onclick="alpha('&#x0E4D;')" value="&#x25CC;&#x0E4D;"></div>
+<div class="asd">&#x25CC;&#x030A;<p><input type="button" class="bt" title="yamakkan" onclick="alpha('&#x0E4E;')" value="&#x25CC;&#x0E4E;"></div>
 </div>
 
 <div class="espc"></div>
- <div class="asd">a<p><input type="button" class="bt" onclick="alfa('&#x0E30;')" value="&#x25CC;&#x0E30;"></div>
-<div class="asd">&#x1EA1;<p><input type="button" class="bt" title="mai han-akat" onclick="alfa('&#x0E31;')" value="&#x25CC;&#x0E31;"></div>
-<div class="asd">ā<p><input type="button" class="bt" onclick="alfa('&#x0E32;')" value="&#x25CC;&#x0E32;"></div>
-<div class="asd">&#x00E5;<p><input type="button" class="bt" onclick="alfa('&#x0E33;')" value="&#x25CC;&#x0E33;"></div>
-<div class="asd">i<p><input type="button" class="bt" onclick="alfa('&#x0E34;')" value="&#x25CC;&#x0E34;"></div>
-<div class="asd">ī<p><input type="button" class="bt" onclick="alfa('&#x0E35;')" value="&#x25CC;&#x0E35;"></div>
-<div class="asd">&#x1EE5;<p><input type="button" class="bt" onclick="alfa('&#x0E36;')" value="&#x25CC;&#x0E36;"></div>
-<div class="asd">&#x1EE5;&#x0304;<p><input type="button" class="bt" onclick="alfa('&#x0E37;')" value="&#x25CC;&#x0E37;"></div>
-<div class="asd">u<p><input type="button" class="bt" onclick="alfa('&#x0E38;')" value="&#x25CC;&#x0E38;"></div>
-<div class="asd">ū<p><input type="button" class="bt" onclick="alfa('&#x0E39;')" value="&#x25CC;&#x0E39;"></div>
+ <div class="asd">a<p><input type="button" class="bt" onclick="alpha('&#x0E30;')" value="&#x25CC;&#x0E30;"></div>
+<div class="asd">&#x1EA1;<p><input type="button" class="bt" title="mai han-akat" onclick="alpha('&#x0E31;')" value="&#x25CC;&#x0E31;"></div>
+<div class="asd">ā<p><input type="button" class="bt" onclick="alpha('&#x0E32;')" value="&#x25CC;&#x0E32;"></div>
+<div class="asd">&#x00E5;<p><input type="button" class="bt" onclick="alpha('&#x0E33;')" value="&#x25CC;&#x0E33;"></div>
+<div class="asd">i<p><input type="button" class="bt" onclick="alpha('&#x0E34;')" value="&#x25CC;&#x0E34;"></div>
+<div class="asd">ī<p><input type="button" class="bt" onclick="alpha('&#x0E35;')" value="&#x25CC;&#x0E35;"></div>
+<div class="asd">&#x1EE5;<p><input type="button" class="bt" onclick="alpha('&#x0E36;')" value="&#x25CC;&#x0E36;"></div>
+<div class="asd">&#x1EE5;&#x0304;<p><input type="button" class="bt" onclick="alpha('&#x0E37;')" value="&#x25CC;&#x0E37;"></div>
+<div class="asd">u<p><input type="button" class="bt" onclick="alpha('&#x0E38;')" value="&#x25CC;&#x0E38;"></div>
+<div class="asd">ū<p><input type="button" class="bt" onclick="alpha('&#x0E39;')" value="&#x25CC;&#x0E39;"></div>
 <div class="esp"></div>
 <div class="boxdevb">
-<div class="asd">v<p><input type="button" class="bt" title="ru" onclick="alfa(this.value)" value="&#x0E24;"></div>
-<div class="asd">&#x0142;<p><input type="button" class="bt" title="lu" onclick="alfa(this.value)" value="&#x0E26;"></div>
-<div class="asd">&#x0268;<p><input type="button" class="bt" title="lakkhang yao" onclick="alfa(this.value)" value="&#x0E45;"></div>
+<div class="asd">v<p><input type="button" class="bt" title="ru" onclick="alpha(this.value)" value="&#x0E24;"></div>
+<div class="asd">&#x0142;<p><input type="button" class="bt" title="lu" onclick="alpha(this.value)" value="&#x0E26;"></div>
+<div class="asd">&#x0268;<p><input type="button" class="bt" title="lakkhang yao" onclick="alpha(this.value)" value="&#x0E45;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">e<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E40;"></div>
-<div class="asd">&#x00E6;<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E41;"></div>
-<div class="asd">o<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E42;"></div>
-<div class="asd">&#x1ECB;<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E44;"></div>
-<div class="asd">&#x0131;<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E43;"></div>
+<div class="asd">e<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E40;"></div>
+<div class="asd">&#x00E6;<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E41;"></div>
+<div class="asd">o<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E42;"></div>
+<div class="asd">&#x1ECB;<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E44;"></div>
+<div class="asd">&#x0131;<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E43;"></div>
 </div>
 <div class="espc"></div>
-<div class="asd">&#x00A7;<p><input type="button" class="bt" title="fongman" onclick="alfa(this.value)" value="&#x0E4F;"></div>
-<div class="asd">&#x00AB;<p><input type="button" class="bt" title="mai yamok (repetition)" onclick="alfa(this.value)" value="&#x0E46;"></div>
-<div class="asd">&#x01C0;<p><input type="button" class="bt" title="paiyannoi" onclick="alfa(this.value)" value="&#x0E2F;"></div>
-<div class="asd">&#x01C1;<p><input type="button" class="bt" title="angkhankhu" onclick="alfa(this.value)" value="&#x0E5A;"></div>
-<div class="asd">&#x00BB;<p><input type="button" class="bt" title="khomut" onclick="alfa(this.value)" value="&#x0E5B;"></div>
+<div class="asd">&#x00A7;<p><input type="button" class="bt" title="fongman" onclick="alpha(this.value)" value="&#x0E4F;"></div>
+<div class="asd">&#x00AB;<p><input type="button" class="bt" title="mai yamok (repetition)" onclick="alpha(this.value)" value="&#x0E46;"></div>
+<div class="asd">&#x01C0;<p><input type="button" class="bt" title="paiyannoi" onclick="alpha(this.value)" value="&#x0E2F;"></div>
+<div class="asd">&#x01C1;<p><input type="button" class="bt" title="angkhankhu" onclick="alpha(this.value)" value="&#x0E5A;"></div>
+<div class="asd">&#x00BB;<p><input type="button" class="bt" title="khomut" onclick="alpha(this.value)" value="&#x0E5B;"></div>
 
 <div class="espc"></div>
-<div class="as">0<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E50;"></p></div>
-<div class="as">1<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E51;"></p></div>
-<div class="as">2<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E52;"></p></div>
-<div class="as">3<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E53;"></p></div>
-<div class="as">4<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E54;"></p></div>
-<div class="as">5<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E55;"></p></div>
-<div class="as">6<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E56;"></p></div>
-<div class="as">7<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E57;"></p></div>
-<div class="as">8<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E58;"></p></div>
-<div class="as">9<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x0E59;"></p></div>
+<div class="as">0<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E50;"></p></div>
+<div class="as">1<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E51;"></p></div>
+<div class="as">2<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E52;"></p></div>
+<div class="as">3<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E53;"></p></div>
+<div class="as">4<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E54;"></p></div>
+<div class="as">5<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E55;"></p></div>
+<div class="as">6<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E56;"></p></div>
+<div class="as">7<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E57;"></p></div>
+<div class="as">8<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E58;"></p></div>
+<div class="as">9<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x0E59;"></p></div>
 <span class="esps"></span>
-<div class="as"><p><input type="button" class="bt" title="Baht symbol" onclick="alfa(this.value)" value="&#x0E3F;"></p></div>
+<div class="as"><p><input type="button" class="bt" title="Baht symbol" onclick="alpha(this.value)" value="&#x0E3F;"></p></div>
 </div>
 </form>
 </div>
@@ -381,6 +379,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/thai.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:54 GMT -->
 </html>

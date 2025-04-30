@@ -1,10 +1,8 @@
  <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/buhid.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:09 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Buhid keyboard Online (Mangyan, Philippines) • Lexilogos</title>
+<title>Buhid keyboard Online (Mangyan, Philippines) LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online keyboard to type the Buhid script, used by the Mangyan people, Mindoro Island (Philippines)">
 <meta name="Keywords" content="script, buhid">
@@ -19,13 +17,13 @@
 .cadr { width:80%; color:#0000FF; font-family:Noto Sans Buhid; font-size:1.7em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carbuh.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" alt="dictionnaire" class="imgloge" title="Online Dictionaries &gt; Index"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -190,7 +188,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="Clear" onClick="reset();conversion.saisie.focus()">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" onClick="copysanskrit()" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -204,41 +202,41 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
 
-<div class="as">a<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1740;"></p></div>
-<div class="as">i<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1741;"></p></div>
-<div class="as">u<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1742;"></p></div>
-<div class="as">i<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1752;"></p></div>
-<div class="as">u<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1753;"></p></div>
+<div class="as">a<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1740;"></p></div>
+<div class="as">i<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1741;"></p></div>
+<div class="as">u<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1742;"></p></div>
+<div class="as">i<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1752;"></p></div>
+<div class="as">u<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1753;"></p></div>
 
 <span class="esps"></span>
-<div class="as">&nbsp;<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1735;" title="danda"></p></div>
-<div class="as">&nbsp;<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1736;" title="double danda"></p></div>
+<div class="as">&nbsp;<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1735;" title="danda"></p></div>
+<div class="as">&nbsp;<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1736;" title="double danda"></p></div>
 
 <div class="espc"></div>
 
 
-<div class="as">ka<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1743;"></p></div>
-<div class="as">ga<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1744;"></p></div>
-<div class="as">nga<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1745;"></p></div>
-<div class="as">ta<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1746;"></p></div>
-<div class="as">da<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1747;"></p></div>
-<div class="as">na<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1748;"></p></div>
+<div class="as">ka<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1743;"></p></div>
+<div class="as">ga<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1744;"></p></div>
+<div class="as">nga<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1745;"></p></div>
+<div class="as">ta<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1746;"></p></div>
+<div class="as">da<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1747;"></p></div>
+<div class="as">na<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1748;"></p></div>
 
-<div class="as">pa<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1749;"></p></div>
-<div class="as">ba<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x174A;"></p></div>
-<div class="as">ma<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x174B;"></p></div>
+<div class="as">pa<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1749;"></p></div>
+<div class="as">ba<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x174A;"></p></div>
+<div class="as">ma<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x174B;"></p></div>
 
 
-<div class="as">ya<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x174C;"></p></div>
-<div class="as">ra<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x174D;"></p></div>
-<div class="as">la<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x174E;"></p></div>
-<div class="as">wa<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x174F;"></p></div>
+<div class="as">ya<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x174C;"></p></div>
+<div class="as">ra<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x174D;"></p></div>
+<div class="as">la<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x174E;"></p></div>
+<div class="as">wa<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x174F;"></p></div>
 
-<div class="as">sa<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1750;"></p></div>
-<div class="as">ha<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#x1751;" ></p></div>
+<div class="as">sa<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1750;"></p></div>
+<div class="as">ha<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#x1751;" ></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -284,6 +282,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/buhid.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:09 GMT -->
 </html>

@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/greek_ancient.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:15 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Ancient Greek Keyboard - Polytonic Diacritics • Lexilogos</title>
+<title>Ancient Greek Keyboard - Polytonic Diacritics - LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Ancient Greek keyboard to type characters and polytonic diacritics of the Greek alphabet">
 <meta name="Keywords" content="greek, ancient, keyboard, online, alphabet, diacritic, polytonic">
@@ -19,14 +17,14 @@
 .infobulle {display:inline-block; position:absolute; background-color:#FFF; border:1px solid #000; padding:0.2em; margin-top:1.5em; margin-left:0.5em}
 </style> 
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carela934a.js?var=9"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
-<script src="../code/affi77ae.js?ver=2"></script>
+<script src="../code/affi.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -191,7 +189,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="4" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="4" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -205,7 +203,7 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
 <div id="clavierVirtuel">
 <div id="boutonsDirects">
@@ -256,7 +254,7 @@ console.log(e);
 </div>
 <div id="divDiacritiques" class="asd">
 <div class="asd"><p><input type="button" value="´" title="acute"></p><p><input type="button" value="`" title="grave"></p></div>
-<div class="asd"><p><input type="button" value="᾿" title="smooth breathing"></p><p><input type="button" value="῾" title="rough breathing"></p></div>
+<div class="asd"><p><input type="button" value="᾿" title="rough breathing"></p><p><input type="button" value="῾" title="rough breathing"></p></div>
 <div class="asd"><p><input type="button" value="ˉ" title="macron (α, ι, υ)"></p><p><input type="button" value="˘" title="breve (α, ι, υ)"></p></div>
 <div class="asd"><p><input type="button" value="῀" title="circumflex (α, η, ι, υ, ω)"></p></div>
 <div class="asd"><p><input type="button" value="¨" title="diaeresis (ι, υ)"></p></div>
@@ -299,56 +297,56 @@ console.log(e);
 <input type="button" value="Ὺ" class="Υ `" title="grave">
 <input type="button" value="Ὸ" class="Ο `" title="grave">
 <input type="button" value="Ὼ" class="Ω `" title="grave">
-<input type="button" value="ἀ" class="α ᾿" title="smooth breathing">
-<input type="button" value="Ἀ" class="Α ᾿" title="smooth breathing">
-<input type="button" value="ἐ" class="ε ᾿" title="smooth breathing">
-<input type="button" value="Ἐ" class="Ε ᾿" title="smooth breathing">
-<input type="button" value="ἠ" class="η ᾿" title="smooth breathing">
-<input type="button" value="Ἠ" class="Η ᾿" title="smooth breathing">
-<input type="button" value="ἰ" class="ι ᾿" title="smooth breathing">
-<input type="button" value="Ἰ" class="Ι ᾿" title="smooth breathing">
-<input type="button" value="ὀ" class="ο ᾿" title="smooth breathing">
-<input type="button" value="Ὀ" class="Ο ᾿" title="smooth breathing">
-<input type="button" value="ὐ" class="υ ᾿" title="smooth breathing">
-<input type="button" value="ὠ" class="ω ᾿" title="smooth breathing">
-<input type="button" value="Ὠ" class="Ω ᾿" title="smooth breathing">
-<input type="button" value="ᾨ" class="Ω ᾿" title="smooth breathing">
-<input type="button" value="ῤ" class="ρ ᾿" title="smooth breathing">
-<input type="button" value="ἄ" class="α ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="Ἄ" class="Α ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ἔ" class="ε ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="Ἔ" class="Ε ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ἤ" class="η ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="Ἤ" class="Η ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ἴ" class="ι ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="Ἴ" class="Ι ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ὄ" class="ο ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="Ὄ" class="Ο ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ὔ" class="υ ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ὤ" class="ω ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="Ὤ" class="Ω ᾿ ´" title="smooth breathing + acute">
-<input type="button" value="ἆ" class="α ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="Ἆ" class="Α ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="ἦ" class="η ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="Ἦ" class="Η ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="ἶ" class="ι ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="Ἶ" class="Ι ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="ὖ" class="υ ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="ὦ" class="ω ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="Ὦ" class="Ω ᾿ ῀" title="smooth breathing + circumflex">
-<input type="button" value="ἂ" class="α ᾿ `" title="smooth breathing + grave">
-<input type="button" value="Ἂ" class="Α ᾿ `" title="smooth breathing + grave">
-<input type="button" value="ἒ" class="ε ᾿ `" title="smooth breathing + grave">
-<input type="button" value="Ἒ" class="Ε ᾿ `" title="smooth breathing + grave">
-<input type="button" value="ἢ" class="η ᾿ `" title="smooth breathing + grave">
-<input type="button" value="Ἢ" class="Η ᾿ `" title="smooth breathing + grave">
-<input type="button" value="ἲ" class="ι ᾿ `" title="smooth breathing + grave">
-<input type="button" value="Ἲ" class="Ι ᾿ `" title="smooth breathing + grave">
-<input type="button" value="ὂ" class="ο ᾿ `" title="smooth breathing + grave">
-<input type="button" value="Ὂ" class="Ο ᾿ `" title="smooth breathing + grave">
-<input type="button" value="ὒ" class="υ ᾿ `" title="smooth breathing + grave">
-<input type="button" value="ὢ" class="ω ᾿ `" title="smooth breathing + grave">
-<input type="button" value="Ὢ" class="Ω ᾿ `" title="smooth breathing + grave">
+<input type="button" value="ἀ" class="α ᾿" title="rough breathing">
+<input type="button" value="Ἀ" class="Α ᾿" title="rough breathing">
+<input type="button" value="ἐ" class="ε ᾿" title="rough breathing">
+<input type="button" value="Ἐ" class="Ε ᾿" title="rough breathing">
+<input type="button" value="ἠ" class="η ᾿" title="rough breathing">
+<input type="button" value="Ἠ" class="Η ᾿" title="rough breathing">
+<input type="button" value="ἰ" class="ι ᾿" title="rough breathing">
+<input type="button" value="Ἰ" class="Ι ᾿" title="rough breathing">
+<input type="button" value="ὀ" class="ο ᾿" title="rough breathing">
+<input type="button" value="Ὀ" class="Ο ᾿" title="rough breathing">
+<input type="button" value="ὐ" class="υ ᾿" title="rough breathing">
+<input type="button" value="ὠ" class="ω ᾿" title="rough breathing">
+<input type="button" value="Ὠ" class="Ω ᾿" title="rough breathing">
+<input type="button" value="ᾨ" class="Ω ᾿" title="rough breathing">
+<input type="button" value="ῤ" class="ρ ᾿" title="rough breathing">
+<input type="button" value="ἄ" class="α ᾿ ´" title="rough breathing + acute">
+<input type="button" value="Ἄ" class="Α ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ἔ" class="ε ᾿ ´" title="rough breathing + acute">
+<input type="button" value="Ἔ" class="Ε ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ἤ" class="η ᾿ ´" title="rough breathing + acute">
+<input type="button" value="Ἤ" class="Η ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ἴ" class="ι ᾿ ´" title="rough breathing + acute">
+<input type="button" value="Ἴ" class="Ι ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ὄ" class="ο ᾿ ´" title="rough breathing + acute">
+<input type="button" value="Ὄ" class="Ο ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ὔ" class="υ ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ὤ" class="ω ᾿ ´" title="rough breathing + acute">
+<input type="button" value="Ὤ" class="Ω ᾿ ´" title="rough breathing + acute">
+<input type="button" value="ἆ" class="α ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="Ἆ" class="Α ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="ἦ" class="η ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="Ἦ" class="Η ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="ἶ" class="ι ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="Ἶ" class="Ι ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="ὖ" class="υ ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="ὦ" class="ω ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="Ὦ" class="Ω ᾿ ῀" title="rough breathing + circumflex">
+<input type="button" value="ἂ" class="α ᾿ `" title="rough breathing + grave">
+<input type="button" value="Ἂ" class="Α ᾿ `" title="rough breathing + grave">
+<input type="button" value="ἒ" class="ε ᾿ `" title="rough breathing + grave">
+<input type="button" value="Ἒ" class="Ε ᾿ `" title="rough breathing + grave">
+<input type="button" value="ἢ" class="η ᾿ `" title="rough breathing + grave">
+<input type="button" value="Ἢ" class="Η ᾿ `" title="rough breathing + grave">
+<input type="button" value="ἲ" class="ι ᾿ `" title="rough breathing + grave">
+<input type="button" value="Ἲ" class="Ι ᾿ `" title="rough breathing + grave">
+<input type="button" value="ὂ" class="ο ᾿ `" title="rough breathing + grave">
+<input type="button" value="Ὂ" class="Ο ᾿ `" title="rough breathing + grave">
+<input type="button" value="ὒ" class="υ ᾿ `" title="rough breathing + grave">
+<input type="button" value="ὢ" class="ω ᾿ `" title="rough breathing + grave">
+<input type="button" value="Ὢ" class="Ω ᾿ `" title="rough breathing + grave">
 <input type="button" value="ἁ" class="α ῾" title="rough breathing">
 <input type="button" value="Ἁ" class="Α ῾" title="rough breathing">
 <input type="button" value="ἑ" class="ε ῾" title="rough breathing">
@@ -426,69 +424,69 @@ console.log(e);
 <input type="button" value="ῒ" class="ι ¨ `" title="diaeresis + grave">
 <input type="button" value="ῢ" class="υ ¨ `" title="diaeresis + grave">
 
-<input type="button" value="ᾳ" class="α ᶥ" title="iota subscrit">
-<input type="button" value="ᾼ" class="Α ᶥ" title="iota subscrit">
-<input type="button" value="ῃ" class="η ᶥ" title="iota subscrit">
-<input type="button" value="ῌ" class="Η ᶥ" title="iota subscrit">
-<input type="button" value="ῳ" class="ω ᶥ" title="iota subscrit">
-<input type="button" value="ῼ" class="Ω ᶥ" title="iota subscrit">
-<input type="button" value="ᾴ" class="α ´ ᶥ" title="acute + iota subscrit">
-<input type="button" value="ῄ" class="η ´ ᶥ" title="acute + iota subscrit">
-<input type="button" value="ῴ" class="ω ´ ᶥ" title="acute + iota subscrit">
-<input type="button" value="ᾷ" class="α ῀ ᶥ" title="circumflex + iota subscrit">
-<input type="button" value="ῇ" class="η ῀ ᶥ" title="circumflex + iota subscrit">
-<input type="button" value="ῷ" class="ω ῀ ᶥ" title="circumflex + iota subscrit">
-<input type="button" value="ᾲ" class="α ` ᶥ" title="grave + iota subscrit">
-<input type="button" value="ῂ" class="η ` ᶥ" title="grave + iota subscrit">
-<input type="button" value="ῲ" class="ω ` ᶥ" title="grave + iota subscrit">
-<input type="button" value="ᾀ" class="α ᾿ ᶥ" title="smooth breathing + iota subscrit">
-<input type="button" value="ᾈ" class="Α ᾿ ᶥ" title="smooth breathing + iota subscrit">
-<input type="button" value="ᾐ" class="η ᾿ ᶥ" title="smooth breathing + iota subscrit">
-<input type="button" value="ᾘ" class="Η ᾿ ᶥ" title="smooth breathing + iota subscrit">
-<input type="button" value="ᾠ" class="ω ᾿ ᶥ" title="smooth breathing + iota subscrit">
-<input type="button" value="ᾨ" class="Ω ᾿ ᶥ" title="smooth breathing + iota subscrit">
-<input type="button" value="ᾄ" class="α ᾿ ´ ᶥ" title="smooth breathing + acute + iota subscrit">
-<input type="button" value="ᾌ" class="Α ᾿ ´ ᶥ" title="smooth breathing + acute + iota subscrit">
-<input type="button" value="ᾔ" class="η ᾿ ´ ᶥ" title="smooth breathing + acute + iota subscrit">
-<input type="button" value="ᾜ" class="Η ᾿ ´ ᶥ" title="smooth breathing + acute + iota subscrit">
-<input type="button" value="ᾤ" class="ω ᾿ ´ ᶥ" title="smooth breathing + acute + iota subscrit">
-<input type="button" value="ᾬ" class="Ω ᾿ ´ ᶥ" title="smooth breathing + acute + iota subscrit">
-<input type="button" value="ᾆ" class="α ᾿ ῀ ᶥ" title="smooth breathing + circumflex + iota subscrit">
-<input type="button" value="ᾎ" class="Α ᾿ ῀ ᶥ" title="smooth breathing + circumflex + iota subscrit">
-<input type="button" value="ᾖ" class="η ᾿ ῀ ᶥ" title="smooth breathing + circumflex + iota subscrit">
-<input type="button" value="ᾞ" class="Η ᾿ ῀ ᶥ" title="smooth breathing + circumflex + iota subscrit">
-<input type="button" value="ᾦ" class="ω ᾿ ῀ ᶥ" title="smooth breathing + circumflex + iota subscrit">
-<input type="button" value="ᾮ" class="Ω ᾿ ῀ ᶥ" title="smooth breathing + circumflex + iota subscrit">
-<input type="button" value="ᾂ" class="α ᾿ ` ᶥ" title="smooth breathing + grave + iota subscrit">
-<input type="button" value="ᾊ" class="Α ᾿ ` ᶥ" title="smooth breathing + grave + iota subscrit">
-<input type="button" value="ᾒ" class="η ᾿ ` ᶥ" title="smooth breathing + grave + iota subscrit">
-<input type="button" value="ᾚ" class="Η ᾿ ` ᶥ" title="smooth breathing + grave + iota subscrit">
-<input type="button" value="ᾢ" class="ω ᾿ ` ᶥ" title="smooth breathing + grave + iota subscrit">
-<input type="button" value="ᾪ" class="Ω ᾿ ` ᶥ" title="smooth breathing + grave + iota subscrit">
-<input type="button" value="ᾁ" class="α ῾ ᶥ" title="rough breathing + iota subscrit">
-<input type="button" value="ᾉ" class="Α ῾ ᶥ" title="rough breathing + iota subscrit">
-<input type="button" value="ᾑ" class="η ῾ ᶥ" title="rough breathing + iota subscrit">
-<input type="button" value="ᾙ" class="Η ῾ ᶥ" title="rough breathing + iota subscrit">
-<input type="button" value="ᾡ" class="ω ῾ ᶥ" title="rough breathing + iota subscrit">
-<input type="button" value="ᾩ" class="Ω ῾ ᶥ" title="rough breathing + iota subscrit">
-<input type="button" value="ᾅ" class="α ῾ ´ ᶥ" title="rough breathing + acute + iota subscrit">
-<input type="button" value="ᾍ" class="Α ῾ ´ ᶥ" title="rough breathing + acute + iota subscrit">
-<input type="button" value="ᾕ" class="η ῾ ´ ᶥ" title="rough breathing + acute + iota subscrit">
-<input type="button" value="ᾝ" class="Η ῾ ´ ᶥ" title="rough breathing + acute + iota subscrit">
-<input type="button" value="ᾥ" class="ω ῾ ´ ᶥ" title="rough breathing + acute + iota subscrit">
-<input type="button" value="ᾭ" class="Ω ῾ ´ ᶥ" title="rough breathing + acute + iota subscrit">
-<input type="button" value="ᾇ" class="α ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscrit">
-<input type="button" value="ᾏ" class="Α ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscrit">
-<input type="button" value="ᾗ" class="η ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscrit">
-<input type="button" value="ᾟ" class="Η ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscrit">
-<input type="button" value="ᾧ" class="ω ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscrit">
-<input type="button" value="ᾯ" class="Ω ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscrit">
-<input type="button" value="ᾃ" class="α ῾ ` ᶥ" title="rough breathing + grave + iota subscrit">
-<input type="button" value="ᾋ" class="Α ῾ ` ᶥ" title="rough breathing + grave + iota subscrit">
-<input type="button" value="ᾓ" class="η ῾ ` ᶥ" title="rough breathing + grave + iota subscrit">
-<input type="button" value="ᾛ" class="Η ῾ ` ᶥ" title="rough breathing + grave + iota subscrit">
-<input type="button" value="ᾣ" class="ω ῾ ` ᶥ" title="rough breathing + grave + iota subscrit">
-<input type="button" value="ᾫ" class="Ω ῾ ` ᶥ" title="rough breathing + grave + iota subscrit">
+<input type="button" value="ᾳ" class="α ᶥ" title="iota subscript">
+<input type="button" value="ᾼ" class="Α ᶥ" title="iota subscript">
+<input type="button" value="ῃ" class="η ᶥ" title="iota subscript">
+<input type="button" value="ῌ" class="Η ᶥ" title="iota subscript">
+<input type="button" value="ῳ" class="ω ᶥ" title="iota subscript">
+<input type="button" value="ῼ" class="Ω ᶥ" title="iota subscript">
+<input type="button" value="ᾴ" class="α ´ ᶥ" title="acute + iota subscript">
+<input type="button" value="ῄ" class="η ´ ᶥ" title="acute + iota subscript">
+<input type="button" value="ῴ" class="ω ´ ᶥ" title="acute + iota subscript">
+<input type="button" value="ᾷ" class="α ῀ ᶥ" title="circumflex + iota subscript">
+<input type="button" value="ῇ" class="η ῀ ᶥ" title="circumflex + iota subscript">
+<input type="button" value="ῷ" class="ω ῀ ᶥ" title="circumflex + iota subscript">
+<input type="button" value="ᾲ" class="α ` ᶥ" title="grave + iota subscript">
+<input type="button" value="ῂ" class="η ` ᶥ" title="grave + iota subscript">
+<input type="button" value="ῲ" class="ω ` ᶥ" title="grave + iota subscript">
+<input type="button" value="ᾀ" class="α ᾿ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾈ" class="Α ᾿ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾐ" class="η ᾿ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾘ" class="Η ᾿ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾠ" class="ω ᾿ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾨ" class="Ω ᾿ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾄ" class="α ᾿ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾌ" class="Α ᾿ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾔ" class="η ᾿ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾜ" class="Η ᾿ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾤ" class="ω ᾿ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾬ" class="Ω ᾿ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾆ" class="α ᾿ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾎ" class="Α ᾿ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾖ" class="η ᾿ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾞ" class="Η ᾿ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾦ" class="ω ᾿ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾮ" class="Ω ᾿ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾂ" class="α ᾿ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾊ" class="Α ᾿ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾒ" class="η ᾿ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾚ" class="Η ᾿ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾢ" class="ω ᾿ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾪ" class="Ω ᾿ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾁ" class="α ῾ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾉ" class="Α ῾ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾑ" class="η ῾ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾙ" class="Η ῾ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾡ" class="ω ῾ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾩ" class="Ω ῾ ᶥ" title="rough breathing + iota subscript">
+<input type="button" value="ᾅ" class="α ῾ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾍ" class="Α ῾ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾕ" class="η ῾ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾝ" class="Η ῾ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾥ" class="ω ῾ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾭ" class="Ω ῾ ´ ᶥ" title="rough breathing + acute + iota subscript">
+<input type="button" value="ᾇ" class="α ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾏ" class="Α ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾗ" class="η ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾟ" class="Η ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾧ" class="ω ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾯ" class="Ω ῾ ῀ ᶥ" title="rough breathing + circumflex + iota subscript">
+<input type="button" value="ᾃ" class="α ῾ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾋ" class="Α ῾ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾓ" class="η ῾ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾛ" class="Η ῾ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾣ" class="ω ῾ ` ᶥ" title="rough breathing + grave + iota subscript">
+<input type="button" value="ᾫ" class="Ω ῾ ` ᶥ" title="rough breathing + grave + iota subscript">
 </p>
 </div>
 </form>
@@ -555,6 +553,4 @@ Copy [Ctrl]+[C] &amp; Past [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/greek_ancient.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:16 GMT -->
 </html>

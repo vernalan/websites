@@ -383,8 +383,8 @@ car = car.replace(/[ûúù]/g, "ئوو");
 car = car.replace(/ ئوو /g, " و ");
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 // cas du û = et
 car = car.replace(/ ئوو،/g, " و،");
 

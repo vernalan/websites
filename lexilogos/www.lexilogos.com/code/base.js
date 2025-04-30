@@ -1,5 +1,5 @@
 //  copyright lexilogos.com
-function alfa(item) {
+function alpha(item) {
     var input = document.conversion.saisie;
     if (document.selection) {
         input.focus();
@@ -7,7 +7,7 @@ function alfa(item) {
         range.text = item;
         range.select();
     }
-    else if (input.selectionStart || input.selectionStart === "0") {
+    else if (input.selectionStart || input.selectionStart === '0') {
         var startPos = input.selectionStart;
         var endPos = input.selectionEnd;
         var cursorPos = startPos;
@@ -27,6 +27,12 @@ function alfa(item) {
         input.focus();
     }
 }
+
+//function copy() {
+//    textRange = document.conversion.saisie.createTextRange();
+//    textRange.execCommand("Copy");
+//    textRange = "";
+//}
 
 var car;
 function annuler() {

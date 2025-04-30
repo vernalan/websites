@@ -23,7 +23,7 @@ class clavierVirtuel
 				car = this.value;
 				car = car.replace('◌', '');
 				car = car.replace('\u{A0}', '');
-				alfa(car)
+				alpha(car)
 			});
 			attribuerInfobulle(this.boutonsDirects[i]);
 		}	
@@ -89,7 +89,7 @@ class clavierVirtuel
 				car = this.value;
 				car = car.replace('◌', '');
 				car = car.replace('\u{A0}', '');
-				alfa(car);
+				alpha(car);
 					this.parent.initialiser();
 				});
 				attribuerInfobulle(this.boutons[i]);

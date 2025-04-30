@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/nunavik.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:17 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Nunavik Keyboard • Lexilogos</title>
+<title>Nunavik Keyboard LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online keyboard to type an Inuktitut text (Nunavik) with the Qaniujaaqpait script">
 <meta name="Keywords" content="nunavik, keyboard, script">
@@ -18,13 +16,13 @@
 .inuk { font-size:1em; font-family:Noto Sans Canadian Aboriginal, Gadugi; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carnuna.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -190,7 +188,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -204,118 +202,118 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
 <div class="boxdeva">
-<div class="as">a<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐊ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐋ"></p></div>
-<div class="as">pa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐸ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐹ"></p></div>
-<div class="as">ta<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑕ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑖ"></p></div>
-<div class="as">ka<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑲ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑳ"></p></div>
-<div class="as">ha<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕹ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕺ"></p></div>
-<div class="as">ga<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒐ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒑ"></p></div>
-<div class="as">ma<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒪ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒫ"></p></div>
-<div class="as">na<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓇ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓈ"></p></div>
-<div class="as">sa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓴ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓵ"></p></div>
-<div class="as">ša<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓴ̵"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓵ̵"></p></div>
-<div class="as">ha<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓴˏ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓵˏ"></p></div>
-<div class="as">la<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓚ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓛ"></p></div>
-<div class="as">ja<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔭ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔮ"></p></div>
-<div class="as">jja<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔭ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔮ"></p></div>
-<div class="as">řa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖬ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖭ"></p></div>
-<div class="as">va<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕙ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕚ"></p></div>
-<div class="as">ra<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕋ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕌ"></p></div>
-<div class="as">qa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖃ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖄ"></p></div>
-<div class="as">qqa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑲ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑳ"></p></div>
-<div class="as">ŋa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖓ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖔ"></p></div>
-<div class="as">ŋŋa<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙵ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙶ"></p></div>
-<div class="as">ła<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖤ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖥ"></p></div>
+<div class="as">a<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐊ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐋ"></p></div>
+<div class="as">pa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐸ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐹ"></p></div>
+<div class="as">ta<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑕ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑖ"></p></div>
+<div class="as">ka<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑲ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑳ"></p></div>
+<div class="as">ha<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕹ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕺ"></p></div>
+<div class="as">ga<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒐ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒑ"></p></div>
+<div class="as">ma<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒪ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒫ"></p></div>
+<div class="as">na<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓇ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓈ"></p></div>
+<div class="as">sa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓴ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓵ"></p></div>
+<div class="as">ša<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓴ̵"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓵ̵"></p></div>
+<div class="as">ha<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓴˏ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓵˏ"></p></div>
+<div class="as">la<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓚ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓛ"></p></div>
+<div class="as">ja<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔭ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔮ"></p></div>
+<div class="as">jja<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔭ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔮ"></p></div>
+<div class="as">řa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖬ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖭ"></p></div>
+<div class="as">va<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕙ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕚ"></p></div>
+<div class="as">ra<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕋ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕌ"></p></div>
+<div class="as">qa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖃ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖄ"></p></div>
+<div class="as">qqa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑲ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑳ"></p></div>
+<div class="as">ŋa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖓ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖔ"></p></div>
+<div class="as">ŋŋa<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙵ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙶ"></p></div>
+<div class="as">ła<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖤ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖥ"></p></div>
 <div class="esp"></div>
-<div class="as">i<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐃ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐄ"></p></div>
-<div class="as">pi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐱ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐲ"></p></div>
-<div class="as">ti<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑎ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑏ"></p></div>
-<div class="as">ki<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑭ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑮ"></p></div>
-<div class="as">hi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕵ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕶ"></p></div>
-<div class="as">gi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒋ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒌ"></p></div>
-<div class="as">mi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒥ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒦ"></p></div>
-<div class="as">ni<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓂ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓃ"></p></div>
-<div class="as">si<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓯ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓰ"></p></div>
-<div class="as">ši<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓯ̵"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓰ̵"></p></div>
-<div class="as">hi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓯˋ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓰˋ"></p></div>
-<div class="as">li<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓕ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓖ"></p></div>
-<div class="as">ji<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔨ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔩ"></p></div>
-<div class="as">jji<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔨ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔩ"></p></div>
-<div class="as">ři<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖨ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖩ"></p></div>
-<div class="as">vi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕕ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕖ"></p></div>
-<div class="as">ri<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕆ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕇ"></p></div>
-<div class="as">qi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕿ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖀ"></p></div>
-<div class="as">qqi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑭ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑮ"></p></div>
-<div class="as">ŋi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖏ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖐ"></p></div>
-<div class="as">ŋŋi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙱ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙲ"></p></div>
-<div class="as">łi<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖠ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖡ"></p></div>
+<div class="as">i<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐃ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐄ"></p></div>
+<div class="as">pi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐱ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐲ"></p></div>
+<div class="as">ti<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑎ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑏ"></p></div>
+<div class="as">ki<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑭ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑮ"></p></div>
+<div class="as">hi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕵ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕶ"></p></div>
+<div class="as">gi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒋ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒌ"></p></div>
+<div class="as">mi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒥ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒦ"></p></div>
+<div class="as">ni<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓂ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓃ"></p></div>
+<div class="as">si<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓯ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓰ"></p></div>
+<div class="as">ši<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓯ̵"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓰ̵"></p></div>
+<div class="as">hi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓯˋ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓰˋ"></p></div>
+<div class="as">li<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓕ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓖ"></p></div>
+<div class="as">ji<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔨ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔩ"></p></div>
+<div class="as">jji<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔨ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔩ"></p></div>
+<div class="as">ři<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖨ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖩ"></p></div>
+<div class="as">vi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕕ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕖ"></p></div>
+<div class="as">ri<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕆ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕇ"></p></div>
+<div class="as">qi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕿ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖀ"></p></div>
+<div class="as">qqi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑭ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑮ"></p></div>
+<div class="as">ŋi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖏ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖐ"></p></div>
+<div class="as">ŋŋi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙱ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙲ"></p></div>
+<div class="as">łi<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖠ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖡ"></p></div>
 <div class="esp"></div>
-<div class="as">u<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐅ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐆ"></p></div>
-<div class="as">pu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐳ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐴ"></p></div>
-<div class="as">tu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑐ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑑ"></p></div>
-<div class="as">ku<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑯ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑰ"></p></div>
-<div class="as">hu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕷ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕸ"></p></div>
-<div class="as">gu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒍ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒎ"></p></div>
-<div class="as">mu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒧ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒨ"></p></div>
-<div class="as">nu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓄ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓅ"></p></div>
-<div class="as">su<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓱ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓲ"></p></div>
-<div class="as">šu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓱ̵"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓲ̵"></p></div>
-<div class="as">hu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ˎᓱ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ˎᓲ"></p></div>
-<div class="as">lu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓗ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓘ"></p></div>
-<div class="as">ju<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔪ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔫ"></p></div>
-<div class="as">jju<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔪ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔫ"></p></div>
-<div class="as">řu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖪ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖫ"></p></div>
-<div class="as">vu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕗ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕘ"></p></div>
-<div class="as">ru<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕈ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕉ"></p></div>
-<div class="as">qu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖁ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖂ"></p></div>
-<div class="as">qqu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑯ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑰ"></p></div>
-<div class="as">ŋu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖑ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖒ"></p></div>
-<div class="as">ŋŋu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙳ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙴ"></p></div>
-<div class="as">łu<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖢ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖣ"></p></div>
+<div class="as">u<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐅ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐆ"></p></div>
+<div class="as">pu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐳ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐴ"></p></div>
+<div class="as">tu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑐ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑑ"></p></div>
+<div class="as">ku<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑯ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑰ"></p></div>
+<div class="as">hu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕷ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕸ"></p></div>
+<div class="as">gu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒍ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒎ"></p></div>
+<div class="as">mu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒧ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒨ"></p></div>
+<div class="as">nu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓄ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓅ"></p></div>
+<div class="as">su<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓱ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓲ"></p></div>
+<div class="as">šu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓱ̵"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓲ̵"></p></div>
+<div class="as">hu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ˎᓱ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ˎᓲ"></p></div>
+<div class="as">lu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓗ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓘ"></p></div>
+<div class="as">ju<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔪ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔫ"></p></div>
+<div class="as">jju<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔪ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔫ"></p></div>
+<div class="as">řu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖪ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖫ"></p></div>
+<div class="as">vu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕗ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕘ"></p></div>
+<div class="as">ru<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕈ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕉ"></p></div>
+<div class="as">qu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖁ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖂ"></p></div>
+<div class="as">qqu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑯ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑰ"></p></div>
+<div class="as">ŋu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖑ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖒ"></p></div>
+<div class="as">ŋŋu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙳ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙴ"></p></div>
+<div class="as">łu<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖢ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖣ"></p></div>
 <div class="esp"></div>
 
-<div class="as">ai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐁ"></p></div>
-<div class="as">pai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᐯ"></p></div>
-<div class="as">tai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑌ"></p></div>
-<div class="as">kai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑫ"></p></div>
-<div class="as">hai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕴ"></p></div>
-<div class="as">gai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒉ"></p></div>
-<div class="as">mai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒣ"></p></div>
-<div class="as">nai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓀ"></p></div>
-<div class="as">sai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓭ"></p></div>
-<div class="as">lai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓓ"></p></div>
-<div class="as">jai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔦ"></p></div>
-<div class="as">jjai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔦ"></p></div>
-<div class="as">vai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕓ"></p></div>
-<div class="as">rai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕂ"></p></div>
-<div class="as">qai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙯ"></p></div>
-<div class="as">qqai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᑫ"></p></div>
-<div class="as">ŋai<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᙰ"></p></div>
+<div class="as">ai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐁ"></p></div>
+<div class="as">pai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᐯ"></p></div>
+<div class="as">tai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑌ"></p></div>
+<div class="as">kai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑫ"></p></div>
+<div class="as">hai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕴ"></p></div>
+<div class="as">gai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒉ"></p></div>
+<div class="as">mai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒣ"></p></div>
+<div class="as">nai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓀ"></p></div>
+<div class="as">sai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓭ"></p></div>
+<div class="as">lai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓓ"></p></div>
+<div class="as">jai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔦ"></p></div>
+<div class="as">jjai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔦ"></p></div>
+<div class="as">vai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕓ"></p></div>
+<div class="as">rai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕂ"></p></div>
+<div class="as">qai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙯ"></p></div>
+<div class="as">qqai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᑫ"></p></div>
+<div class="as">ŋai<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᙰ"></p></div>
 <div class="esp"></div>
-<div class="as">p<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑉ"></p></div>
-<div class="as">t<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦ"></p></div>
-<div class="as">k<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒃ"></p></div>
-<div class="as">h<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕻ"></p></div>
-<div class="as">g<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒡ"></p></div>
-<div class="as">m<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᒻ"></p></div>
-<div class="as">n<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓐ"></p></div>
-<div class="as">s<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔅ"></p></div>
-<div class="as">š<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔅ̵"></p></div>
-<div class="as">h<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔅ̷"></p></div>
-<div class="as">l<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᓪ"></p></div>
-<div class="as">j<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᔾ"></p></div>
-<div class="as">jj<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᑦᔾ"></p></div>
-<div class="as">ř<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖮ"></p></div>
-<div class="as">v<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕝ"></p></div>
-<div class="as">r<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᕐ"></p></div>
-<div class="as">q<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅ"></p></div>
-<div class="as">qq<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖅᒃ"></p></div>
-<div class="as">ŋ<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖕ"></p></div>
-<div class="as">ŋŋ<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖖ"></p></div>
-<div class="as">ł<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᖦ"></p></div>
+<div class="as">p<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑉ"></p></div>
+<div class="as">t<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦ"></p></div>
+<div class="as">k<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒃ"></p></div>
+<div class="as">h<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕻ"></p></div>
+<div class="as">g<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒡ"></p></div>
+<div class="as">m<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᒻ"></p></div>
+<div class="as">n<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓐ"></p></div>
+<div class="as">s<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔅ"></p></div>
+<div class="as">š<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔅ̵"></p></div>
+<div class="as">h<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔅ̷"></p></div>
+<div class="as">l<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᓪ"></p></div>
+<div class="as">j<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᔾ"></p></div>
+<div class="as">jj<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᑦᔾ"></p></div>
+<div class="as">ř<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖮ"></p></div>
+<div class="as">v<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕝ"></p></div>
+<div class="as">r<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᕐ"></p></div>
+<div class="as">q<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅ"></p></div>
+<div class="as">qq<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖅᒃ"></p></div>
+<div class="as">ŋ<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖕ"></p></div>
+<div class="as">ŋŋ<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖖ"></p></div>
+<div class="as">ł<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᖦ"></p></div>
 </div>
 </form>
 </div>
@@ -356,6 +354,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/nunavik.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:17 GMT -->
 </html>

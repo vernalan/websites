@@ -7,11 +7,11 @@ car = car.replace(/&/g, "्");
 car = car.replace(/््/g, "");
 
 car = car.replace(/a/g, "अ");
-car = car.replace(/[Aāâ]/g, "आ");
+car = car.replace(/[Aā]/g, "आ");
 car = car.replace(/i/g, "इ");
-car = car.replace(/[Iīî]/g, "ई");
+car = car.replace(/[Iī]/g, "ई");
 car = car.replace(/u/g, "उ");
-car = car.replace(/[Uūû]/g, "ऊ");
+car = car.replace(/[Uū]/g, "ऊ");
 car = car.replace(/अअ/g, "आ");
 car = car.replace(/इइ/g, "ई");
 car = car.replace(/उउ/g, "ऊ");

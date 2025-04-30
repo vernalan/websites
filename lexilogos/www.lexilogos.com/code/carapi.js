@@ -103,7 +103,7 @@ car = car.replace(/ɣ=/g, "v");
 car = car.replace(/w=/g, "ʍ");
 car = car.replace(/ʍ=/g, "w");
 car = car.replace(/y=/g, "ʎ");
-car = car.replace(/ʎ=/g, "ʏ");
+car = car.replace(/ʎ=/g, "y");
 car = car.replace(/ʏ=/g, "y");
 car = car.replace(/z=/g, "ʑ");
 car = car.replace(/ʑ=/g, "ʐ");

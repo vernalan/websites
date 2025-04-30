@@ -1,5 +1,5 @@
 //  copyright lexilogos.com
-function alfa(item) {
+function alpha(item) {
 var input = document.conversion.saisie;
 if (document.selection) {
 input.focus();
@@ -98,8 +98,8 @@ car = car.replace(/[AIE]/g, "إ");
 
 car = car.replace(/_/g, "ـ");
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

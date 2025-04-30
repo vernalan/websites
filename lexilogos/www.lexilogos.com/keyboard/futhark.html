@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/futhark.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:42 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Younger Futhark Keyboard - To type Online Runes • Lexilogos</title>
+<title>Younger Futhark Keyboard - To type Online Runes - LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Keyboard to type the Runic characters of the Younger Futhark alphabet (fuþąrk)">
 <meta name="Keywords" content="alphabet, runes, keyboard">
@@ -18,13 +16,13 @@
 .run { font-family:Junicode, Segoe UI Symbol, Arial; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carrune.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -190,7 +188,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -204,24 +202,24 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
-<div class="as v">f<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚠ"></p></div>
-<div class="as v">u<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚢ"></p></div>
-<div class="as v">þ<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚦ"></p></div>
-<div class="as">ą<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚭ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚬ"></p></div>
-<div class="as v">r<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚱ"></p></div>
-<div class="as v">k<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚴ"></p></div>
-<div class="as">h<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚽ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚼ"></p></div>
-<div class="as">n<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚿ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᚾ"></p></div>
-<div class="as v">i<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛁ"></p></div>
-<div class="as">a<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛆ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛅ"></p></div>
-<div class="as">s<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛌ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛋ"></p></div>
-<div class="as">t<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛐ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛏ"></p></div>
-<div class="as">b<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛓ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛒ"></p></div>
-<div class="as">m<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛙ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛘ"></p></div>
-<div class="as v">l<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛚ"></p></div>
-<div class="as">ʀ<p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛧ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ᛦ"></p></div>
+<div class="as v">f<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚠ"></p></div>
+<div class="as v">u<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚢ"></p></div>
+<div class="as v">þ<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚦ"></p></div>
+<div class="as">ą<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚭ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚬ"></p></div>
+<div class="as v">r<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚱ"></p></div>
+<div class="as v">k<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚴ"></p></div>
+<div class="as">h<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚽ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚼ"></p></div>
+<div class="as">n<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚿ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᚾ"></p></div>
+<div class="as v">i<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛁ"></p></div>
+<div class="as">a<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛆ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛅ"></p></div>
+<div class="as">s<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛌ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛋ"></p></div>
+<div class="as">t<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛐ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛏ"></p></div>
+<div class="as">b<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛓ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛒ"></p></div>
+<div class="as">m<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛙ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛘ"></p></div>
+<div class="as v">l<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛚ"></p></div>
+<div class="as">ʀ<p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛧ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ᛦ"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -262,6 +260,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/futhark.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:42 GMT -->
 </html>

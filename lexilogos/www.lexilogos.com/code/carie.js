@@ -50,8 +50,8 @@ car = car.replace(/ʰ=/g, "’");
 car = car.replace(/’=/g, "ʰ");
 car = car.replace(/ww/g, "ʷ");
 car = car.replace(/ee/g, "ǝ");
-car = car.replace(/</g, "ʕ");
-car = car.replace(/>/g, "ʔ");
+car = car.replace(/\</g, "ʕ");
+car = car.replace(/\>/g, "ʔ");
 
 
 startPos = document.conversion.saisie.selectionStart;

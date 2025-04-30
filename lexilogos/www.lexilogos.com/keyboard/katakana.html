@@ -1,29 +1,26 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/katakana.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:23 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Katakana Japanese Online Keyboard • Lexilogos</title>
+<title>Katakana Japanese Online Keyboard LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online keyboard to type the Katakana characters of the Japanese language">
 <meta name="Keywords" content="katakana,alphabet,japanese,keyboard,online">
 <meta property="og:image" content="../images/babel_bruegel.jpg">
 <link rel="shortcut icon" href="https://www.lexilogos.com/favicon.ico">
 <style>
-.bt, .bt:visited {text-decoration:none; cursor:pointer; font-size:1.2em; font-family:MS UI Gothic, BabelStone Han; font-style:normal; font-weight:normal; color:#CC0033; background-color: #E9E9E9; border:1px solid #666; border-radius: 4px; }
-.bt:hover { color:#0000FF; background-color:#FFFF7D; }
-.cadr {width:80%; font-size:1.7em; color:#0000FF; font-family:MS UI Gothic, BabelStone Han; padding:3px; }
-.nih { font-size:1.2em; color:#0000FF; font-family:MS UI Gothic, BabelStone Han; }
+.bt, .bt:hover, .bt:visited {text-decoration:none; cursor:pointer; font-size:1.2em; font-family:BabelStone Han, MS UI Gothic; color:#CC0033;}
+.cadr {width:80%; font-size:1.7em; color:#0000FF; font-family:BabelStone Han, MS UI Gothic; padding:3px; }
+.nih { font-size:1.2em; color:#0000FF; font-family:BabelStone Han, MS UI Gothic; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carnik.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus();">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -189,7 +186,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -203,7 +200,7 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
 <div class="boxdevb">
 <table class="tab-kb">
@@ -216,12 +213,12 @@ console.log(e);
 <td>na</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ア"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ァ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="カ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="サ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="タ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ナ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ア"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ァ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="カ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="サ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="タ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ナ"></td>
 </tr>
 <tr> 
 <td>i</td>
@@ -232,12 +229,12 @@ console.log(e);
 <td>ni</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="イ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ィ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="キ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="シ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="チ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ニ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="イ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ィ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="キ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="シ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="チ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ニ"></td>
 </tr>
 <tr> 
 <td>u</td>
@@ -248,12 +245,12 @@ console.log(e);
 <td>nu</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ウ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ゥ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ク"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ス"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ツ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヌ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ウ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ゥ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ク"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ス"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ツ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヌ"></td>
 </tr>
 <tr> 
 <td>e</td>
@@ -264,12 +261,12 @@ console.log(e);
 <td>ne</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="エ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ェ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ケ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="セ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="テ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ネ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="エ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ェ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ケ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="セ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="テ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ネ"></td>
 </tr>
 <tr> 
 <td>o</td>
@@ -280,12 +277,12 @@ console.log(e);
 <td>no</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="オ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ォ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="コ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ソ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ト"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ノ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="オ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ォ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="コ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ソ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ト"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ノ"></td>
 </tr>
 <tr> 
 <td>&nbsp;</td>
@@ -297,11 +294,11 @@ console.log(e);
 </tr>
 <tr> 
 <td>&nbsp; </td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヴ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヴ"></td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ッ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ン"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ッ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ン"></td>
 </tr>
 </table>
 </div>
@@ -315,11 +312,11 @@ console.log(e);
 <td>ra</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ハ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="マ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヤ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ャ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ラ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ハ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="マ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヤ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ャ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ラ"></td>
 </tr>
 <tr> 
 <td>hi</td>
@@ -329,11 +326,11 @@ console.log(e);
 <td>ri</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヒ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ミ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヒ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ミ"></td>
 <td></td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="リ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="リ"></td>
 </tr>
 <tr> 
 <td>fu</td>
@@ -343,11 +340,11 @@ console.log(e);
 <td>ru</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="フ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ム"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ユ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ュ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ル"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="フ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ム"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ユ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ュ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ル"></td>
 </tr>
 <tr> 
 <td>he</td>
@@ -357,11 +354,11 @@ console.log(e);
 <td>re</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヘ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="メ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヘ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="メ"></td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="レ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="レ"></td>
 </tr>
 <tr> 
 <td>ho</td>
@@ -371,11 +368,11 @@ console.log(e);
 <td>ro</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ホ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="モ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヨ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ョ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ロ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ホ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="モ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヨ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ョ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ロ"></td>
 </tr>
 </table>
 </div>
@@ -390,12 +387,12 @@ console.log(e);
 <td>pa</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ワ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ガ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ザ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ダ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="バ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="パ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ワ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ガ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ザ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ダ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="バ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="パ"></td>
 </tr>
 <tr> 
 <td class="grey">wi</td>
@@ -406,12 +403,12 @@ console.log(e);
 <td>pi</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヰ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ギ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ジ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヂ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ビ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ピ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヰ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ギ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ジ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヂ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ビ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ピ"></td>
 </tr>
 <tr> 
 <td>&nbsp;</td>
@@ -423,11 +420,11 @@ console.log(e);
 </tr>
 <tr> 
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="グ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ズ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヅ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ブ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="プ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="グ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ズ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヅ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ブ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="プ"></td>
 </tr>
 <tr> 
 <td class="grey">we</td>
@@ -438,12 +435,12 @@ console.log(e);
 <td>pe</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヱ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ゲ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ゼ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="デ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ベ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ペ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヱ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ゲ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ゼ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="デ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ベ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ペ"></td>
 </tr>
 <tr> 
 <td>wo</td>
@@ -454,24 +451,24 @@ console.log(e);
 <td>po</td>
 </tr>
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヲ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ゴ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ゾ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ド"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ボ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ポ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヲ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ゴ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ゾ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ド"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ボ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ポ"></td>
 </tr>
 </table>
 </div>
 <div class="esp"></div>
 <table class="tab-kb">
 <tr> 
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="・"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ー"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヽ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ヾ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="、"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="。"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="・"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ー"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヽ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ヾ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="、"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="。"></td>
 </tr>
 </table>
 </form>
@@ -519,6 +516,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/katakana.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:24 GMT -->
 </html>

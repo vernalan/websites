@@ -3,8 +3,7 @@ var car;
 
 function transcrire() {
 car = document.conversion.saisie.value;
-car = car.replace(/\'/g, "ʼ"); // 02BC
-car = car.replace(/̕/g, "ʼ"); // ancien 0315
+car = car.replace(/\'/g, "\̕");
 
 car = car.replace(/a/g, "ա");
 car = car.replace(/b/g, "բ");
@@ -15,7 +14,7 @@ car = car.replace(/z/g, "զ");
 car = car.replace(/[ēêé]/g, "է");
 car = car.replace(/եե/g, "է");
 car = car.replace(/ë/g, "ը");
-car = car.replace(/եʼ/g, "ը");
+car = car.replace(/ե̕/g, "ը");
 car = car.replace(/ե=/g, "ը");
 car = car.replace(/ը=/g, "ե");
 car = car.replace(/ž/g, "ժ");
@@ -47,11 +46,11 @@ car = car.replace(/ոո/g, "օ");
 car = car.replace(/ո=/g, "օ");
 car = car.replace(/f/g, "ֆ");
 
-car = car.replace(/պʼ/g, "փ");
-car = car.replace(/կʼ/g, "ք");
-car = car.replace(/տʼ/g, "թ");
-car = car.replace(/ծʼ/g, "ց"); // c
-car = car.replace(/րʼ/g, "ռ");
+car = car.replace(/պ̕/g, "փ");
+car = car.replace(/կ̕/g, "ք");
+car = car.replace(/տ̕/g, "թ");
+car = car.replace(/ծ̕/g, "ց"); // c
+car = car.replace(/ր̕/g, "ռ");
 
 car = car.replace(/պ=/g, "փ");
 car = car.replace(/կ=/g, "ք");
@@ -70,10 +69,10 @@ car = car.replace(/ծհ/g, "ճ"); // ch
 car = car.replace(/ց=/g, "ճ");
 car = car.replace(/սհ/g, "շ"); // sh
 car = car.replace(/ս=/g, "շ"); // s
-car = car.replace(/ճʼ/g, "չ"); // ch'
+car = car.replace(/ճ̕/g, "չ"); // ch'
 car = car.replace(/ճ=/g, "չ");
 car = car.replace(/տծ/g, "չ"); // tc
-car = car.replace(/ծʼ/g, "ց"); // ts'
+car = car.replace(/ծ̕/g, "ց"); // ts'
 car = car.replace(/ձհ/g, "ջ"); // dzh
 car = car.replace(/ձ=/g, "ջ"); //j
 car = car.replace(/րր/g, "ռ"); // rr
@@ -121,11 +120,11 @@ car = car.replace(/Ո=/g, "Օ");
 car = car.replace(/ՈՈ/g, "Օ");
 car = car.replace(/F/g, "Ֆ");
 
-car = car.replace(/Պʼ/g, "Փ");
-car = car.replace(/Կʼ/g, "Ք");
-car = car.replace(/Տʼ/g, "Թ");
-car = car.replace(/Ծʼ/g, "Ց"); // C
-car = car.replace(/Րʼ/g, "Ռ");
+car = car.replace(/Պ̕/g, "Փ");
+car = car.replace(/Կ̕/g, "Ք");
+car = car.replace(/Տ̕/g, "Թ");
+car = car.replace(/Ծ̕/g, "Ց"); // C
+car = car.replace(/Ր̕/g, "Ռ");
 
 car = car.replace(/Պ=/g, "Փ");
 car = car.replace(/Կ=/g, "Ք");
@@ -144,9 +143,9 @@ car = car.replace(/ԾՀ/g, "Ճ"); // CH
 car = car.replace(/Ց=/g, "Ճ");
 car = car.replace(/ՍՀ/g, "Շ"); // SH
 car = car.replace(/Ս=/g, "Շ"); // S
-car = car.replace(/Ճʼ/g, "Չ"); // CH'
+car = car.replace(/Ճ̕/g, "Չ"); // CH'
 car = car.replace(/Ճ=/g, "Չ");
-car = car.replace(/Ծʼ/g, "Ց"); // TS'
+car = car.replace(/Ծ̕/g, "Ց"); // TS'
 car = car.replace(/ՁՀ/g, "Ջ"); // DZH
 car = car.replace(/Ձ=/g, "Ջ"); //J
 
@@ -166,9 +165,9 @@ car = car.replace(/Րր/g, "Ռ");
 
 car = car.replace(/\./g, "։");
 car = car.replace(/\?/g, "՞");
-car = car.replace(/,/g, "՝");
+car = car.replace(/\,/g, "՝");
 car = car.replace(/\!/g, "՜");
-car = car.replace(/-/g, "֊");
+
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

@@ -1,10 +1,8 @@
  <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tuareg_latin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:51 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Tuareg Keyboard - Latin Script • Lexilogos</title>
+<title>Tuareg Keyboard - Latin Script - LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Tuareg Keyboard to type a text in Latin (Roman) characters">
 <meta name="Keywords" content="keyboard, latin, tuareg">
@@ -16,13 +14,13 @@
 .cadr { width:80%; color:#0000FF; font-family:Noto Sans, Arial; font-size:1em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/cartouareg.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="nouveau"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" alt="dictionnaire" class="imgloge" title="Online Dictionaries &gt; Index"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -188,7 +186,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="Clear" onClick="reset();conversion.saisie.focus()">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -202,23 +200,23 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ă"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ă"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ḍ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ḍ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ǝ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ǝ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ǧ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ǧ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="J̌"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ǰ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ɣ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ɣ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ḥ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ḥ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ḷ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ḷ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ŋ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ŋ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ṣ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ṣ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Š"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="š"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ṭ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ṭ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ž"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ž"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ẓ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ẓ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ʔ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ʔ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ă"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ă"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ḍ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ḍ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ǝ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ǝ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ǧ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ǧ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="J̌"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ǰ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ɣ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ɣ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ḥ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ḥ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ḷ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ḷ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ŋ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ŋ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ṣ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ṣ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Š"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="š"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ṭ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ṭ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ž"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ž"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ẓ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ẓ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ʔ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ʔ"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -234,7 +232,7 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="espa"></div>
 <p class="pp"><span class="ji">&#x2192;</span> <a href="https://www.lexilogos.com/touareg_dictionnaire.htm">Tuareg language</a> </p>
 <p class="pp"><span class="ji">&#x2192;</span> <a href="tifinagh.html">Tuareg keyboard</a>: Tifinagh script</p>
-<p class="pp"><span class="ji">&#x2192;</span> <a href="tamazight_latin.html">Latin Berber keyboard</a> </p>
+<p class="pp"><span class="ji">&#x2192;</span> <a href="tamazight_Latin-2.html">Latin Berber keyboard</a> </p>
 <p class="pp"><span class="ji">&#x2192;</span> <a href="index.html">Multilingual keyboard</a>: index </p>
 
 <div class="espb"></div>
@@ -256,6 +254,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tuareg_latin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:52 GMT -->
 </html>

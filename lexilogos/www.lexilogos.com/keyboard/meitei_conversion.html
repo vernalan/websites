@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/meitei_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:47 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Meitei &gt; Latin Conversion, Online Tool • Lexilogos</title>
+<title>Meitei &gt; Latin Conversion, Online Tool LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online tool to convert a text texte written in Meitei script to Latin alphabet (romanization, transliteration)">
 <meta name="Keywords" content="conversion, script, meitei, latin, transliteration">
@@ -18,7 +16,7 @@
 <script src="../code/clipboard.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="transcription.text1.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -47,7 +45,7 @@ in Latin script:</td>
 </tr>
 <tr> 
 <td> 
-<textarea autofocus spellcheck="false" id="bar1" name="text1" rows="20" onInput="meilat()" onKeyUp="meilat()" class="cadr"></textarea> <br> <br> 
+<textarea spellcheck="false" id="bar1" name="text1" rows="20" onKeyUp="meilat()" class="cadr"></textarea> <br> <br> 
 <input type="button" class="bf" onClick="reset();transcription.text1.focus()" value="effacer"> </td>
 <td> 
 <textarea spellcheck="false" id="bar2" name="text2" rows="20" class="cadr"></textarea> <br> <br>
@@ -91,6 +89,4 @@ console.log(e);
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/meitei_conversion.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:47 GMT -->
 </html>

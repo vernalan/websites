@@ -12,10 +12,8 @@ car = car.replace(/[UūŪ]/g, "ऊ");
 car = car.replace(/अअ/g, "आ");
 car = car.replace(/इइ/g, "ई");
 car = car.replace(/उउ/g, "ऊ");
-car = car.replace(/e/g, "ए");
-car = car.replace(/o/g, "ओ");
-car = car.replace(/[Eēê]/g, "ए"); // doublon ?
-car = car.replace(/[Oōô]/g, "ओ"); // doublon  ?
+car = car.replace(/[eē]/g, "ए");
+car = car.replace(/[oō]/g, "ओ");
 car = car.replace(/अइ/g, "ऐ");
 car = car.replace(/अउ/g, "औ");
 

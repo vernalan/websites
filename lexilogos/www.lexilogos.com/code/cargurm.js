@@ -4,13 +4,13 @@ var car;
 function transcrire() {
 car = document.conversion.saisie.value;
 car = car.replace(/a/g, "ਅ");
-car = car.replace(/[Aāâ]/g, "ਆ");
+car = car.replace(/[Aā]/g, "ਆ");
 car = car.replace(/ਅਅ/g, "ਆ");
 car = car.replace(/i/g, "ਇ");
-car = car.replace(/[Iīî]/g, "ਈ");
+car = car.replace(/[Iī]/g, "ਈ");
 car = car.replace(/ਇਇ/g, "ਈ");
 car = car.replace(/u/g, "ਉ");
-car = car.replace(/[Uūû]/g, "ਊ");
+car = car.replace(/[Uū]/g, "ਊ");
 car = car.replace(/ਉਉ/g, "ਊ");
 car = car.replace(/e/g, "ਏ");
 car = car.replace(/ਅਇ/g, "ਐ");

@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/latin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:31 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Latin keyboard Online (Diacritics) • Lexilogos</title>
+<title>Latin keyboard Online (Diacritics) LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Latin keyboard to type the diacritical marks (short and long vowels)">
 <meta name="Keywords" content="latin,keyboard,online,diacritic">
@@ -16,13 +14,13 @@
 .cadr { width:80%; color:blue; font-family:Arial; font-size:1em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carla.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a> </div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a> </div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -187,7 +185,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -201,20 +199,20 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <br>
 <br>
 <div class="box-tam">
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ā"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ă"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ē"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ĕ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ī"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ĭ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ō"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ŏ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ū"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ŭ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="ȳ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="y̆"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ā"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ă"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ē"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ĕ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ī"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ĭ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ō"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ŏ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ū"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ŭ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="ȳ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="y̆"></p></div>
 </div>
 <div class="box-tam">
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Æ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="æ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Œ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="œ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Æ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="æ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Œ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="œ"></p></div>
 </div>
 </form>
 </div> 
@@ -255,6 +253,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/latin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:31 GMT -->
 </html>

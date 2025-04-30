@@ -65,17 +65,17 @@ car = car.replace (/ى'/g, "ۑ");
 car = car.replace (/ۑ'/g, "ى");
 
 car = car.replace (/a/g, "ـَ");
-car = car.replace (/[Aāâ]/g, "ـَا");
+car = car.replace (/[Aā]/g, "ـَا");
 car = car.replace (/e/g, "ـٜ");
-car = car.replace (/[Eēê]/g, "ـٰٜی");
+car = car.replace (/[Eē]/g, "ـٰٜی");
 car = car.replace (/i/g, "ـِ");
-car = car.replace (/[Iīî]/g, "ـِى");
+car = car.replace (/[Iī]/g, "ـِى");
 car = car.replace (/[ou]/g, "ـُ");
 car = car.replace (/[OōUū]/g, "ـُو");
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/greek_modern.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:16 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Modern Greek Keyboard Online • Lexilogos</title>
+<title>Modern Greek Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Greek keyboard to type a text with the Greek script">
 <meta name="Keywords" content="greek, keyboard">
@@ -17,13 +15,13 @@
 .cadr {width:80%; color:#0000FF; font-family:Times New Roman; font-size:1.7em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carel.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -188,7 +186,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
 <br>
 <br> 
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -202,41 +200,41 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
-<div class="as">a<p><input type="button" value="Α" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="α" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ά" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ά" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">b<p><input type="button" value="Β" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="β" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">g<p><input type="button" value="Γ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="γ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">d<p><input type="button" value="Δ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="δ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">e<p><input type="button" value="Ε" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ε" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Έ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="έ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">z<p><input type="button" value="Ζ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ζ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">è<p><input type="button" value="Η" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="η" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ή" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ή" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">th<p><input type="button" value="Θ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="θ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as v">i<p><input type="button" value="Ι" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ι" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ϊ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as v">&nbsp;<p><input type="button" value="Ί" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ί" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ΐ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">k<p><input type="button" value="Κ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="κ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">l<p><input type="button" value="Λ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="λ" onclick="alfa(this.value)" class="bt"></p></div>
+<div class="as">a<p><input type="button" value="Α" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="α" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ά" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ά" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">b<p><input type="button" value="Β" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="β" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">g<p><input type="button" value="Γ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="γ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">d<p><input type="button" value="Δ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="δ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">e<p><input type="button" value="Ε" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ε" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Έ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="έ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">z<p><input type="button" value="Ζ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ζ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">è<p><input type="button" value="Η" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="η" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ή" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ή" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">th<p><input type="button" value="Θ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="θ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as v">i<p><input type="button" value="Ι" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ι" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ϊ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as v">&nbsp;<p><input type="button" value="Ί" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ί" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ΐ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">k<p><input type="button" value="Κ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="κ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">l<p><input type="button" value="Λ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="λ" onclick="alpha(this.value)" class="bt"></p></div>
 <div class="esp mobnul"></div>
-<div class="as">m<p><input type="button" value="Μ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="μ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">n<p><input type="button" value="Ν" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ν" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">x<p><input type="button" value="Ξ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ξ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">o<p><input type="button" value="Ο" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ο" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ό" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ό" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">p<p><input type="button" value="Π" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="π" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">r<p><input type="button" value="Ρ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ρ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as v">s<p><input type="button" value="Σ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="σ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ς" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">t<p><input type="button" value="Τ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="τ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as v">u<p><input type="button" value="Υ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="υ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ϋ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as v">&nbsp;<p><input type="button" value="Ύ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ύ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ΰ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">ph<p><input type="button" value="Φ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="φ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">kh<p><input type="button" value="Χ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="χ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">ps<p><input type="button" value="Ψ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ψ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as">o<p><input type="button" value="Ω" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ω" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as"><p><input type="button" value="Ώ" onclick="alfa(this.value)" class="bt"></p><p><input type="button" value="ώ" onclick="alfa(this.value)" class="bt"></p></div>
-<div class="as v">;<p><input type="button" value="·" onclick="alfa(this.value)" class="bt"></p></div>
+<div class="as">m<p><input type="button" value="Μ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="μ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">n<p><input type="button" value="Ν" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ν" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">x<p><input type="button" value="Ξ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ξ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">o<p><input type="button" value="Ο" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ο" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ό" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ό" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">p<p><input type="button" value="Π" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="π" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">r<p><input type="button" value="Ρ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ρ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as v">s<p><input type="button" value="Σ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="σ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ς" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">t<p><input type="button" value="Τ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="τ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as v">u<p><input type="button" value="Υ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="υ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ϋ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as v">&nbsp;<p><input type="button" value="Ύ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ύ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ΰ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">ph<p><input type="button" value="Φ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="φ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">kh<p><input type="button" value="Χ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="χ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">ps<p><input type="button" value="Ψ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ψ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as">o<p><input type="button" value="Ω" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ω" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as"><p><input type="button" value="Ώ" onclick="alpha(this.value)" class="bt"></p><p><input type="button" value="ώ" onclick="alpha(this.value)" class="bt"></p></div>
+<div class="as v">;<p><input type="button" value="·" onclick="alpha(this.value)" class="bt"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -291,6 +289,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/greek_modern.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:16 GMT -->
 </html>

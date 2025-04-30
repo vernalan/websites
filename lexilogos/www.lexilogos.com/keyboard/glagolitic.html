@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/glagolitic.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:13 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Slavonic Keyboard Online - Glagolitic Alphabet • Lexilogos</title>
+<title>Slavonic Keyboard Online - Glagolitic Alphabet LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Slavonic keyboard to type a text with the Glagolitic script">
 <meta name="Keywords" content="glagolitic, slavonic, keyboard, script">
@@ -16,12 +14,12 @@
 .cadr { width:80%; color:#0000FF; font-family:Segoe UI Historic, 'MPH 2B Damase'; font-size:1.8em; padding:0.3em; }
 </style> 
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/cargla.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -187,7 +185,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -201,57 +199,57 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=20;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=4;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=20;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
-<div class="as"><span class="grey">а</span><br>a<p><input type="button" value="Ⰰ" onclick="alfa(this.value)" class="bt" title="az"></p><p><input type="button" value="ⰰ" onclick="alfa(this.value)" class="bt" title="az"></p></div>
-<div class="as"><span class="grey">б</span><br>b<p><input type="button" value="Ⰱ" onclick="alfa(this.value)" class="bt" title="buki"></p><p><input type="button" value="ⰱ" onclick="alfa(this.value)" class="bt" title="buki"></p></div>
-<div class="as"><span class="grey">в</span><br>v<p><input type="button" value="Ⰲ" onclick="alfa(this.value)" class="bt" title="vede"></p><p><input type="button" value="ⰲ" onclick="alfa(this.value)" class="bt" title="vede"></p></div>
-<div class="as"><span class="grey">г</span><br>g<p><input type="button" value="Ⰳ" onclick="alfa(this.value)" class="bt" title="glagoli"></p><p><input type="button" value="ⰳ" onclick="alfa(this.value)" class="bt" title="glagoli"></p></div>
-<div class="as"><span class="grey">д</span><br>d<p><input type="button" value="Ⰴ" onclick="alfa(this.value)" class="bt" title="dobro"></p><p><input type="button" value="ⰴ" onclick="alfa(this.value)" class="bt" title="dobro"></p></div>
-<div class="as"><span class="grey">е</span><br>e<p><input type="button" value="Ⰵ" onclick="alfa(this.value)" class="bt" title="est"></p><p><input type="button" value="ⰵ" onclick="alfa(this.value)" class="bt" title="est"></p></div>
-<div class="as"><span class="grey">ж</span><br>ž<p><input type="button" value="Ⰶ" onclick="alfa(this.value)" class="bt" title="živete"></p><p><input type="button" value="ⰶ" onclick="alfa(this.value)" class="bt" title="živete"></p></div>
-<div class="as"><span class="grey">ѕ</span><br>dz<p><input type="button" value="Ⰷ" onclick="alfa(this.value)" class="bt" title="dzelo"></p><p><input type="button" value="ⰷ" onclick="alfa(this.value)" class="bt" title="dzelo"></p></div>
-<div class="as"><span class="grey">з</span><br>z<p><input type="button" value="Ⰸ" onclick="alfa(this.value)" class="bt" title="zemlja"></p><p><input type="button" value="ⰸ" onclick="alfa(this.value)" class="bt" title="zemlja"></p></div>
-<div class="as"><span class="grey">й</span><br>y<p><input type="button" value="Ⰹ" onclick="alfa(this.value)" class="bt" title="iže"></p><p><input type="button" value="ⰹ" onclick="alfa(this.value)" class="bt" title="iže"></p></div>
-<div class="as"><span class="grey">й</span><br>y<p><input type="button" value="Ⰺ" onclick="alfa(this.value)" class="bt" title="iže (initial)"></p><p><input type="button" value="ⰺ" onclick="alfa(this.value)" class="bt" title="iže (initial)"></p></div>
-<div class="as"><span class="grey">і</span><br>i<p><input type="button" value="Ⰻ" onclick="alfa(this.value)" class="bt" title="i"></p><p><input type="button" value="ⰻ" onclick="alfa(this.value)" class="bt" title="i"></p></div>
-<div class="as"><span class="grey">ћ</span><br>j<p><input type="button" value="Ⰼ" onclick="alfa(this.value)" class="bt" title="jerv"></p><p><input type="button" value="ⰼ" onclick="alfa(this.value)" class="bt" title="jerv"></p></div>
-<div class="as"><span class="grey">к</span><br>k<p><input type="button" value="Ⰽ" onclick="alfa(this.value)" class="bt" title="kako"></p><p><input type="button" value="ⰽ" onclick="alfa(this.value)" class="bt" title="kako"></p></div>
-<div class="as"><span class="grey">л</span><br>l<p><input type="button" value="Ⰾ" onclick="alfa(this.value)" class="bt" title="ljudi"></p><p><input type="button" value="ⰾ" onclick="alfa(this.value)" class="bt" title="ljudi"></p></div>
-<div class="as"><span class="grey">м</span><br>m<p><input type="button" value="Ⰿ" onclick="alfa(this.value)" class="bt" title="myslete"></p><p><input type="button" value="ⰿ" onclick="alfa(this.value)" class="bt" title="myslete"></p></div>
-<div class="as"><span class="grey">н</span><br>n<p><input type="button" value="Ⱀ" onclick="alfa(this.value)" class="bt" title="naš"></p><p><input type="button" value="ⱀ" onclick="alfa(this.value)" class="bt" title="naš"></p></div>
-<div class="as"><span class="grey">о</span><br>o<p><input type="button" value="Ⱁ" onclick="alfa(this.value)" class="bt" title="on"></p><p><input type="button" value="ⱁ" onclick="alfa(this.value)" class="bt" title="on"></p></div>
-<div class="as"><span class="grey">п</span><br>p<p><input type="button" value="Ⱂ" onclick="alfa(this.value)" class="bt" title="pokoj"></p><p><input type="button" value="ⱂ" onclick="alfa(this.value)" class="bt" title="pokoi"></p></div>
-<div class="as"><span class="grey">р</span><br>r<p><input type="button" value="Ⱃ" onclick="alfa(this.value)" class="bt" title="rcy"></p><p><input type="button" value="ⱃ" onclick="alfa(this.value)" class="bt" title="rcy"></p></div>
-<div class="as"><span class="grey">с</span><br>s<p><input type="button" value="Ⱄ" onclick="alfa(this.value)" class="bt" title="slovo"></p><p><input type="button" value="ⱄ" onclick="alfa(this.value)" class="bt" title="slovo"></p></div>
-<div class="as"><span class="grey">т</span><br>t<p><input type="button" value="Ⱅ" onclick="alfa(this.value)" class="bt" title="tverdo"></p><p><input type="button" value="ⱅ" onclick="alfa(this.value)" class="bt" title="tverdo"></p></div>
+<div class="as"><span class="grey">а</span><br>a<p><input type="button" value="Ⰰ" onclick="alpha(this.value)" class="bt" title="az"></p><p><input type="button" value="ⰰ" onclick="alpha(this.value)" class="bt" title="az"></p></div>
+<div class="as"><span class="grey">б</span><br>b<p><input type="button" value="Ⰱ" onclick="alpha(this.value)" class="bt" title="buki"></p><p><input type="button" value="ⰱ" onclick="alpha(this.value)" class="bt" title="buki"></p></div>
+<div class="as"><span class="grey">в</span><br>v<p><input type="button" value="Ⰲ" onclick="alpha(this.value)" class="bt" title="vede"></p><p><input type="button" value="ⰲ" onclick="alpha(this.value)" class="bt" title="vede"></p></div>
+<div class="as"><span class="grey">г</span><br>g<p><input type="button" value="Ⰳ" onclick="alpha(this.value)" class="bt" title="glagoli"></p><p><input type="button" value="ⰳ" onclick="alpha(this.value)" class="bt" title="glagoli"></p></div>
+<div class="as"><span class="grey">д</span><br>d<p><input type="button" value="Ⰴ" onclick="alpha(this.value)" class="bt" title="dobro"></p><p><input type="button" value="ⰴ" onclick="alpha(this.value)" class="bt" title="dobro"></p></div>
+<div class="as"><span class="grey">е</span><br>e<p><input type="button" value="Ⰵ" onclick="alpha(this.value)" class="bt" title="est"></p><p><input type="button" value="ⰵ" onclick="alpha(this.value)" class="bt" title="est"></p></div>
+<div class="as"><span class="grey">ж</span><br>ž<p><input type="button" value="Ⰶ" onclick="alpha(this.value)" class="bt" title="živete"></p><p><input type="button" value="ⰶ" onclick="alpha(this.value)" class="bt" title="živete"></p></div>
+<div class="as"><span class="grey">ѕ</span><br>dz<p><input type="button" value="Ⰷ" onclick="alpha(this.value)" class="bt" title="dzelo"></p><p><input type="button" value="ⰷ" onclick="alpha(this.value)" class="bt" title="dzelo"></p></div>
+<div class="as"><span class="grey">з</span><br>z<p><input type="button" value="Ⰸ" onclick="alpha(this.value)" class="bt" title="zemlja"></p><p><input type="button" value="ⰸ" onclick="alpha(this.value)" class="bt" title="zemlja"></p></div>
+<div class="as"><span class="grey">й</span><br>y<p><input type="button" value="Ⰹ" onclick="alpha(this.value)" class="bt" title="iže"></p><p><input type="button" value="ⰹ" onclick="alpha(this.value)" class="bt" title="iže"></p></div>
+<div class="as"><span class="grey">й</span><br>y<p><input type="button" value="Ⰺ" onclick="alpha(this.value)" class="bt" title="iže (initial)"></p><p><input type="button" value="ⰺ" onclick="alpha(this.value)" class="bt" title="iže (initial)"></p></div>
+<div class="as"><span class="grey">і</span><br>i<p><input type="button" value="Ⰻ" onclick="alpha(this.value)" class="bt" title="i"></p><p><input type="button" value="ⰻ" onclick="alpha(this.value)" class="bt" title="i"></p></div>
+<div class="as"><span class="grey">ћ</span><br>j<p><input type="button" value="Ⰼ" onclick="alpha(this.value)" class="bt" title="jerv"></p><p><input type="button" value="ⰼ" onclick="alpha(this.value)" class="bt" title="jerv"></p></div>
+<div class="as"><span class="grey">к</span><br>k<p><input type="button" value="Ⰽ" onclick="alpha(this.value)" class="bt" title="kako"></p><p><input type="button" value="ⰽ" onclick="alpha(this.value)" class="bt" title="kako"></p></div>
+<div class="as"><span class="grey">л</span><br>l<p><input type="button" value="Ⰾ" onclick="alpha(this.value)" class="bt" title="ljudi"></p><p><input type="button" value="ⰾ" onclick="alpha(this.value)" class="bt" title="ljudi"></p></div>
+<div class="as"><span class="grey">м</span><br>m<p><input type="button" value="Ⰿ" onclick="alpha(this.value)" class="bt" title="myslete"></p><p><input type="button" value="ⰿ" onclick="alpha(this.value)" class="bt" title="myslete"></p></div>
+<div class="as"><span class="grey">н</span><br>n<p><input type="button" value="Ⱀ" onclick="alpha(this.value)" class="bt" title="naš"></p><p><input type="button" value="ⱀ" onclick="alpha(this.value)" class="bt" title="naš"></p></div>
+<div class="as"><span class="grey">о</span><br>o<p><input type="button" value="Ⱁ" onclick="alpha(this.value)" class="bt" title="on"></p><p><input type="button" value="ⱁ" onclick="alpha(this.value)" class="bt" title="on"></p></div>
+<div class="as"><span class="grey">п</span><br>p<p><input type="button" value="Ⱂ" onclick="alpha(this.value)" class="bt" title="pokoj"></p><p><input type="button" value="ⱂ" onclick="alpha(this.value)" class="bt" title="pokoi"></p></div>
+<div class="as"><span class="grey">р</span><br>r<p><input type="button" value="Ⱃ" onclick="alpha(this.value)" class="bt" title="rcy"></p><p><input type="button" value="ⱃ" onclick="alpha(this.value)" class="bt" title="rcy"></p></div>
+<div class="as"><span class="grey">с</span><br>s<p><input type="button" value="Ⱄ" onclick="alpha(this.value)" class="bt" title="slovo"></p><p><input type="button" value="ⱄ" onclick="alpha(this.value)" class="bt" title="slovo"></p></div>
+<div class="as"><span class="grey">т</span><br>t<p><input type="button" value="Ⱅ" onclick="alpha(this.value)" class="bt" title="tverdo"></p><p><input type="button" value="ⱅ" onclick="alpha(this.value)" class="bt" title="tverdo"></p></div>
 <div class="esp mobnul"></div>
-<div class="as"><span class="grey">у</span><br>u<p><input type="button" value="Ⱆ" onclick="alfa(this.value)" class="bt" title="uk"></p><p><input type="button" value="ⱆ" onclick="alfa(this.value)" class="bt" title="uk"></p></div>
-<div class="as"><span class="grey">ф</span><br>f<p><input type="button" value="Ⱇ" onclick="alfa(this.value)" class="bt" title="fert"></p><p><input type="button" value="ⱇ" onclick="alfa(this.value)" class="bt" title="fert"></p></div>
-<div class="as"><span class="grey">х</span><br>x<p><input type="button" value="Ⱈ" onclick="alfa(this.value)" class="bt" title="xer"></p><p><input type="button" value="ⱈ" onclick="alfa(this.value)" class="bt" title="xer"></p></div>
-<div class="as"><span class="grey">ѡ</span><br>ō<p><input type="button" value="Ⱉ" onclick="alfa(this.value)" class="bt" title="ot"></p><p><input type="button" value="ⱉ" onclick="alfa(this.value)" class="bt" title="ot"></p></div>
-<div class="as"><br>ph<p><input type="button" value="Ⱊ" onclick="alfa(this.value)" class="bt" title="pe"></p><p><input type="button" value="ⱊ" onclick="alfa(this.value)" class="bt" title="pe"></p></div>
-<div class="as"><span class="grey">щ</span><br>št<p><input type="button" value="Ⱋ" onclick="alfa(this.value)" class="bt" title="šta"></p><p><input type="button" value="ⱋ" onclick="alfa(this.value)" class="bt" title="šta"></p></div>
-<div class="as"><span class="grey">ц</span><br>c<p><input type="button" value="Ⱌ" onclick="alfa(this.value)" class="bt" title="cy"></p><p><input type="button" value="ⱌ" onclick="alfa(this.value)" class="bt" title="cy"></p></div>
-<div class="as"><span class="grey">ч</span><br>č<p><input type="button" value="Ⱍ" onclick="alfa(this.value)" class="bt" title="červ’"></p><p><input type="button" value="ⱍ" onclick="alfa(this.value)" class="bt" title="červ’"></p></div>
-<div class="as"><span class="grey">ш</span><br>š<p><input type="button" value="Ⱎ" onclick="alfa(this.value)" class="bt" title="ša"></p><p><input type="button" value="ⱎ" onclick="alfa(this.value)" class="bt" title="ša"></p></div>
-<div class="as"><span class="grey">ъ</span><br>''<p><input type="button" value="Ⱏ" onclick="alfa(this.value)" class="bt" title="er"></p><p><input type="button" value="ⱏ" onclick="alfa(this.value)" class="bt" title="er"></p></div>
-<div class="as"><span class="grey">ь</span><br>'<p><input type="button" value="Ⱐ" onclick="alfa(this.value)" class="bt" title="er’"></p><p><input type="button" value="ⱐ" onclick="alfa(this.value)" class="bt" title="er’"></p></div>
-<div class="as"><span class="grey">ѣ</span><br>ja<p><input type="button" value="Ⱑ" onclick="alfa(this.value)" class="bt" title="jat’"></p><p><input type="button" value="ⱑ" onclick="alfa(this.value)" class="bt" title="jat’"></p></div>
-<div class="as"><br>h<p><input type="button" value="Ⱒ" onclick="alfa(this.value)" class="bt" title="ha"></p><p><input type="button" value="ⱒ" onclick="alfa(this.value)" class="bt" title="ha"></p></div>
-<div class="as"><span class="grey">ю</span><br>ju<p><input type="button" value="Ⱓ" onclick="alfa(this.value)" class="bt" title="ju"></p><p><input type="button" value="ⱓ" onclick="alfa(this.value)" class="bt" title="ju"></p></div>
-<div class="as"><span class="grey">ѧ</span><br>ę<p><input type="button" value="Ⱔ" onclick="alfa(this.value)" class="bt" title="jus (petit)"></p><p><input type="button" value="ⱔ" onclick="alfa(this.value)" class="bt" title="jus (grand)"></p></div>
-<div class="as"><br> <p><input type="button" value="Ⱕ" onclick="alfa(this.value)" class="bt" title="jus (petit avec queue)"></p><p><input type="button" value="ⱕ" onclick="alfa(this.value)" class="bt" title="jus (petit avec queue)"></p></div>
-<div class="as"><span class="grey">ё</span><br>jö<p><input type="button" value="Ⱖ" onclick="alfa(this.value)" class="bt" title="jo"></p><p><input type="button" value="ⱖ" onclick="alfa(this.value)" class="bt" title="jo"></p></div>
-<div class="as"><span class="grey">ѩ</span><br>ję<p><input type="button" value="Ⱗ" onclick="alfa(this.value)" class="bt" title="jus (petit yodisé)"></p><p><input type="button" value="ⱗ" onclick="alfa(this.value)" class="bt" title="jus (petit yodisé)"></p></div>
-<div class="as"><span class="grey">ѫ</span><br>ǫ <p><input type="button" value="Ⱘ" onclick="alfa(this.value)" class="bt" title="jus (grand)"></p><p><input type="button" value="ⱘ" onclick="alfa(this.value)" class="bt" title="jus (grand)"></p></div>
-<div class="as"><span class="grey">ѭ</span><br>jǫ <p><input type="button" value="Ⱙ" onclick="alfa(this.value)" class="bt" title="jus (grand yodisé)"></p><p><input type="button" value="ⱙ" onclick="alfa(this.value)" class="bt" title="jus (grand yodisé)"></p></div>
-<div class="as"><span class="grey">ѳ</span><br>th<p><input type="button" value="Ⱚ" onclick="alfa(this.value)" class="bt" title="thita"></p><p><input type="button" value="ⱚ" onclick="alfa(this.value)" class="bt" title="thita"></p></div>
-<div class="as"><span class="grey">ѵ</span><br>ü<p><input type="button" value="Ⱛ" onclick="alfa(this.value)" class="bt" title="ižica"></p><p><input type="button" value="ⱛ" onclick="alfa(this.value)" class="bt" title="ižica"></p></div>
+<div class="as"><span class="grey">у</span><br>u<p><input type="button" value="Ⱆ" onclick="alpha(this.value)" class="bt" title="uk"></p><p><input type="button" value="ⱆ" onclick="alpha(this.value)" class="bt" title="uk"></p></div>
+<div class="as"><span class="grey">ф</span><br>f<p><input type="button" value="Ⱇ" onclick="alpha(this.value)" class="bt" title="fert"></p><p><input type="button" value="ⱇ" onclick="alpha(this.value)" class="bt" title="fert"></p></div>
+<div class="as"><span class="grey">х</span><br>x<p><input type="button" value="Ⱈ" onclick="alpha(this.value)" class="bt" title="xer"></p><p><input type="button" value="ⱈ" onclick="alpha(this.value)" class="bt" title="xer"></p></div>
+<div class="as"><span class="grey">ѡ</span><br>ō<p><input type="button" value="Ⱉ" onclick="alpha(this.value)" class="bt" title="ot"></p><p><input type="button" value="ⱉ" onclick="alpha(this.value)" class="bt" title="ot"></p></div>
+<div class="as"><br>ph<p><input type="button" value="Ⱊ" onclick="alpha(this.value)" class="bt" title="pe"></p><p><input type="button" value="ⱊ" onclick="alpha(this.value)" class="bt" title="pe"></p></div>
+<div class="as"><span class="grey">щ</span><br>št<p><input type="button" value="Ⱋ" onclick="alpha(this.value)" class="bt" title="šta"></p><p><input type="button" value="ⱋ" onclick="alpha(this.value)" class="bt" title="šta"></p></div>
+<div class="as"><span class="grey">ц</span><br>c<p><input type="button" value="Ⱌ" onclick="alpha(this.value)" class="bt" title="cy"></p><p><input type="button" value="ⱌ" onclick="alpha(this.value)" class="bt" title="cy"></p></div>
+<div class="as"><span class="grey">ч</span><br>č<p><input type="button" value="Ⱍ" onclick="alpha(this.value)" class="bt" title="červ’"></p><p><input type="button" value="ⱍ" onclick="alpha(this.value)" class="bt" title="červ’"></p></div>
+<div class="as"><span class="grey">ш</span><br>š<p><input type="button" value="Ⱎ" onclick="alpha(this.value)" class="bt" title="ša"></p><p><input type="button" value="ⱎ" onclick="alpha(this.value)" class="bt" title="ša"></p></div>
+<div class="as"><span class="grey">ъ</span><br>''<p><input type="button" value="Ⱏ" onclick="alpha(this.value)" class="bt" title="er"></p><p><input type="button" value="ⱏ" onclick="alpha(this.value)" class="bt" title="er"></p></div>
+<div class="as"><span class="grey">ь</span><br>'<p><input type="button" value="Ⱐ" onclick="alpha(this.value)" class="bt" title="er’"></p><p><input type="button" value="ⱐ" onclick="alpha(this.value)" class="bt" title="er’"></p></div>
+<div class="as"><span class="grey">ѣ</span><br>ja<p><input type="button" value="Ⱑ" onclick="alpha(this.value)" class="bt" title="jat’"></p><p><input type="button" value="ⱑ" onclick="alpha(this.value)" class="bt" title="jat’"></p></div>
+<div class="as"><br>h<p><input type="button" value="Ⱒ" onclick="alpha(this.value)" class="bt" title="ha"></p><p><input type="button" value="ⱒ" onclick="alpha(this.value)" class="bt" title="ha"></p></div>
+<div class="as"><span class="grey">ю</span><br>ju<p><input type="button" value="Ⱓ" onclick="alpha(this.value)" class="bt" title="ju"></p><p><input type="button" value="ⱓ" onclick="alpha(this.value)" class="bt" title="ju"></p></div>
+<div class="as"><span class="grey">ѧ</span><br>ę<p><input type="button" value="Ⱔ" onclick="alpha(this.value)" class="bt" title="jus (petit)"></p><p><input type="button" value="ⱔ" onclick="alpha(this.value)" class="bt" title="jus (grand)"></p></div>
+<div class="as"><br> <p><input type="button" value="Ⱕ" onclick="alpha(this.value)" class="bt" title="jus (petit avec queue)"></p><p><input type="button" value="ⱕ" onclick="alpha(this.value)" class="bt" title="jus (petit avec queue)"></p></div>
+<div class="as"><span class="grey">ё</span><br>jö<p><input type="button" value="Ⱖ" onclick="alpha(this.value)" class="bt" title="jo"></p><p><input type="button" value="ⱖ" onclick="alpha(this.value)" class="bt" title="jo"></p></div>
+<div class="as"><span class="grey">ѩ</span><br>ję<p><input type="button" value="Ⱗ" onclick="alpha(this.value)" class="bt" title="jus (petit yodisé)"></p><p><input type="button" value="ⱗ" onclick="alpha(this.value)" class="bt" title="jus (petit yodisé)"></p></div>
+<div class="as"><span class="grey">ѫ</span><br>ǫ <p><input type="button" value="Ⱘ" onclick="alpha(this.value)" class="bt" title="jus (grand)"></p><p><input type="button" value="ⱘ" onclick="alpha(this.value)" class="bt" title="jus (grand)"></p></div>
+<div class="as"><span class="grey">ѭ</span><br>jǫ <p><input type="button" value="Ⱙ" onclick="alpha(this.value)" class="bt" title="jus (grand yodisé)"></p><p><input type="button" value="ⱙ" onclick="alpha(this.value)" class="bt" title="jus (grand yodisé)"></p></div>
+<div class="as"><span class="grey">ѳ</span><br>th<p><input type="button" value="Ⱚ" onclick="alpha(this.value)" class="bt" title="thita"></p><p><input type="button" value="ⱚ" onclick="alpha(this.value)" class="bt" title="thita"></p></div>
+<div class="as"><span class="grey">ѵ</span><br>ü<p><input type="button" value="Ⱛ" onclick="alpha(this.value)" class="bt" title="ižica"></p><p><input type="button" value="ⱛ" onclick="alpha(this.value)" class="bt" title="ižica"></p></div>
 <div class="esp"></div>
-<div class="as"><p><input type="button" value="Ⱜ" onclick="alfa(this.value)" class="bt" title="štapic"></p><p><input type="button" value="ⱜ" onclick="alfa(this.value)" class="bt" title="štapic"></p></div>
-<div class="as"><p><input type="button" value="Ⱝ" onclick="alfa(this.value)" class="bt" title="trokutasti a"></p><p><input type="button" value="ⱝ" onclick="alfa(this.value)" class="bt" title="trokutasti a"></p></div>
-<div class="as"><p><input type="button" value="Ⱞ" onclick="alfa(this.value)" class="bt" title="myslete (latin)"></p><p><input type="button" value="ⱞ" onclick="alfa(this.value)" class="bt" title="myslete (latin)"></p></div>
+<div class="as"><p><input type="button" value="Ⱜ" onclick="alpha(this.value)" class="bt" title="štapic"></p><p><input type="button" value="ⱜ" onclick="alpha(this.value)" class="bt" title="štapic"></p></div>
+<div class="as"><p><input type="button" value="Ⱝ" onclick="alpha(this.value)" class="bt" title="trokutasti a"></p><p><input type="button" value="ⱝ" onclick="alpha(this.value)" class="bt" title="trokutasti a"></p></div>
+<div class="as"><p><input type="button" value="Ⱞ" onclick="alpha(this.value)" class="bt" title="myslete (latin)"></p><p><input type="button" value="ⱞ" onclick="alpha(this.value)" class="bt" title="myslete (latin)"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -288,6 +286,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/glagolitic.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:14 GMT -->
 </html>

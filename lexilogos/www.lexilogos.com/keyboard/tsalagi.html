@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tsalagi.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:05 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Cherokee Keyboard Online - Tsalagi Alphabet • Lexilogos</title>
+<title>Cherokee Keyboard Online - Tsalagi Alphabet - LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Cherokee keyboard to type a text with the Tsalagi alphabet">
 <meta name="Keywords" content="cherokee, tsalagi, keyboard, alphabet">
@@ -17,13 +15,13 @@
 .kb-t-chero { color: #33CC00; font-size:1em; font-family:Gadugi, Code2000; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carchero.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -189,7 +187,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -203,7 +201,7 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
 <div class="boxdeva">
 <table class="tab-kb">
@@ -220,12 +218,12 @@ console.log(e);
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5024;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5025;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5026;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5027;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5028;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5029;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5024;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5025;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5026;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5027;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5028;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5029;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -239,13 +237,13 @@ console.log(e);
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5031;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5030;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5032;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5033;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5034;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5035;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5036;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5031;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5030;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5032;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5033;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5034;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5035;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5036;"></td>
 </tr>
 
 <tr>
@@ -261,12 +259,12 @@ console.log(e);
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5037;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5038;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5039;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5040;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5041;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5042;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5037;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5038;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5039;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5040;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5041;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5042;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -281,12 +279,12 @@ console.log(e);
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5043;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5044;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5045;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5046;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5047;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5048;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5043;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5044;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5045;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5046;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5047;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5048;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -301,12 +299,12 @@ console.log(e);
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5049;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5050;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5051;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5052;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5053;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5109;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5049;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5050;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5051;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5052;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5053;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5109;"></td>
 </tr>
 <tr>
 <td>hna</td>
@@ -319,14 +317,14 @@ console.log(e);
 <td>nv</td>
 </tr>
 <tr>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5055;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5056;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5054;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5057;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5058;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5059;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5060;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5061;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5055;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5056;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5054;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5057;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5058;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5059;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5060;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5061;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -341,12 +339,12 @@ console.log(e);
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5062;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5063;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5064;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5065;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5066;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5067;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5062;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5063;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5064;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5065;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5066;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5067;"></td>
 </tr>
 </table>
 </div>
@@ -362,13 +360,13 @@ console.log(e);
 <td>sv</td>
 </tr>
 <tr>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5069;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5068;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5070;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5071;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5072;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5073;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5074;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5069;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5068;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5070;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5071;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5072;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5073;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5074;"></td>
 </tr>
 
 <tr>
@@ -382,12 +380,12 @@ console.log(e);
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5075;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5077;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5079;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5081;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5082;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5083;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5075;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5077;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5079;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5081;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5082;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5083;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -400,9 +398,9 @@ console.log(e);
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5076;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5078;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5080;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5076;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5078;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5080;"></td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -417,13 +415,13 @@ console.log(e);
 <td>tlv</td>
 </tr>
 <tr>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5084;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5085;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5086;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5087;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5088;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5089;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5090;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5084;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5085;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5086;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5087;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5088;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5089;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5090;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -436,12 +434,12 @@ console.log(e);
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5091;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5092;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5093;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5094;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5095;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5096;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5091;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5092;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5093;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5094;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5095;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5096;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -454,12 +452,12 @@ console.log(e);
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5097;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5098;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5099;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5100;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5101;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5102;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5097;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5098;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5099;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5100;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5101;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5102;"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -472,12 +470,12 @@ console.log(e);
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5103;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5104;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5105;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5106;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5107;"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="&#5108;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5103;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5104;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5105;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5106;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5107;"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="&#5108;"></td>
 </tr>
 </table>
 </div>
@@ -513,6 +511,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tsalagi.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:05 GMT -->
 </html>

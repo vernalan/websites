@@ -42,8 +42,8 @@ car = car.replace(/hh/g, "ʰ");
 car = car.replace(/ww/g, "ʷ");
 car = car.replace(/xx/g, "ˣ");
 car = car.replace(/ee/g, "ə");
-car = car.replace(/</g, "ʿ");
-car = car.replace(/>/g, "ʾ");
+car = car.replace(/\</g, "ʿ");
+car = car.replace(/\>/g, "ʾ");
 // quotation left right
 car = car.replace(/‘/g, "ʿ");
 car = car.replace(/’/g, "ʾ");  

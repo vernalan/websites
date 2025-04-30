@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/avestan.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:04 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Avestan Keyboard Online • Lexilogos</title>
+<title>Avestan Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Avestan Alphabet - Online keyboard to type a text with the Avestan script">
 <meta name="Keywords" content="avestan, script, keyboard, alphabet">
@@ -17,13 +15,13 @@
 .kb-avesta {font-family:Noto Sans Avestan; font-size:1.5em;}
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
-<script src="../code/caravest68b3.js?ver=1"></script>
+<script src="../code/base.js"></script>
+<script src="../code/caravest.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -189,7 +187,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -203,76 +201,76 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame">
 <div class="espc"></div>
-<div class="as">a<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68352;"></p></div>
-<div class="as">ā<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68353;"></p></div>
-<div class="as">å<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68354;"></p></div>
-<div class="as">å<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68355;"></p></div>
-<div class="as">ą<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68356;"></p></div>
-<div class="as">ą̇<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68357;"></p></div>
-<div class="as">ə<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68358;"></p></div>
-<div class="as">ə̄<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68359;"></p></div>
-<div class="as">e<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68360;"></p></div>
-<div class="as">ē<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68361;"></p></div>
-<div class="as">o<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68362;"></p></div>
-<div class="as">ō<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68363;"></p></div>
-<div class="as">i<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68364;"></p></div>
-<div class="as">ī<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68365;"></p></div>
-<div class="as">u<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68366;"></p></div>
-<div class="as">ū<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68367;"></p></div>
+<div class="as">a<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68352;"></p></div>
+<div class="as">ā<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68353;"></p></div>
+<div class="as">å<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68354;"></p></div>
+<div class="as">å<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68355;"></p></div>
+<div class="as">ą<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68356;"></p></div>
+<div class="as">ą̇<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68357;"></p></div>
+<div class="as">ə<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68358;"></p></div>
+<div class="as">ə̄<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68359;"></p></div>
+<div class="as">e<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68360;"></p></div>
+<div class="as">ē<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68361;"></p></div>
+<div class="as">o<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68362;"></p></div>
+<div class="as">ō<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68363;"></p></div>
+<div class="as">i<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68364;"></p></div>
+<div class="as">ī<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68365;"></p></div>
+<div class="as">u<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68366;"></p></div>
+<div class="as">ū<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68367;"></p></div>
 <div class="espc"></div>
 
-<div class="as">k<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68368;"></p></div>
-<div class="as">x<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68369;"></p></div>
-<div class="as">x́<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68370;"></p></div>
-<div class="as">xᵛ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68371;"></p></div>
-<div class="as">g<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68372;"></p></div>
-<div class="as">ġ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68373;"></p></div>
-<div class="as">γ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68374;"></p></div>
-<div class="as">c<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68375;"></p></div>
-<div class="as">j<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68376;"></p></div>
-<div class="as">t<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68377;"></p></div>
+<div class="as">k<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68368;"></p></div>
+<div class="as">x<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68369;"></p></div>
+<div class="as">x́<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68370;"></p></div>
+<div class="as">xᵛ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68371;"></p></div>
+<div class="as">g<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68372;"></p></div>
+<div class="as">ġ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68373;"></p></div>
+<div class="as">γ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68374;"></p></div>
+<div class="as">c<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68375;"></p></div>
+<div class="as">j<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68376;"></p></div>
+<div class="as">t<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68377;"></p></div>
 <div class="as">θ
-<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68378;"></p></div>
-<div class="as">d<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68379;"></p></div>
-<div class="as">δ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68380;"></p></div>
-<div class="as">t̰<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68381;"></p></div>
-<div class="as">p<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68382;"></p></div>
-<div class="as">f<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68383;"></p></div>
-<div class="as">b<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68384;"></p></div>
-<div class="as">β<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68385;"></p></div>
+<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68378;"></p></div>
+<div class="as">d<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68379;"></p></div>
+<div class="as">δ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68380;"></p></div>
+<div class="as">t̰<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68381;"></p></div>
+<div class="as">p<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68382;"></p></div>
+<div class="as">f<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68383;"></p></div>
+<div class="as">b<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68384;"></p></div>
+<div class="as">β<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68385;"></p></div>
 <div class="espc"></div>
 
 
-<div class="as">ŋ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68386;"></p></div>
-<div class="as">ŋ́<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68387;"></p></div>
-<div class="as">ŋᵛ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68388;"></p></div>
-<div class="as">n<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68389;"></p></div>
-<div class="as">ń<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68390;"></p></div>
-<div class="as">ṇ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68391;"></p></div>
-<div class="as">m<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68392;"></p></div>
-<div class="as">m̨<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68393;"></p></div>
-<div class="as">ẏ<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68394;"></p></div>
-<div class="as">y<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68395;"></p></div>
-<div class="as">v<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68396;"></p></div>
-<div class="as">r<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68397;"></p></div>
-<div class="as">l<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68398;"></p></div>
-<div class="as">s<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68399;"></p></div>
-<div class="as">z<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68400;"></p></div>
-<div class="as">š<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68401;"></p></div>
-<div class="as">ž<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68402;"></p></div>
-<div class="as">š́<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68403;"></p></div>
-<div class="as">ṣ̌<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68404;"></p></div>
-<div class="as">h<p><input type="button" class="bt" onclick="alfa(this.value)" value="&#68405;"></p></div>
+<div class="as">ŋ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68386;"></p></div>
+<div class="as">ŋ́<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68387;"></p></div>
+<div class="as">ŋᵛ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68388;"></p></div>
+<div class="as">n<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68389;"></p></div>
+<div class="as">ń<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68390;"></p></div>
+<div class="as">ṇ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68391;"></p></div>
+<div class="as">m<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68392;"></p></div>
+<div class="as">m̨<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68393;"></p></div>
+<div class="as">ẏ<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68394;"></p></div>
+<div class="as">y<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68395;"></p></div>
+<div class="as">v<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68396;"></p></div>
+<div class="as">r<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68397;"></p></div>
+<div class="as">l<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68398;"></p></div>
+<div class="as">s<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68399;"></p></div>
+<div class="as">z<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68400;"></p></div>
+<div class="as">š<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68401;"></p></div>
+<div class="as">ž<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68402;"></p></div>
+<div class="as">š́<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68403;"></p></div>
+<div class="as">ṣ̌<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68404;"></p></div>
+<div class="as">h<p><input type="button" class="bt" onclick="alpha(this.value)" value="&#68405;"></p></div>
 <div class="espc"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68409;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68410;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68411;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68412;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68413;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68414;"></div>
-<div class="as"><input type="button" class="bt" onclick="alfa(this.value)" value="&#68415;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68409;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68410;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68411;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68412;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68413;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68414;"></div>
+<div class="as"><input type="button" class="bt" onclick="alpha(this.value)" value="&#68415;"></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -318,6 +316,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/avestan.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:05 GMT -->
 </html>

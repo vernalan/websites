@@ -7,11 +7,11 @@ car = car.replace(/&/g, "୍");
 car = car.replace(/୍୍/g, "");
 
 car = car.replace(/a/g, "ଅ");
-car = car.replace(/[Aāâ]/g, "ଆ");
+car = car.replace(/[Aā]/g, "ଆ");
 car = car.replace(/i/g, "ଇ");
-car = car.replace(/[Iīî]/g, "ଈ");
+car = car.replace(/[Iī]/g, "ଈ");
 car = car.replace(/u/g, "ଉ");
-car = car.replace(/[Uūû]/g, "ଊ");
+car = car.replace(/[Uū]/g, "ଊ");
 car = car.replace(/ଅଅ/g, "ଆ");
 car = car.replace(/ଇଇ/g, "ଈ");
 car = car.replace(/ଉଉ/g, "ଊ");
@@ -39,7 +39,7 @@ car = car.replace(/୍ଌ/g, "ୢ");
 car = car.replace(/୍ୡ/g, "ୣ");
 car = car.replace(/୍ଏ/g, "େ");
 car = car.replace(/୍ଓ/g, "ୋ");
-// car = car.replace(/୍ /g, " ");
+car = car.replace(/୍ /g, " ");
 
 //cons
 car = car.replace(/n/g, "ନ୍");
@@ -163,20 +163,12 @@ car = car.replace(/୍ଃ/g, "ଃ");
 // nukta
 car = car.replace(/=/g, "଼");
 
-//half conso
-car = car.replace(/x/g, "\u200d");
-car = car.replace(/\u200d\u200d/g, "\u200c");
-
 
 // alternative : car = car.replace(/:/g, "ଃ");
 // avagraha
-car = car.replace(/\'\'/g, "ଽ");
-car = car.replace(/’’/g, "ଽ");
+car = car.replace(/\'/g, "ଽ");
+car = car.replace(/’/g, "ଽ");
 
-// ponctuation
-car = car.replace(/\|/g, "।");
-car = car.replace(/\//g, "।");
-car = car.replace(/।।/g, "॥");
 
 car = car.replace(/0/g, "୦");
 car = car.replace(/1/g, "୧");

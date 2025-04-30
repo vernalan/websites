@@ -47,17 +47,7 @@ car = car.replace(/Ẹ/g, "Ẹ");
 car = car.replace(/Ọ/g, "Ọ");
 car = car.replace(/Ṣ/g, "Ṣ");
 
-// abuan
-car = car.replace(/ạ/g, "ạ");
-car = car.replace(/ḅ/g, "ḅ");
-car = car.replace(/ḍ/g, "ḍ");
-car = car.replace(/ị/g, "ị");
-car = car.replace(/ụ/g, "ụ");
-car = car.replace(/Ạ/g, "Ạ");
-car = car.replace(/Ḅ/g, "Ḅ");
-car = car.replace(/Ḍ/g, "Ḍ");
-car = car.replace(/Ị/g, "Ị");
-car = car.replace(/Ụ/g, "Ụ");
+car = car.replace(/̩/g, "̣");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

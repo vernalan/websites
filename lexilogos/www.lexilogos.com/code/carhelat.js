@@ -4,8 +4,8 @@ var car;
 function transcrire() {
 car = document.conversion.saisie.value;
 car = car.replace(/_/g, "=");
-car = car.replace(/</g, "ʿ");
-car = car.replace(/>/g, "ʾ");
+car = car.replace(/\</g, "ʿ");
+car = car.replace(/\>/g, "ʾ");
 car = car.replace(/‘/g, "ʿ");
 car = car.replace(/’/g, "ʾ");
 car = car.replace(/a=/g, "ā");

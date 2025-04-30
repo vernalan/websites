@@ -44,8 +44,8 @@ car = car.replace(/é/g, "ې");
 car = car.replace(/y/g, "ي");
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 car = car.replace(/0/g, "۰");
 car = car.replace(/1/g, "۱");
 car = car.replace(/2/g, "۲");
@@ -58,8 +58,8 @@ car = car.replace(/8/g, "۸");
 car = car.replace(/9/g, "۹");
 
 car = car.replace(/\?/g, "؟");
-car = car.replace(/;/g, "؛");
-car = car.replace(/,/g, "،");
+car = car.replace(/\;/g, "؛");
+car = car.replace(/\,/g, "،");
 
 startPos = document.conversion.saisie.selectionStart;
 endPos = document.conversion.saisie.selectionEnd;

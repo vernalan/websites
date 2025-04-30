@@ -6,15 +6,15 @@ car = document.conversion.saisie.value;
 car = car.replace(/\+/g, "𑄳");
 car = car.replace(/𑄴𑄳/g, "𑄳");
 
-car = car.replace(/[Aāâ]/g, "𑄃");
+car = car.replace(/[Aā]/g, "𑄃");
 car = car.replace(/i/g, "𑄄");
 car = car.replace(/u/g, "𑄅");
 car = car.replace(/e/g, "𑄆");
 
 car = car.replace(/𑄄𑄄/g, "𑄃𑄩");
 car = car.replace(/𑄅𑄅/g, "𑄃𑄫");
-car = car.replace(/[Iīî]/g, "𑄃𑄩");
-car = car.replace(/[Uūû]/g, "𑄃𑄫");
+car = car.replace(/[Iī]/g, "𑄃𑄩");
+car = car.replace(/[Uū]/g, "𑄃𑄫");
 
 car = car.replace(/𑄃𑄄/g, "𑄃𑄭"); //AI
 car = car.replace(/O/g, "𑄃𑄰");  //OI

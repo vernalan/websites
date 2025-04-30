@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/yoruba.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:00 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Yoruba Keyboard Online • Lexilogos</title>
+<title>Yoruba Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Yoruba Keyboard to type a text with the special characters of the Yoruba alphabet">
 <meta name="Keywords" content="alphabet,Yoruba,keyboard,online,virtual">
@@ -16,13 +14,13 @@
 .cadr { width:80%; color:#0000FF; font-family:Noto Sans, Arial; font-size:1em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
-<script src="../code/caryor77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
+<script src="../code/caryor.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -186,7 +184,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <div class="delc"> 
 <br><input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="8" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="8" class="cadr"></textarea>
 <br><br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
 <script>
@@ -199,27 +197,27 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Á"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="á"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="À"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="à"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="É"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="é"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="È"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="è"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ẹ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ẹ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ẹ́"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ẹ́"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ẹ̀"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ẹ̀"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Í"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="í"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ì"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ì"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ń"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ń"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ǹ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ǹ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ó"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ó"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ò"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ò"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ọ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ọ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ọ́"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ọ́"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ọ̀"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ọ̀"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ṣ"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ṣ"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ú"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ú"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ù"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ù"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Á"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="á"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="À"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="à"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="É"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="é"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="È"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="è"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ẹ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ẹ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ẹ́"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ẹ́"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ẹ̀"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ẹ̀"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Í"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="í"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ì"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ì"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ń"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ń"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ǹ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ǹ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ó"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ó"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ò"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ò"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ọ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ọ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ọ́"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ọ́"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ọ̀"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ọ̀"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ṣ"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ṣ"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ú"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ú"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ù"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ù"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -256,6 +254,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/yoruba.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:48:01 GMT -->
 </html>

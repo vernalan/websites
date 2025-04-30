@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/swedish.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:49 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Swedish Keyboard Online • Lexilogos</title>
+<title>Swedish Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Swedish Keyboard to type a text with the special characters of the Swedish alphabet">
 <meta name="Keywords" content="alphabet,swedish,keyboard,online,virtual">
@@ -18,13 +16,13 @@
 .tabl td { padding-left:0.5em; padding-right:0.5em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/carsve.js"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -189,7 +187,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="8" onKeyUp="transcrire()" class="cadr"></textarea>
 <br><br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
 <script>
@@ -202,11 +200,11 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Å"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="å"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ä"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ä"></p></div>
-<div class="as"><p><input type="button" class="bt" onclick="alfa(this.value)" value="Ö"></p><p><input type="button" class="bt" onclick="alfa(this.value)" value="ö"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Å"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="å"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ä"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ä"></p></div>
+<div class="as"><p><input type="button" class="bt" onclick="alpha(this.value)" value="Ö"></p><p><input type="button" class="bt" onclick="alpha(this.value)" value="ö"></p></div>
 </form>
 </div>
 <div class="espb"></div>
@@ -275,6 +273,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/swedish.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:50 GMT -->
 </html>

@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tibetan.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:54 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Tibetan Keyboard Online • Lexilogos</title>
+<title>Tibetan Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Tibetan keyboard to type a text with the Tibetan script">
 <meta name="Keywords" content="tibetan,keyboard,character,alphabet">
@@ -19,17 +17,17 @@
 .cadr { width:80%; color:#0000FF; font-family:Noto Serif Tibetan; font-size:1.8em; padding:0.3em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
+<script src="../code/base.js"></script>
 <script src="../code/cartib.js"></script> 
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
-<span class="kb-t">Tibetan</span> &nbsp; class="kb-tib">&#x0F56;&#x0F7C;&#x0F51;&#x0F0B;&#x0F61;&#x0F72;&#x0F42;</span></div>
+<span class="kb-t">Tibetan</span> &nbsp; <span class="kb-tib">བོད་ཡིག</span></div>
 <div class="cd"><a href="https://www.lexilogos.com/english/communication.htm"><img src="../images/don_e.png" class="imgdone" title="Donate: Thank you!"></a><br>
 <a href="https://www.lexilogos.com/english/search.htm"><img src="../images/w_bouscateur.gif" class="imgbou" title="Search on Lexilogos &amp; on the web" alt="search"></a><br>
 <a href="https://www.lexilogos.com/clavier/tibetain.htm"><img src="../images/fra.gif" class="imgflag" alt="French" title="in French / en français"></a> 
@@ -192,7 +190,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" rows="3" onKeyUp="transcrire()" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" rows="3" onKeyUp="transcrire()" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -206,118 +204,114 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=3;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=30;conversion.saisie.focus()" value="large frame">
- <div class="espc"></div>
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" class="bf" onClick="conversion.saisie.rows=3;conversion.saisie.focus()" value="small frame"><input type="button" class="bf" onClick="conversion.saisie.rows=30;conversion.saisie.focus()" value="large frame">
+<div class="espc"></div>
 <div class="boxdeva">
 <div class="boxdevb">
-<div class="asd">ka<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F40;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F90;"></div>
-<div class="asd">kha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F41;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F91;"></div>
-<div class="asd">ga<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F42;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F92;"></div>
-<div class="asd">nga<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F44;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F94;"></div>
+<div class="asd">ka<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3904;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3984;"></div>
+<div class="asd">kha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3905;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3985;"></div>
+<div class="asd">ga<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3906;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3986;"></div>
+<div class="asd">nga<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3908;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3988;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">ca<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F45;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F95;"></div>
-<div class="asd">cha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F46;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F96;"></div>
-<div class="asd">ja<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F47;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F97;"></div>
-<div class="asd">nya<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F49;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F99;"></div>
+<div class="asd">ca<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3909;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3989;"></div>
+<div class="asd">cha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3910;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3990;"></div>
+<div class="asd">ja<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3911;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3991;"></div>
+<div class="asd">nya<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3913;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3993;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">ta<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F4F;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F9F;"></div>
-<div class="asd">tha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F50;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA0;"></div>
-<div class="asd">da<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F51;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA1;"></div>
-<div class="asd">na<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F53;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA3;"></div>
+<div class="asd">ta<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3919;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3999;"></div>
+<div class="asd">tha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3920;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4000;"></div>
+<div class="asd">da<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3921;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4001;"></div>
+<div class="asd">na<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3923;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4003;"></div>
 </div>
 <div class="esp mobnul"></div>
 <div class="boxdevb">
-<div class="asd">pa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F54;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA4;"></div>
-<div class="asd">pha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F55;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA5;"></div>
-<div class="asd">ba<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F56;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA6;"></div>
-<div class="asd">ma<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F58;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA8;"></div>
+<div class="asd">pa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3924;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4004;"></div>
+<div class="asd">pha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3925;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4005;"></div>
+<div class="asd">ba<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3926;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4006;"></div>
+<div class="asd">ma<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3928;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4008;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">tsa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F59;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FA9;"></div>
-<div class="asd">tsha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F5A;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FAA;"></div>
-<div class="asd">dza<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F5B;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FAB;"></div>
-<div class="asd">wa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F5D;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FAD;"></div>
+<div class="asd">tsa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3929;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4009;"></div>
+<div class="asd">tsha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3930;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4010;"></div>
+<div class="asd">dza<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3931;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4011;"></div>
+<div class="asd">wa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3933;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4013;"></div>
 </div>
 <div class="boxdevb">
-<div class="asd">zha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F5E;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FAE;"></div>
-<div class="asd">za<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F5F;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FAF;"></div>
-<div class="asd">-a<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F60;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB0;"></div>
-<div class="asd">ya<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F61;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB1;"></div>
-</div>
-<div class="esp"></div>
-<div class="boxdevb">
-<div class="asd">ra<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F62;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB2;"></div>
-<div class="asd">la<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F63;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB3;"></div>
-<div class="asd">śa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F64;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB4;"></div>
-<div class="asd">sa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F66;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB6;"></div>
-</div>
-<div class="boxdevb">
-<div class="asd">ha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F67;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB7;"></div>
-<div class="asd">a <span class="grey k">[q]</span><p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F68;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB8;"></div>
+<div class="asd">zha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3934;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4014;"></div>
+<div class="asd">za<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3935;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4015;"></div>
+<div class="asd">-a<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3936;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4016;"></div>
+<div class="asd">ya<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3937;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4017;"></div>
 </div>
 <div class="esp"></div>
 <div class="boxdevb">
-<div class="asd">Ṭa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F4A;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F9A;"></div>
-<div class="asd">Ṭha<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F4B;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F9B;"></div>
-<div class="asd">Ḍa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F4C;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F9C;"></div>
-<div class="asd">Ṇa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F4E;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0F9E;"></div>
-<div class="asd">Ra<p><input type="button" class="bt" onClick="alfa(this.value);annuler();" value="&#x0F6A;"></p><p><input type="button" class="bts" onClick="alfa(this.value);annuler();" value="&#x0FBC;"></div>
-<div class="asd">Ṣa<p><input type="button" class="bt" onclick="alfa(this.value);annuler();" value="&#x0F65;"></p><p><input type="button" class="bts" onclick="alfa(this.value);annuler();" value="&#x0FB5;"></div>
+<div class="asd">ra<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3938;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4018;"></div>
+<div class="asd">la<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3939;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4019;"></div>
+<div class="asd">śa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3940;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4020;"></div>
+<div class="asd">sa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3942;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4022;"></div>
+</div>
+<div class="boxdevb">
+<div class="asd">ha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3943;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4023;"></div>
+<div class="asd">a <span class="grey k">[q]</span><p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3944;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4024;"></div>
+</div>
+<div class="esp"></div>
+<div class="boxdevb">
+<div class="asd">Ṭa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3914;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3994;"></div>
+<div class="asd">Ṭha<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3915;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3995;"></div>
+<div class="asd">Ḍa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3916;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3996;"></div>
+<div class="asd">Ṇa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3918;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#3998;"></div>
+<div class="asd">Ra<p><input type="button" class="bt" onClick="alpha(this.value);annuler();" value="&#3946;"></p><p><input type="button" class="bts" onClick="alpha(this.value);annuler();" value="&#4028;"></div>
+<div class="asd">Ṣa<p><input type="button" class="bt" onclick="alpha(this.value);annuler();" value="&#3941;"></p><p><input type="button" class="bts" onclick="alpha(this.value);annuler();" value="&#4021;"></div>
 </div>
 </div>
 
 <div class="boxdeva">
 <div class="boxdevb">
-<div class="as">ā<p><input type="button" value="&#x0F71;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">i<p><input type="button" value="&#x0F72;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">ī<p><input type="button" value="&#x0F73;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">u<p><input type="button" value="&#x0F74;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">ū<p><input type="button" value="&#x0F75;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
+<div class="as">ā<p><input type="button" value="&#3953;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">i<p><input type="button" value="&#3954;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">ī<p><input type="button" value="&#3955;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">u<p><input type="button" value="&#3956;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">ū<p><input type="button" value="&#3957;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
 </div>
 <div class="boxdevb">
-<div class="as">e<p><input type="button" class="btx" onclick="alfa(this.value);annuler();" value="&#x0F7A;"></p></div>
-<div class="as">ē<p><input type="button" class="btx" onclick="alfa(this.value);annuler();" value="&#x0F7B;"></p></div>
-<div class="as">o<p><input type="button" class="btx" onclick="alfa(this.value);annuler();" value="&#x0F7C;"></p></div>
-<div class="as">ō<p><input type="button" class="btx" onclick="alfa(this.value);annuler();" value="&#x0F7D;"></p></div>
+<div class="as">e<p><input type="button" class="btx" onclick="alpha(this.value);annuler();" value="&#3962;"></p></div>
+<div class="as">ē<p><input type="button" class="btx" onclick="alpha(this.value);annuler();" value="&#3963;"></p></div>
+<div class="as">o<p><input type="button" class="btx" onclick="alpha(this.value);annuler();" value="&#3964;"></p></div>
+<div class="as">ō<p><input type="button" class="btx" onclick="alpha(this.value);annuler();" value="&#3965;"></p></div>
 </div>
 <div class="esp"></div>
-<div class="as">ri<p><input type="button" value="&#x0F76;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">rī<p><input type="button" value="&#x0F77;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">li<p><input type="button" value="&#x0F78;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
-<div class="as">lī<p><input type="button" value="&#x0F79;" onclick="alfa(this.value);annuler();" class="btx"></p></div>
+<div class="as">ri<p><input type="button" value="&#3958;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">rī<p><input type="button" value="&#3959;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">li<p><input type="button" value="&#3960;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
+<div class="as">lī<p><input type="button" value="&#3961;" onclick="alpha(this.value);annuler();" class="btx"></p></div>
 
 <div class="esp"></div>
-<div class="as"><input type="button" class="btx" title="rnam bcad (visarga)" value="&#x0F7F;" onclick="alfa(this.value);annuler();"></div>
-<div class="as"><input type="button" value="&#x0F14;" onclick="alfa(this.value);annuler();" title="gter tsheg" class="btx"></div>
-<div class="as"><input type="button" class="btx" title="rjes su nga ro (anusvara)" onclick="alfa(this.value);annuler();" value="&#x0F7E;"></div>
-<div class="as"><input type="button" class="btx" title="sna ldan (candrabindu)" onclick="alfa(this.value);annuler();" value="&#x0F83;"></div>
-<div class="as"><input type="button" class="btx" title="nyi zla naa da" onclick="alfa(this.value);annuler();" value="&#x0F82;"></div>
-<div class="as"><input type="button" class="btx" title="OM" onclick="alfa(this.value);annuler();" value="&#x0F00;"></div>
-<div class="as"><input type="button" class="btx" title="halanta (virama)" onclick="alfa(this.value);annuler();" value="&#x0F84;"></div>
-<div class="as"><input type="button" class="btx" title="paluta (avagraha)" onclick="alfa(this.value);annuler();" value="&#x0F85;"></div>
-
+<div class="as"><input type="button" value="&#3967;" onclick="alpha(this.value);annuler();" title="rnam bcad" class="btx"></div>
+<div class="as"><input type="button" value="&#3860;" onclick="alpha(this.value);annuler();" title="gter tsheg" class="btx"></div>
+<div class="as"><input type="button" class="btx" title="rjes su nga ro" onclick="alpha(this.value);annuler();" value="&#3966;"></div>
+<div class="as"><input type="button" class="btx" title="sna ldan" onclick="alpha(this.value);annuler();" value="&#3971;"></div>
+<div class="as"><input type="button" class="btx" title="nyi zla naa da" onclick="alpha(this.value);annuler();" value="&#3970;"></div>
+<div class="as"><input type="button" class="btx" title="OM" onclick="alpha(this.value);annuler();" value="&#x0F00;"></div>
 <div class="esp"></div>
-<p class="k">punctuation</p>
-<div class="as"><input type="button" value="&#x0F0B;" onclick="alfa(this.value);annuler();" title="tsheg (intersyllabic)" class="btx"></div>
-<div class="as"><input type="button" value="&#x0F0D;" onclick="alfa(this.value);annuler();" title="shad" class="btx"></div>
-<div class="as"><input type="button" value="&#x0F0F;" onclick="alfa(this.value);annuler();" title="tsheg shad" class="btx"></div>
-<div class="as"><input type="button" value="&#x0F11;" onclick="alfa(this.value);annuler();" title="rin chen spungs shad" class="btx"></div>
-<div class="as"><input type="button" value="&#x0F04;" onclick="alfa(this.value);annuler();" title="initial yig mgo mdun ma" class="btx"></div>
-<div class="as"><input type="button" value="&#x0F05;" onclick="alfa(this.value);annuler();" title="closing yig mgo sgab ma" class="btx"></div>
-
+<p>punctuation</p>
+<div class="as"><input type="button" value="&#3851;" onclick="alpha(this.value);annuler();" title="tsheg (intersyllabique)" class="btx"></div>
+<div class="as"><input type="button" value="&#3853;" onclick="alpha(this.value);annuler();" title="shad" class="btx"></div>
+<div class="as"><input type="button" value="&#3855;" onclick="alpha(this.value);annuler();" title="tsheg shad" class="btx"></div>
+<div class="as"><input type="button" value="&#3857;" onclick="alpha(this.value);annuler();" title="rin chen spungs shad" class="btx"></div>
+<div class="as"><input type="button" value="&#3844;" onclick="alpha(this.value);annuler();" title="yig mgo mdun ma ouvrant" class="btx"></div>
+<div class="as"><input type="button" value="&#3845;" onclick="alpha(this.value);annuler();" title="yig mgo sgab ma fermant" class="btx"></div>
 <div class="esp"></div>
-<div class="as">0<p><input type="button" value="&#x0F20;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">1<p><input type="button" value="&#x0F21;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">2<p><input type="button" value="&#x0F22;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">3<p><input type="button" value="&#x0F23;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">4<p><input type="button" value="&#x0F24;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">5<p><input type="button" value="&#x0F25;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">6<p><input type="button" value="&#x0F26;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">7<p><input type="button" value="&#x0F27;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">8<p><input type="button" value="&#x0F28;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
-<div class="as">9<p><input type="button" value="&#x0F29;" onclick="alfa(this.value);annuler();" class="bt"></p></div>
+<div class="as">0<p><input type="button" value="&#3872;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">1<p><input type="button" value="&#3873;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">2<p><input type="button" value="&#3874;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">3<p><input type="button" value="&#3875;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">4<p><input type="button" value="&#3876;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">5<p><input type="button" value="&#3877;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">6<p><input type="button" value="&#3878;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">7<p><input type="button" value="&#3879;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">8<p><input type="button" value="&#3880;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
+<div class="as">9<p><input type="button" value="&#3881;" onclick="alpha(this.value);annuler();" class="bt"></p></div>
 </div>
 </form>
 </div>
@@ -367,6 +361,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/tibetan.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:55 GMT -->
 </html>

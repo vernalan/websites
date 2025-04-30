@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
-
-<!-- Mirrored from www.lexilogos.com/keyboard/chinese_pinyin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:06 GMT -->
 <head>
 <meta charset="utf-8">
-<title>Chinese Pinyin Keyboard Online • Lexilogos</title>
+<title>Chinese Pinyin Keyboard Online LEXILOGOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Online Chinese Pinyin Keyboard">
 <meta name="Keywords" content="chinese,pinyin,keyboard,alphabet">
@@ -20,13 +18,13 @@
 .tabl td:nth-child(1) { padding-right:0.6em; }
 </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../code/base77ae.js?ver=2"></script>
-<script src="../code/carch.js"></script>
+<script src="../code/base.js"></script>
+<script src="../code/carch77ae.js?ver=2"></script>
 <script src="../code/clipboard.js"></script>
 <script src="../code/savee.js"></script>
 <!-- GA -->
 </head>
-<body>
+<body onLoad="conversion.saisie.focus()">
 <div class="ca"><a href="https://www.lexilogos.com/english/new.htm"><img src="../images/lexilogos_papagai.gif" class="imgpap" title="What's new?" alt="new"></a></div>
 <div class="cb"><a href="https://www.lexilogos.com/english/index.htm"><img src="../images/lexilogos_english.gif" class="imgloge" title="Online Dictionaries &gt; Index" alt="Lexilogos"></a></div>
 <div class="cc"><a href="index.html"><img src="../images/keyboard.gif" class="imgclae" alt="online keyboard" title="Index languages"></a><br>
@@ -191,7 +189,7 @@ You must enable JavaScript in your web browser: see the <a class="ext" href="htt
 <br>
 <input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
 </div>
-<textarea autofocus spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="8" class="cadr"></textarea>
+<textarea spellcheck="false" name="saisie" id="bar" onKeyUp="transcrire()" rows="8" class="cadr"></textarea>
 <br>
 <br>
 <input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
@@ -205,45 +203,45 @@ console.log(e);
 });
 </script>
 <input type="button" class="bf" onClick="save()" value="save">
-<input type="button" class="bf" onClick="alfa(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
+<input type="button" class="bf" onClick="alpha(' ')" value="space"><input type="button" onClick="conversion.saisie.rows=8;conversion.saisie.focus()" value="small frame" class="bf"><input type="button" onClick="conversion.saisie.rows=40;conversion.saisie.focus()" value="large frame" class="bf">
 <div class="espc"></div>
 <div class="boxdeva">
 <table class="tabl">
 <tr> 
 <td>1</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ā"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ē"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ī"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ō"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ū"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǖ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ā"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ē"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ī"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ō"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ū"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǖ"></td>
 </tr>
 <tr> 
 <td>2</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="á"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="é"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="í"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ó"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ú"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǘ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="á"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="é"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="í"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ó"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ú"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǘ"></td>
 </tr>
 <tr> 
 <td>3</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǎ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ě"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǐ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǒ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǔ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǚ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǎ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ě"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǐ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǒ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǔ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǚ"></td>
 </tr>
 <tr> 
 <td>4</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="à"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="è"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ì"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ò"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ù"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ǜ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="à"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="è"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ì"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ò"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ù"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ǜ"></td>
 </tr>
 <tr> 
 <td>&nbsp;</td>
@@ -252,7 +250,7 @@ console.log(e);
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="ü"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="ü"></td>
 </tr>
 </table>
 </div>
@@ -260,39 +258,39 @@ console.log(e);
 <table class="tabl">
 <tr> 
 <td>1</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ā"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ē"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ī"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ō"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ū"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǖ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ā"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ē"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ī"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ō"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ū"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǖ"></td>
 </tr>
 <tr> 
 <td>2</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Á"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="É"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Í"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ó"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ú"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǘ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Á"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="É"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Í"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ó"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ú"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǘ"></td>
 </tr>
 <tr> 
 <td>3</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǎ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ě"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǐ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǒ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǔ"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǚ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǎ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ě"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǐ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǒ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǔ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǚ"></td>
 </tr>
 <tr> 
 <td>4</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="À"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="È"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ì"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ò"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ù"></td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ǜ"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="À"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="È"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ì"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ò"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ù"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ǜ"></td>
 </tr>
 <tr> 
 <td>&nbsp;</td>
@@ -301,7 +299,7 @@ console.log(e);
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="button" class="bt" onclick="alfa(this.value)" value="Ü"></td>
+<td><input type="button" class="bt" onclick="alpha(this.value)" value="Ü"></td>
 </tr>
 </table>
 </div>
@@ -350,6 +348,4 @@ Copy [Ctrl]+[C] &amp; Paste [Ctrl]+[V]
 <div class="center"><a class="co" href="https://www.lexilogos.com/contact.php">Xavier Nègre &nbsp; © Lexilogos 2002-2025</a></div>
 <div class="espd"></div>
 </body>
-
-<!-- Mirrored from www.lexilogos.com/keyboard/chinese_pinyin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Apr 2025 15:47:06 GMT -->
 </html>

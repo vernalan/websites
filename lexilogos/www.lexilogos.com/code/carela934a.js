@@ -482,7 +482,7 @@ car = car.replace(/-Ύ/g, "Ὕ");
 car = car.replace(/-Ώ/g, "Ὥ");
 
 car = car.replace(/\?/g, ";");
-car = car.replace(/;/g, "·");
+car = car.replace(/\;/g, "·");
 
 car = car.replace(/σ /g, "ς ");
 car = car.replace(/σ,/g, "ς,");
