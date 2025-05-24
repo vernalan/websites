@@ -368,7 +368,7 @@
         }
 
         // --- Core Functionality ---
-        async function handleExtract() {
+async function handleExtract() {
             const url = urlInput.value.trim();
             if (!url) { setStatus('Please enter a URL.', true); return; }
             try { new URL(url); } catch (_) { setStatus('Invalid URL format.', true); return; }
@@ -385,59 +385,193 @@
             setStatus('Fetching content...');
             if (currentDownloadUrl) { URL.revokeObjectURL(currentDownloadUrl); currentDownloadUrl = null; }
 
-            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+            // Multiple proxy services with retry logic
+            const proxies = [
+                `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+                `https://corsproxy.io/?${encodeURIComponent(url)}`,
+                `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
+                `https://cors-anywhere.herokuapp.com/${url}`
+            ];
 
-            try {
-                // 1. Fetch
-                const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error(`Fetch failed: ${response.status} ${response.statusText}`);
-                const html = await response.text();
-                setStatus('Parsing HTML...');
+            let lastError = null;
+            let attempt = 0;
 
-                // 2. Parse DOM
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                let base = doc.querySelector('base');
-                if (!base) { base = doc.createElement('base'); base.href = url; doc.head.appendChild(base); }
-                else { try { const currentBaseHref = new URL(base.getAttribute('href'), url); base.setAttribute('href', currentBaseHref.href); } catch (e) { base.setAttribute('href', url); console.warn("Corrected invalid base href to:", url); } }
-                setStatus('Extracting article content...');
+            for (const proxyUrl of proxies) {
+                attempt++;
+                try {
+                    setStatus(`Attempting to fetch content (${attempt}/${proxies.length})...`);
+                    
+                    // Enhanced fetch with timeout and proper error handling
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+                    
+                    const response = await fetch(proxyUrl, {
+                        signal: controller.signal,
+                        headers: {
+                            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                        }
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
 
-                // 3. Readability
-                const reader = new Readability(doc);
-                const article = reader.parse();
-                if (!article || !article.content) throw new Error("Could not extract article content.");
-                setStatus('Converting to Markdown...');
+                    // Check content-length header vs actual content
+                    const contentLength = response.headers.get('content-length');
+                    let html;
+                    
+                    try {
+                        // Use response.arrayBuffer() first to avoid content-length issues
+                        const buffer = await response.arrayBuffer();
+                        const decoder = new TextDecoder('utf-8');
+                        html = decoder.decode(buffer);
+                        
+                        // Verify we got some content
+                        if (!html || html.trim().length < 100) {
+                            throw new Error('Response body is empty or too small');
+                        }
+                        
+                        // Check if we got an error page instead of content
+                        if (html.includes('Access denied') || html.includes('403 Forbidden') || 
+                            html.includes('Rate limit') || html.includes('Too Many Requests')) {
+                            throw new Error('Proxy access denied or rate limited');
+                        }
+                        
+                    } catch (decodeError) {
+                        // Fallback to text() method
+                        try {
+                            html = await response.text();
+                        } catch (textError) {
+                            throw new Error(`Failed to read response: ${decodeError.message}`);
+                        }
+                    }
 
-                // 4. Turndown
-                const markdown = turndownService.turndown(article.content);
+                    setStatus('Content fetched successfully, parsing HTML...');
 
-                // 5. Output & Download Link
-                const articleTitle = article.title || 'Untitled Article';
-                const fullMarkdown = `# ${articleTitle}\n\n${markdown}`;
-                const filename = `${articleTitle.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, ' ').trim() || 'article'}.md`;
+                    // 2. Parse DOM
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Check if we got a valid HTML document
+                    if (!doc.documentElement || doc.documentElement.tagName !== 'HTML') {
+                        throw new Error('Invalid HTML document received');
+                    }
+                    
+                    let base = doc.querySelector('base');
+                    if (!base) { 
+                        base = doc.createElement('base'); 
+                        base.href = url; 
+                        doc.head.appendChild(base); 
+                    } else { 
+                        try { 
+                            const currentBaseHref = new URL(base.getAttribute('href'), url); 
+                            base.setAttribute('href', currentBaseHref.href); 
+                        } catch (e) { 
+                            base.setAttribute('href', url); 
+                            console.warn("Corrected invalid base href to:", url); 
+                        } 
+                    }
+                    
+                    setStatus('Extracting article content...');
 
-                outputPre.textContent = fullMarkdown;
-                localStorage.setItem(LS_KEYS.CONTENT, fullMarkdown);
+                    // 3. Readability with better error handling
+                    let reader, article;
+                    try {
+                        reader = new Readability(doc.cloneNode(true)); // Clone to avoid mutations
+                        article = reader.parse();
+                    } catch (readabilityError) {
+                        console.warn('Readability failed:', readabilityError);
+                        // Fallback: try to extract basic content
+                        const bodyText = doc.body ? doc.body.innerText || doc.body.textContent : '';
+                        const titleElement = doc.querySelector('title, h1');
+                        const title = titleElement ? titleElement.textContent.trim() : 'Extracted Content';
+                        
+                        if (bodyText && bodyText.trim().length > 100) {
+                            article = {
+                                title: title,
+                                content: `<div>${bodyText}</div>`
+                            };
+                        } else {
+                            throw new Error("Could not extract meaningful content from page");
+                        }
+                    }
+                    
+                    if (!article || !article.content) {
+                        throw new Error("No article content found - page may be too dynamic or require JavaScript");
+                    }
+                    
+                    setStatus('Converting to Markdown...');
 
-                const blob = new Blob([fullMarkdown], { type: 'text/markdown;charset=utf-8' });
-                currentDownloadUrl = URL.createObjectURL(blob);
-                const downloadLink = document.createElement('a');
-                downloadLink.href = currentDownloadUrl; downloadLink.download = filename; downloadLink.textContent = `Download "${filename}"`;
-                downloadArea.appendChild(downloadLink);
+                    // 4. Turndown with error handling
+                    let markdown;
+                    try {
+                        markdown = turndownService.turndown(article.content);
+                    } catch (turndownError) {
+                        console.warn('Turndown failed, using plain text:', turndownError);
+                        // Fallback to plain text extraction
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = article.content;
+                        markdown = tempDiv.textContent || tempDiv.innerText || article.content;
+                    }
 
-                resultsDiv.style.display = 'block';
-                copyContentButton.disabled = false; // Enable copy button on success
-                setStatus('Extraction and conversion complete.', false);
+                    // 5. Output & Download Link
+                    const articleTitle = article.title || 'Untitled Article';
+                    const fullMarkdown = `# ${articleTitle}\n\nSource: ${url}\nExtracted: ${new Date().toISOString()}\n\n---\n\n${markdown}`;
+                    const filename = `${articleTitle.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, ' ').trim() || 'article'}.md`;
 
-            } catch (error) {
-                console.error('Error processing URL:', error);
-                setStatus(`Error: ${error.message}`, true);
-                resultsDiv.style.display = 'none';
-                localStorage.removeItem(LS_KEYS.CONTENT);
-                copyContentButton.disabled = true; // Keep copy disabled on error
-            } finally {
-                extractButton.disabled = false;
+                    outputPre.textContent = fullMarkdown;
+                    localStorage.setItem(LS_KEYS.CONTENT, fullMarkdown);
+
+                    const blob = new Blob([fullMarkdown], { type: 'text/markdown;charset=utf-8' });
+                    currentDownloadUrl = URL.createObjectURL(blob);
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = currentDownloadUrl; 
+                    downloadLink.download = filename; 
+                    downloadLink.textContent = `Download "${filename}"`;
+                    downloadArea.appendChild(downloadLink);
+
+                    resultsDiv.style.display = 'block';
+                    copyContentButton.disabled = false; // Enable copy button on success
+                    setStatus('Extraction and conversion complete.', false);
+                    
+                    return; // Success! Exit the retry loop
+
+                } catch (error) {
+                    console.error(`Attempt ${attempt} failed:`, error);
+                    lastError = error;
+                    
+                    // If this isn't the last attempt, wait before trying next proxy
+                    if (attempt < proxies.length) {
+                        setStatus(`Attempt ${attempt} failed, trying alternative method...`);
+                        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
+                    }
+                }
             }
+
+            // All attempts failed
+            console.error('All extraction attempts failed:', lastError);
+            let errorMessage = 'Failed to extract content. ';
+            
+            if (lastError.name === 'AbortError') {
+                errorMessage += 'Request timed out. The page may be too large or slow to load.';
+            } else if (lastError.message.includes('content-length')) {
+                errorMessage += 'The page content was corrupted during transfer. Try again or use a different URL.';
+            } else if (lastError.message.includes('CORS')) {
+                errorMessage += 'Cross-origin request blocked. The website may have strict CORS policies.';
+            } else if (lastError.message.includes('Rate limit') || lastError.message.includes('403')) {
+                errorMessage += 'Access denied by proxy service. Please try again later.';
+            } else {
+                errorMessage += lastError.message;
+            }
+            
+            setStatus(errorMessage, true);
+            resultsDiv.style.display = 'none';
+            localStorage.removeItem(LS_KEYS.CONTENT);
+            copyContentButton.disabled = true; // Keep copy disabled on error
+            
+            extractButton.disabled = false;
         }
 
         // --- Button Handlers ---
