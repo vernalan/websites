@@ -8,20 +8,24 @@ Instead of manually copy/pasting URLs to import, adding **"Edit in LiveCodes"** 
 
 Drag this link to the browser bookmarks bar:
 
+{% raw %}
 <div
   dangerouslySetInnerHTML={{
     __html: `<a href='javascript:(()=>{window.open("https://livecodes.io/?x="+encodeURIComponent(location.href),"_blank");})();'>Edit in LiveCodes</a>`,
   }}
 />
+{% endraw %}
 
 <br />
 
 or manually create a new bookmark in your browser and add this code as its URL:
 
 <!-- prettier-ignore -->
+{% raw %}
 ```js
 javascript:(()=>{window.open("https://livecodes.io/?x="+encodeURIComponent(location.href),"_blank");})();
 ```
+{% endraw %}
 
 ## Example Usage
 
