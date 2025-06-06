@@ -448,9 +448,9 @@
       let outputFormat = 'markdown';
 
       // Functions
-      function updateOutput() {
+function updateOutput() {
         let inputContent = '';
-        
+
         // Get input content based on current input format
         if (inputFormat === 'richtext') {
           inputContent = richEditor.innerHTML;
@@ -466,24 +466,32 @@
 
         // Convert from input format to common format (HTML)
         let htmlContent = '';
-        
+
         switch (inputFormat) {
           case 'markdown':
             htmlContent = mdToHtmlConverter.makeHtml(inputContent);
             break;
           case 'richtext':
+            // Convert rich text to HTML
+            htmlContent = inputContent;
+            break;
           case 'html':
             htmlContent = inputContent;
             break;
           case 'plaintext':
-            htmlContent = inputContent.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+            htmlContent = inputContent.replace(/</g, '<').replace(/>/g, '>').replace(/\n/g, '<br>');
             break;
         }
 
         // Convert from HTML to output format
         switch (outputFormat) {
           case 'markdown':
-            outputTextarea.value = htmlToMdConverter.turndown(htmlContent);
+            if (inputFormat === 'richtext') {
+              // Convert rich text HTML to markdown
+              outputTextarea.value = htmlToMdConverter.turndown(htmlContent);
+            } else {
+              outputTextarea.value = htmlToMdConverter.turndown(htmlContent);
+            }
             break;
           case 'richtext':
             outputRichtext.innerHTML = htmlContent;
