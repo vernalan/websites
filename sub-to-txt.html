@@ -134,6 +134,7 @@
 </head>
 <body>
     <h1>SUB to TXT Converter</h1>
+    <p>Supported formats: .srt, .vtt, .ass, .ssa, .txt</p>
     <div class="container">
         <div class="input-section">
             <div class="tab-buttons">
@@ -294,11 +295,12 @@
             downloadBtn.style.display = 'block';
             
             // Save to localStorage with error handling
+            // Check if localStorage is available
             if (typeof localStorage !== 'undefined') {
                 try {
                     localStorage.setItem('convertedText', txtContent);
                 } catch (e) {
-                    console.error('LocalStorage error:', e.message);
+                    console.error('LocalStorage error:', e);
                 }
             }
         }
