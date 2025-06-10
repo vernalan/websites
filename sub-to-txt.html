@@ -133,7 +133,7 @@
     </style>
 </head>
 <body>
-    <h1>SRT to TXT Converter</h1>
+    <h1>SUB to TXT Converter</h1>
     <div class="container">
         <div class="input-section">
             <div class="tab-buttons">
@@ -261,7 +261,12 @@
             // Remove subtitle formatting based on format
             let txtContent = srtInput;
             
-            // SRT format
+            // Normalize line endings and remove invalid characters first
+            txtContent = txtContent
+                .replace(/\r\n|\r|\n/g, '\n')  // Normalize line endings
+                .replace(/[^\x00-\x7F]/g, '')  // Remove non-ASCII chars if needed
+                
+            // SRT format processing
             txtContent = txtContent
                 .replace(/^\d+\s*$/gm, '')  // Remove sequence numbers
                 .replace(/^\d{1,2}:\d{2}:\d{2},\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2},\d{3}\s*$/gm, '')  // Remove timestamps
