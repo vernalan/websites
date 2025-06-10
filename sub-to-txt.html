@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRT to TXT Converter</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #cccccc;
+            --button-bg: #4CAF50;
+            --button-hover: #45a049;
+            --download-bg: #2196F3;
+            --download-hover: #0b7dda;
+            --tab-bg: #f1f1f1;
+            --tab-text: #333333;
+            --tab-active-bg: #4CAF50;
+            --tab-active-text: #ffffff;
+            --input-bg: #ffffff;
+            --input-text: #333333;
+        }
+
+        .dark-mode {
+            --bg-color: #1e1e1e;
+            --text-color: #f0f0f0;
+            --border-color: #444444;
+            --button-bg: #2e7d32;
+            --button-hover: #1b5e20;
+            --download-bg: #1565c0;
+            --download-hover: #0d47a1;
+            --tab-bg: #333333;
+            --tab-text: #f0f0f0;
+            --tab-active-bg: #2e7d32;
+            --tab-active-text: #ffffff;
+            --input-bg: #2d2d2d;
+            --input-text: #f0f0f0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            color: var(--text-color);
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            resize: vertical;
+            background-color: var(--input-bg);
+            color: var(--input-text);
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: var(--button-bg);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: var(--button-hover);
+        }
+        .download-btn {
+            background-color: var(--download-bg);
+            display: none;
+        }
+        .download-btn:hover {
+            background-color: var(--download-hover);
+        }
+        
+        /* Tab styles */
+        .input-section {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 15px;
+            background-color: var(--bg-color);
+        }
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .tab-btn {
+            flex: 1;
+            background-color: var(--tab-bg);
+            color: var(--tab-text);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            background-color: var(--tab-active-bg);
+            color: var(--tab-active-text);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+#fileInput {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+        #fileInfo {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>SRT to TXT Converter</h1>
+    <div class="container">
+        <div class="input-section">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="paste">Paste Text</button>
+                <button class="tab-btn" data-tab="upload">Upload File</button>
+            </div>
+            
+            <div class="tab-content active" id="paste-tab">
+                <textarea id="srtInput" placeholder="Paste your subtitle content here..."></textarea>
+            </div>
+            
+            <div class="tab-content" id="upload-tab">
+                <input type="file" id="fileInput" accept=".srt,.vtt,.ass,.ssa,.txt">
+                <div id="fileInfo"></div>
+            </div>
+        </div>
+        
+        <button id="convertBtn">Convert to TXT</button>
+        <button id="clearBtn">Clear</button>
+        <textarea id="txtOutput" placeholder="Converted text will appear here..." readonly></textarea>
+        <button id="downloadBtn" class="download-btn">Download TXT File</button>
+    </div>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.id = 'darkModeToggle';
+        darkModeToggle.textContent = '🌙 Dark Mode';
+        darkModeToggle.style.position = 'fixed';
+        darkModeToggle.style.top = '10px';
+        darkModeToggle.style.right = '10px';
+        darkModeToggle.style.padding = '5px 10px';
+        darkModeToggle.style.borderRadius = '4px';
+        darkModeToggle.style.border = 'none';
+        darkModeToggle.style.cursor = 'pointer';
+        darkModeToggle.style.backgroundColor = '#4CAF50';
+        darkModeToggle.style.color = 'white';
+        
+        document.body.prepend(darkModeToggle);
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️ Light Mode';
+        }
+
+        darkModeToggle.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark-mode');
+            var isDarkMode = document.documentElement.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            darkModeToggle.textContent = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(`${btn.dataset.tab}-tab`).classList.add('active');
+            });
+        });
+
+        // File upload handling
+        document.getElementById('fileInput').addEventListener('change', handleFileUpload);
+        document.getElementById('convertBtn').addEventListener('click', convertSrtToTxt);
+        document.getElementById('downloadBtn').addEventListener('click', downloadTxt);
+        document.getElementById('clearBtn').addEventListener('click', clearTextAreas);
+
+        function clearTextAreas() {
+            document.getElementById('srtInput').value = '';
+            document.getElementById('txtOutput').value = '';
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileInfo').textContent = '';
+        }
+
+        function handleFileUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const content = e.target.result;
+                document.getElementById('srtInput').value = content;
+                localStorage.setItem('subtitleContent', content);
+                document.getElementById('fileInfo').textContent = `File: ${file.name} (${(file.size/1024).toFixed(2)} KB)`;
+            };
+            reader.readAsText(file);
+        }
+
+        // Save pasted/uploaded content to localStorage
+        document.getElementById('srtInput').addEventListener('input', function() {
+            localStorage.setItem('subtitleContent', this.value);
+        });
+
+        // Load saved content on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedContent = localStorage.getItem('subtitleContent');
+            if (savedContent) {
+                document.getElementById('srtInput').value = savedContent;
+            }
+        });
+
+        // Load saved content on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedText = localStorage.getItem('convertedText');
+            if (savedText) {
+                document.getElementById('txtOutput').value = savedText;
+                document.getElementById('downloadBtn').style.display = 'block';
+            }
+        });
+
+        function convertSrtToTxt() {
+            const srtInput = document.getElementById('srtInput').value;
+            const txtOutput = document.getElementById('txtOutput');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            if (!srtInput.trim()) {
+                alert('Please enter SRT content to convert');
+                return;
+            }
+
+            // Remove subtitle formatting based on format
+            let txtContent = srtInput;
+            
+            // SRT format
+            txtContent = txtContent
+                .replace(/^\d+\s*$/gm, '')  // Remove sequence numbers
+                .replace(/^\d{1,2}:\d{2}:\d{2},\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2},\d{3}\s*$/gm, '')  // Remove timestamps
+                .replace(/^\s*$/gm, '')  // Remove empty lines
+                .trim();
+            
+            // VTT format
+            txtContent = txtContent
+                .replace(/^WEBVTT.*$/gm, '')  // Remove VTT header
+                .replace(/^\d{1,2}:\d{2}:\d{2}\.\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2}\.\d{3}\s*$/gm, '')  // Remove VTT timestamps
+                .replace(/^NOTE.*$/gm, '')  // Remove VTT notes
+                .replace(/^STYLE.*$/gm, '')  // Remove VTT style blocks
+                .replace(/^\s*$/gm, '')  // Remove empty lines
+                .trim();
+            
+            // ASS/SSA format
+            txtContent = txtContent
+                .replace(/^\[Script Info\].*?\[Events\].*?$/gms, '')  // Remove header section
+                .replace(/^Dialogue:.*?,.*?,.*?,.*?,.*?,.*?,.*?,.*?,.*?,(.*?)$/gm, '$1')  // Extract dialogue text
+                .replace(/\{.*?\}/g, '')  // Remove inline formatting tags
+                .replace(/^\s*$/gm, '')  // Remove empty lines
+                .trim();
+
+            txtOutput.value = txtContent;
+            downloadBtn.style.display = 'block';
+            
+            // Save to localStorage with error handling
+            if (typeof localStorage !== 'undefined') {
+                try {
+                    localStorage.setItem('convertedText', txtContent);
+                } catch (e) {
+                    console.error('LocalStorage error:', e.message);
+                }
+            }
+        }
+
+        function downloadTxt() {
+            const txtContent = document.getElementById('txtOutput').value;
+            if (!txtContent) {
+                alert('No content to download');
+                return;
+            }
+
+            const blob = new Blob([txtContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted_text.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
