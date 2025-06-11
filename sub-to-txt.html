@@ -316,16 +316,18 @@
             // VTT format
             txtContent = txtContent
                 .replace(/^WEBVTT.*$/gm, '')  // Remove VTT header
-                .replace(/^\d{1,2}:\d{2}:\d{2}\.\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2}\.\d{3}\s*$/gm, '')  // Remove VTT timestamps
-                .replace(/^NOTE.*$/gm, '')  // Remove VTT notes
-                .replace(/^STYLE.*$/gm, '')  // Remove VTT style blocks
+                .replace(/^(?:Kind|Language|Region|Style|Note|Comment|Title):.*$/gm, '')  // Remove metadata headers
+                .replace(/^\d{1,2}:\d{2}:\d{2}\.\d{3}\s*-->\s*\d{1,2}:\d{2}:\d{2}\.\d{3}\s*.*$/gm, '')  // Remove VTT timestamps and any following alignment/position
+                .replace(/<[^>]*>/g, '') // Remove HTML tags
+                .replace(/\b(?:align|position|line|size):[^\s;]+/g, '') // Remove VTT styling directives
                 .replace(/^\s*$/gm, '')  // Remove empty lines
+                .replace(/\n{3,}/g, '\n\n')  // Remove excessive newlines
                 .trim();
             
             // ASS/SSA format
             txtContent = txtContent
                 .replace(/^\[Script Info\].*?\[Events\].*?$/gms, '')  // Remove header section
-                .replace(/^Dialogue:.*?,.*?,.*?,.*?,.*?,.*?,.*?,.*?,.*?,(.*?)$/gm, '$1')  // Extract dialogue text
+                .replace(/^Dialogue:\s*[^,\n]*,[^,\n]*,[^,\n]*,[^,\n]*,[^,\n]*,[^,\n]*,[^,\n]*,[^,\n]*,[^,\n]*,(.*)$/gm, '$1')  // Extract dialogue text
                 .replace(/\{.*?\}/g, '')  // Remove inline formatting tags
                 .replace(/^\s*$/gm, '')  // Remove empty lines
                 .trim();
