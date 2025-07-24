@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Wage Calculator</title>
+    <style>
+        :root {
+            --border-color: #e9ecef;
+            --input-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --page-bg: #f0f2f5;
+            --text-color: #495057;
+            --label-color: #343a40;
+            --icon-color: #868e96;
+            --primary-color: #4285F4;
+            --border-radius-md: 8px;
+            --border-radius-sm: 6px;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --border-color: #495057;
+            --input-bg: #2d3748;
+            --card-bg: #1a202c;
+            --page-bg: #121826;
+            --text-color: #e2e8f0;
+            --label-color: #e2e8f0;
+            --icon-color: #a0aec0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        .calculator-container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--label-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--icon-color);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+            color: var(--primary-color);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .instructions {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: rgba(66, 133, 244, 0.05);
+            border-radius: var(--border-radius-sm);
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .instructions ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .label-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .label-header label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--label-color);
+        }
+
+        .label-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            color: var(--icon-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .icon-btn:hover {
+            color: #333;
+        }
+
+        .dark-mode .icon-btn:hover {
+            color: #e2e8f0;
+        }
+
+        .icon-btn.more-dots {
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .pin-btn.pinned {
+            color: var(--primary-color);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper .input-prefix,
+        .input-wrapper .input-suffix {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-color);
+            font-size: 14px;
+        }
+
+        .input-wrapper .input-prefix {
+            left: 12px;
+            font-size: 16px;
+        }
+
+        .input-wrapper .input-suffix {
+            right: 12px;
+            color: var(--icon-color);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background-color: var(--input-bg);
+            color: var(--label-color);
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+
+        .form-input.has-prefix {
+            padding-left: 30px;
+        }
+
+        .form-input.has-suffix {
+            padding-right: 110px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card-header .chevron-icon {
+            color: var(--primary-color);
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--label-color);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header">
+            <h1>Wage Calculator</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1a.145.145 0 0 1 .001-.001z"/>
+                </svg>
+            </button>
+        </div>
+
+
+
+        <!-- Wage Card -->
+        <div class="card">
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="hourly-wage">Hourly wage</label>
+                    <div class="label-actions">
+                         <button class="icon-btn pin-btn" aria-label="Pin hourly wage" data-target="hourly-wage">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.176a6 6 0 0 1 .751-.555l.078-.048V2.277a2.7 2.7 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354m1.58 1.408-.002-.001.002.001M11.5 1a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5c0 .438.286.835.57 1.096.145.13.3.238.43.325V6.2a.5.5 0 0 1-.122.324l-.175.247c-.353.498-.765.82-1.134 1.033C3.604 9.45 3.5 9.848 3.5 10.5a.5.5 0 0 0 .5.5h4v4.5a.5.5 0 0 0 .5.5s.5-.224.5-.5V11h4a.5.5 0 0 0 .5-.5c0-.652-.104-1.05-.31-1.355-.37-.537-.782-.859-1.134-1.033l-.175-.247a.5.5 0 0 1-.122-.324V2.421c.13-.087.285-.195.43-.325.284-.26.57-.658.57-1.096"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="text" id="hourly-wage" class="form-input has-prefix wage-input" inputmode="decimal" placeholder="0.00">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="daily-wage">Daily wage</label>
+                    <div class="label-actions">
+                        <button class="icon-btn pin-btn" aria-label="Pin daily wage" data-target="daily-wage">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.176a6 6 0 0 1 .751-.555l.078-.048V2.277a2.7 2.7 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354m1.58 1.408-.002-.001.002.001M11.5 1a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5c0 .438.286.835.57 1.096.145.13.3.238.43.325V6.2a.5.5 0 0 1-.122.324l-.175.247c-.353.498-.765.82-1.134 1.033C3.604 9.45 3.5 9.848 3.5 10.5a.5.5 0 0 0 .5.5h4v4.5a.5.5 0 0 0 .5.5s.5-.224.5-.5V11h4a.5.5 0 0 0 .5-.5c0-.652-.104-1.05-.31-1.355-.37-.537-.782-.859-1.134-1.033l-.175-.247a.5.5 0 0 1-.122-.324V2.421c.13-.087.285-.195.43-.325.284-.26.57-.658.57-1.096"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="text" id="daily-wage" class="form-input has-prefix wage-input" inputmode="decimal" placeholder="0.00">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="weekly-wage">Weekly wage</label>
+                    <div class="label-actions">
+                        <button class="icon-btn pin-btn" aria-label="Pin weekly wage" data-target="weekly-wage">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.176a6 6 0 0 1 .751-.555l.078-.048V2.277a2.7 2.7 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354m1.58 1.408-.002-.001.002.001M11.5 1a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5c0 .438.286.835.57 1.096.145.13.3.238.43.325V6.2a.5.5 0 0 1-.122.324l-.175.247c-.353.498-.765.82-1.134 1.033C3.604 9.45 3.5 9.848 3.5 10.5a.5.5 0 0 0 .5.5h4v4.5a.5.5 0 0 0 .5.5s.5-.224.5-.5V11h4a.5.5 0 0 0 .5-.5c0-.652-.104-1.05-.31-1.355-.37-.537-.782-.859-1.134-1.033l-.175-.247a.5.5 0 0 1-.122-.324V2.421c.13-.087.285-.195.43-.325.284-.26.57-.658.57-1.096"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="text" id="weekly-wage" class="form-input has-prefix wage-input" inputmode="decimal" placeholder="0.00">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="monthly-wage">Monthly wage</label>
+                    <div class="label-actions">
+                        <button class="icon-btn pin-btn" aria-label="Pin monthly wage" data-target="monthly-wage">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.176a6 6 0 0 1 .751-.555l.078-.048V2.277a2.7 2.7 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354m1.58 1.408-.002-.001.002.001M11.5 1a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5c0 .438.286.835.57 1.096.145.13.3.238.43.325V6.2a.5.5 0 0 1-.122.324l-.175.247c-.353.498-.765.82-1.134 1.033C3.604 9.45 3.5 9.848 3.5 10.5a.5.5 0 0 0 .5.5h4v4.5a.5.5 0 0 0 .5.5s.5-.224.5-.5V11h4a.5.5 0 0 0 .5-.5c0-.652-.104-1.05-.31-1.355-.37-.537-.782-.859-1.134-1.033l-.175-.247a.5.5 0 0 1-.122-.324V2.421c.13-.087.285-.195.43-.325.284-.26.57-.658.57-1.096"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="text" id="monthly-wage" class="form-input has-prefix wage-input" inputmode="decimal" placeholder="0.00">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="yearly-wage">Yearly wage</label>
+                    <div class="label-actions">
+                        <button class="icon-btn pin-btn" aria-label="Pin yearly wage" data-target="yearly-wage">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224.5-.5.5s-.5-.224-.5-.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.176a6 6 0 0 1 .751-.555l.078-.048V2.277a2.7 2.7 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354m1.58 1.408-.002-.001.002.001M11.5 1a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5c0 .438.286.835.57 1.096.145.13.3.238.43.325V6.2a.5.5 0 0 1-.122.324l-.175.247c-.353.498-.765.82-1.134 1.033C3.604 9.45 3.5 9.848 3.5 10.5a.5.5 0 0 0 .5.5h4v4.5a.5.5 0 0 0 .5.5s.5-.224.5-.5V11h4a.5.5 0 0 0 .5-.5c0-.652-.104-1.05-.31-1.355-.37-.537-.782-.859-1.134-1.033l-.175-.247a.5.5 0 0 1-.122-.324V2.421c.13-.087.285-.195.43-.325.284-.26.57-.658.57-1.096"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="text" id="yearly-wage" class="form-input has-prefix wage-input" inputmode="decimal" placeholder="0.00">
+                </div>
+            </div>
+        </div>
+        <!-- Working Days Card -->
+        <div class="card">
+             <div class="card-header">
+                <h2>Working Schedule</h2>
+            </div>
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="hours-week">Hours per week</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="hours-week" class="form-input has-suffix" value="40" inputmode="decimal">
+                    <span class="input-suffix">hours / week</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label-header">
+                    <label for="days-week">Days per week</label>
+                     <div class="label-actions">
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="days-week" class="form-input has-suffix" value="5" inputmode="decimal">
+                    <span class="input-suffix">days / week</span>
+                </div>
+            </div>
+        </div>
+                <div class="card">
+            <div class="instructions">
+                <h3>How to Use This Calculator</h3>
+                <ul>
+                    <li>Enter any wage value (hourly, daily, weekly, monthly, or yearly)</li>
+                    <li>All other wage fields will automatically calculate based on your input</li>
+                    <li>Pin a field to make it the reference point for calculations</li>
+                    <li>Adjust working hours/days to match your schedule</li>
+                    <li>Toggle dark mode using the moon/sun icon at the top</li>
+                </ul>
+                <p><strong>Tip:</strong> Pin the wage you know best to ensure accurate calculations.</p>
+            </div>
+        </div>
+    </div>
+        
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const inputs = {
+            hourly: document.getElementById('hourly-wage'),
+            daily: document.getElementById('daily-wage'),
+            weekly: document.getElementById('weekly-wage'),
+            monthly: document.getElementById('monthly-wage'),
+            yearly: document.getElementById('yearly-wage'),
+            hoursPerWeek: document.getElementById('hours-week'),
+            daysPerWeek: document.getElementById('days-week')
+        };
+        const wageInputs = document.querySelectorAll('.wage-input');
+        const pinButtons = document.querySelectorAll('.pin-btn');
+        const themeToggle = document.getElementById('themeToggle');
+        let isCalculating = false;
+        let lastEditedWageInput = null;
+        let pinnedInput = null;
+        
+        // Load theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        // Theme toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        });
+        
+        /**
+         * The main calculation function. It requires an authoritative source input.
+         * @param {HTMLElement} authoritativeInput - The input field that is the source of truth for this calculation.
+         */
+        function calculateWages(authoritativeInput) {
+            if (isCalculating || !authoritativeInput) return;
+            isCalculating = true;
+            const sourceId = authoritativeInput.id;
+            const sourceValue = parseFloat(authoritativeInput.value.replace(/,/g, ''));
+            const hoursPerWeek = parseFloat(inputs.hoursPerWeek.value) || 0;
+            const daysPerWeek = parseFloat(inputs.daysPerWeek.value) || 0;
+            const hoursPerDay = (hoursPerWeek && daysPerWeek) ? hoursPerWeek / daysPerWeek : 0;
+            if (isNaN(sourceValue)) {
+                wageInputs.forEach(input => {
+                    if (input.id !== sourceId) input.value = '';
+                });
+                isCalculating = false;
+                return;
+            }
+            let hourlyWage = 0;
+            switch (sourceId) {
+                case 'hourly-wage': hourlyWage = sourceValue; break;
+                case 'daily-wage': hourlyWage = hoursPerDay > 0 ? sourceValue / hoursPerDay : 0; break;
+                case 'weekly-wage': hourlyWage = hoursPerWeek > 0 ? sourceValue / hoursPerWeek : 0; break;
+                case 'monthly-wage': hourlyWage = (hoursPerWeek > 0) ? (sourceValue * 12) / 52 / hoursPerWeek : 0; break;
+                case 'yearly-wage': hourlyWage = (hoursPerWeek > 0) ? sourceValue / 52 / hoursPerWeek : 0; break;
+            }
+            const results = {
+                hourly: hourlyWage,
+                daily: hourlyWage * hoursPerDay,
+                weekly: hourlyWage * hoursPerWeek,
+                yearly: (hourlyWage * hoursPerWeek) * 52,
+                monthly: ((hourlyWage * hoursPerWeek) * 52) / 12
+            };
+            const formatNumber = (num) => {
+                if (num === 0) return '0';
+                if (!num || !isFinite(num)) return '';
+                let formatted = num.toFixed(2);
+                return formatted.endsWith('.00') ? formatted.slice(0, -3) : formatted;
+            };
+            // Update all wage fields EXCEPT the authoritative one for this calculation.
+            wageInputs.forEach(input => {
+                if (input !== authoritativeInput) {
+                    const key = input.id.split('-')[0]; // 'hourly-wage' -> 'hourly'
+                    input.value = formatNumber(results[key]);
+                }
+            });
+            isCalculating = false;
+        }
+        // --- Event Listeners ---
+        wageInputs.forEach(input => {
+            input.addEventListener('input', (e) => {
+                const currentInput = e.target;
+                lastEditedWageInput = currentInput;
+                // If the user clears a pinned input, unpin it automatically.
+                if (pinnedInput === currentInput && currentInput.value.trim() === '') {
+                    const pinButton = document.querySelector(`.pin-btn[data-target="${pinnedInput.id}"]`);
+                    pinButton.classList.remove('pinned');
+                    pinnedInput = null;
+                }
+                // When a user types in a field, THAT field is the source of truth.
+                calculateWages(currentInput);
+            });
+        });
+        function handleTimeChange() {
+            // For indirect changes (like hours/days), the pinned input takes priority.
+            // If nothing is pinned, use the last field the user touched.
+            const authoritativeInput = pinnedInput || lastEditedWageInput;
+            calculateWages(authoritativeInput);
+        }
+        inputs.hoursPerWeek.addEventListener('input', handleTimeChange);
+        inputs.daysPerWeek.addEventListener('input', handleTimeChange);
+        pinButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.target;
+                const targetInput = document.getElementById(targetId);
+                if (!targetInput.value.trim()) return;
+                if (pinnedInput === targetInput) {
+                    pinnedInput = null;
+                    button.classList.remove('pinned');
+                } else {
+                    if (pinnedInput) {
+                        const oldPinButton = document.querySelector(`.pin-btn[data-target="${pinnedInput.id}"]`);
+                        if (oldPinButton) oldPinButton.classList.remove('pinned');
+                    }
+                    pinnedInput = targetInput;
+                    button.classList.add('pinned');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
